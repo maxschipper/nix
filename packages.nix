@@ -48,6 +48,7 @@
       starship
       ghostty
       git
+      gh
       difftastic
       gh
       just
