@@ -67,7 +67,7 @@
   console.keyMap = "de-latin1-nodeadkeys";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
