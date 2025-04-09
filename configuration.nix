@@ -104,65 +104,6 @@
 
   documentation.man.generateCaches = false;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  programs = {
-    firefox.enable = true;
-
-    nh = {
-      enable = true;
-      flake = "/home/max/.config/nix/";
-    };
-
-    fish = {
-      enable = true;
-      useBabelfish = true;
-    };
-
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
-    bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [ batman ];
-    };
-  };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    helix
-    zellij
-    starship
-    ghostty
-    git
-    difftastic
-    gh
-    just
-    stow
-    fastfetch
-    lsd
-    wget
-    nixd
-    nil
-    nixfmt-rfc-style
-    nfd
-    fzf
-    yazi
-    lazygit
-    tldr
-    gparted
-    ntfs3g
-  ];
-
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-  ];
-
   # virtualisation.lxd
 
   # not working?
