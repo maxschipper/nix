@@ -7,15 +7,15 @@
 }:
 
 {
-  # You could define options here if needed, but for just packages,
-  # you typically only need the 'config' section.
-  # options = {};
-
   config = {
-    # Define the system packages using the 'pkgs' argument
-
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
+
+    fonts.packages = with pkgs; [
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
+    ];
+
     programs = {
       firefox.enable = true;
 
@@ -40,8 +40,6 @@
       };
     };
 
-    # List packages installed in system profile. To search, run:
-    # $ nix search wget
     environment.systemPackages = with pkgs; [
       helix
       zellij
@@ -69,14 +67,5 @@
       ripgrep
       fd
     ];
-
-    fonts.packages = with pkgs; [
-      jetbrains-mono
-      nerd-fonts.jetbrains-mono
-    ];
-
-    # You could potentially define other related things here too,
-    # like environment variables, if it makes sense organizationally.
-    # environment.variables = { EDITOR = "vim"; };
   };
 }

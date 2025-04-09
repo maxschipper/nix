@@ -15,6 +15,13 @@
     "flakes"
   ];
 
+  documentation.man.generateCaches = false;
+
+  environment.sessionVariables = {
+    # FLAKE = "/home/max/.config/nix";
+    EDITOR = "hx";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -100,17 +107,6 @@
       kdePackages.kate
       #  thunderbird
     ];
-  };
-
-  documentation.man.generateCaches = false;
-
-  # virtualisation.lxd
-
-  # not working?
-  # environment.variables.EDITOR = "hx";
-  environment.sessionVariables = {
-    # FLAKE = "/home/max/.config/nix";
-    test = "nix config variables work!";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
