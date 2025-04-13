@@ -21,6 +21,7 @@
           modules = [
             ./configuration.nix
             ./packages.nix
+            ./modules/tailscale.nix
           ];
         };
       };
