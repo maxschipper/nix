@@ -17,7 +17,6 @@
     ];
 
     programs = {
-      firefox.enable = true;
 
       nh = {
         enable = true;
@@ -61,7 +60,6 @@
       yazi
       lazygit
       tldr
-      gparted
       ntfs3g
       fzf
       ripgrep
