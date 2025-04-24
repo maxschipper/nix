@@ -35,7 +35,7 @@
             ./modules/packages/gui
             ./modules/tailscale.nix
           ];
-        }
+        };
       };
     };
 }
