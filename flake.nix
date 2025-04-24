@@ -7,7 +7,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }:
+    { self, nixpkgs, nixpkgs-stable, ... }:
     let
       # inherit (self) outputs;
       # system = "x86_64-linux";
@@ -17,6 +17,9 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+          };
           modules = [
             ./hosts
             ./hosts/pc/configuration.nix
