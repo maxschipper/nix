@@ -3,13 +3,13 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    # nixpkgs.url = "nixpkgs/nixos-24.11";
-    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
   };
 
   outputs =
     { self, nixpkgs, ... }:
     let
+      # inherit (self) outputs;
       # system = "x86_64-linux";
       lib = nixpkgs.lib;
 
@@ -19,11 +19,23 @@
         nixos = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./configuration.nix
-            ./packages.nix
+            ./hosts
+            ./hosts/pc
+            ./modules/packages
+            ./modules/packages/gui
             ./modules/tailscale.nix
           ];
         };
+        imac-nix = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts
+            ./hosts/imac
+            ./modules/packages
+            ./modules/packages/gui
+            ./modules/tailscale.nix
+          ];
+        }
       };
     };
 }
