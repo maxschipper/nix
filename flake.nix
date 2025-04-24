@@ -20,7 +20,7 @@
           system = "x86_64-linux";
           modules = [
             ./hosts
-            ./hosts/pc
+            ./hosts/pc/configuration.nix
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
@@ -30,7 +30,7 @@
           system = "x86_64-linux";
           modules = [
             ./hosts
-            ./hosts/imac
+            ./hosts/imac/configuration.nix
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
