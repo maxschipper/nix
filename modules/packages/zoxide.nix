@@ -8,9 +8,9 @@
 
 {
   config = {
-      bat = {
+      zoxide = {
         enable = true;
-        extraPackages = with pkgs.bat-extras; [ batman ];
+        enableFishIntegration = true;
       };
   };
 };
