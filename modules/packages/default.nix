@@ -18,7 +18,7 @@
 
       nh = {
         enable = true;
-        flake = "/home/max/.config/nix/";
+        flake = "/home/max/nix/";
       };
 
       fish = {
