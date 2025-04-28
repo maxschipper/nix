@@ -6,6 +6,8 @@
     "flakes"
   ];
 
+  documentation.man.generateCaches = false;
+
   environment.sessionVariables = {
     EDITOR = "hx";
   };
