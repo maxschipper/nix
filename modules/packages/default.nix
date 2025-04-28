@@ -63,6 +63,7 @@
       ripgrep
       fd
       btop
+      powertop
     ];
   };
 }
