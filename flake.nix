@@ -7,12 +7,12 @@
   };
 
   outputs =
-    { self, nixpkgs, nixpkgs-stable, ... }:
-    let
-      # inherit (self) outputs;
-      # system = "x86_64-linux";
-      # lib = nixpkgs.lib;
-    in
+    {
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      ...
+    }:
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
@@ -28,9 +28,9 @@
             ./modules/tailscale.nix
           ];
         };
-        imac-nix = nixpkgs-stable.lib.nixosSystem {
+        imac-nix = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          pkgs = import nixpkgs-stable {
+          pkgs = import nixpkgs {
             system = "x86_64-linux";
           };
           modules = [
