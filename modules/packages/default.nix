@@ -62,6 +62,7 @@
       fzf
       ripgrep
       fd
+      btop
     ];
   };
 }
