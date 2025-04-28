@@ -1,10 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +21,7 @@
   networking.hostName = "imac-nix"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -29,7 +33,6 @@
   };
 
   services.libinput.enable = true;
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -54,7 +57,7 @@
   environment.systemPackages = with pkgs; [
     # matchbox
     surf
-    unclutter
+    unclutter-xfixes
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -64,7 +67,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -77,4 +79,3 @@
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 }
-
