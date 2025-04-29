@@ -42,7 +42,6 @@
       zellij
       starship
       ghostty
-      git
       gh
       difftastic
       gh
@@ -57,6 +56,7 @@
       nfd
       yazi
       lazygit
+      git
       tldr
       ntfs3g
       fzf
@@ -64,6 +64,8 @@
       fd
       btop
       powertop
+      ncdu
+      baobab
     ];
   };
 }
