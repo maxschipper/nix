@@ -22,8 +22,7 @@
             system = "x86_64-linux";
           };
           modules = [
-            ./hosts
-            ./hosts/pc/configuration.nix
+            ./hosts/pc
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
@@ -43,8 +42,7 @@
             };
           };
           modules = [
-            ./hosts
-            ./hosts/imac/configuration.nix
+            ./hosts/imac/devnix
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
@@ -65,7 +63,7 @@
             };
           };
           modules = [
-            ./hosts/prodnix
+            ./hosts/imac/prodnix
             ./modules/packages
             ./modules/tailscale.nix
             ./modules/paperless.nix
