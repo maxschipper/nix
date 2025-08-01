@@ -16,13 +16,26 @@
     {
       nixosConfigurations = {
         # gaming pc
-        nixos = nixpkgs.lib.nixosSystem {
+        pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
             system = "x86_64-linux";
           };
           modules = [
             ./hosts/pc
+            ./modules/packages
+            ./modules/packages/gui
+            ./modules/tailscale.nix
+          ];
+        };
+        # laptop
+        laptop = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+          };
+          modules = [
+            ./hosts/laptop
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
@@ -50,14 +63,14 @@
           ];
         };
         # imac prod machine
-        prodnix = nixpkgs.lib.nixosSystem {
+        prodnix = nixpkgs-stable.lib.nixosSystem {
           system = "x86_64-linux";
-          pkgs = import nixpkgs {
+          pkgs = import nixpkgs-stable {
             system = "x86_64-linux";
             config = {
               allowUnfreePredicate =
                 pkg:
-                builtins.elem (nixpkgs.lib.getName pkg) [
+                builtins.elem (nixpkgs-stable.lib.getName pkg) [
                   "broadcom-sta"
                 ];
             };
