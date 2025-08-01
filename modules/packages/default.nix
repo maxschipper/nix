@@ -66,6 +66,7 @@
       powertop
       ncdu
       baobab
+      gemini-cli
     ];
   };
 }

@@ -14,6 +14,10 @@
 
     environment.systemPackages = with pkgs; [
       gparted
+      bitwarden
+      bitwarden-cli
+      bitwarden-desktop
+      xournalpp
     ];
   };
 }
