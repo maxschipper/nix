@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -11,23 +13,11 @@
       self,
       nixpkgs,
       nixpkgs-stable,
+      disko,
       ...
     }:
     {
       nixosConfigurations = {
-        # gaming pc
-        pc = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-          };
-          modules = [
-            ./hosts/pc
-            ./modules/packages
-            ./modules/packages/gui
-            ./modules/tailscale.nix
-          ];
-        };
         # laptop
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -42,6 +32,7 @@
             };
           };
           modules = [
+            disko.nixosModule.disko
             ./hosts/laptop
             ./modules/packages
             ./modules/packages/gui
@@ -49,6 +40,19 @@
             ./modules/de/gnome.nix
             ./modules/de/hyprland.nix
             ./modules/de/niri.nix
+          ];
+        };
+        # gaming pc
+        pc = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+          };
+          modules = [
+            ./hosts/pc
+            ./modules/packages
+            ./modules/packages/gui
+            ./modules/tailscale.nix
           ];
         };
         # imac dev machine
