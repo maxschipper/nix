@@ -33,12 +33,22 @@
           system = "x86_64-linux";
           pkgs = import nixpkgs {
             system = "x86_64-linux";
+            config = {
+              allowUnfreePredicate =
+                pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  # "vivaldi"
+                ];
+            };
           };
           modules = [
             ./hosts/laptop
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
+            ./modules/de/gnome.nix
+            ./modules/de/hyprland.nix
+            ./modules/de/niri.nix
           ];
         };
         # imac dev machine

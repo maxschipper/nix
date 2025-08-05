@@ -1,8 +1,9 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
 
@@ -13,10 +14,21 @@
   boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.timeout = 0;
 
+  boot.kernelParams = [
+    # "quiet"
+    "8250.nr_uarts=0"
+    "console=tty0"
+    "amd_pstate=active"
+  ];
+
+  boot.initrd.systemd.enable = true;
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.fstrim.enable = true;
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,10 +61,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "de";
@@ -62,8 +70,7 @@
   # Configure console keymap
   console.keyMap = "de";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -103,23 +110,34 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  # #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  # #  wget
-  #   helix
-  #   yazi
-  #   nh
-  #   git
-  #   curl
-  #   wget
-  #   ghostty
-  #   btop
-  #   powertop
-  #   fastfetch
-  #   # cpupower
-  #   # turbostat
-  #   # powermetrics
-  # ];
+  environment.systemPackages = with pkgs; [
+    alsa-utils
+    pavucontrol
+    nitch
+    qalculate-gtk
+    libqalculate
+    brightnessctl
+    thunderbird
+    typst
+    typst-fmt
+    tinymist
+    typst-live
+
+    # #  wget
+    #   helix
+    #   yazi
+    #   nh
+    #   git
+    #   curl
+    #   wget
+    #   ghostty
+    #   btop
+    #   powertop
+    #   fastfetch
+    #   # cpupower
+    #   # turbostat
+    #   # powermetrics
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
