@@ -6,6 +6,7 @@
 }:
 
 {
+  networking.hostName = "laptop";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -26,11 +27,12 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  boot.resumeDevice = "/dev/mapper/crypted";
+
+  hardware.enableRedistributableFirmware = true;
 
   services.fstrim.enable = true;
 
-  networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
