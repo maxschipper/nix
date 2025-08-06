@@ -13,7 +13,7 @@ echo "INFO: This will wipe the disk and install NixOS."
 echo "INFO: Flake target: .#laptop"
 
 # The script is expected to be run from the root of the cloned repository.
-nix --extra-experimental-features 'nix-command flakes' run github:nix-community/disko -- --mode disko-install --flake .#laptop
+nix --extra-experimental-features 'nix-command flakes' run github:nix-community/disko#disko-install -- --disk main /dev/nvme0n1 --flake .#laptop
 
 echo "SUCCESS: disko-install finished."
 echo "IMPORTANT: Set a password for your user now."

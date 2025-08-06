@@ -32,7 +32,7 @@
             };
           };
           modules = [
-            disko.nixosModule.disko
+            disko.nixosModules.disko
             ./hosts/laptop
             ./modules/packages
             ./modules/packages/gui
