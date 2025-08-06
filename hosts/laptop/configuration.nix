@@ -20,6 +20,7 @@
     "8250.nr_uarts=0"
     "console=tty0"
     "amd_pstate=active"
+    "resume_offset=533760"
   ];
 
   boot.initrd.systemd.enable = true;
@@ -28,6 +29,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.resumeDevice = "/dev/mapper/crypted";
+  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
 
   hardware.enableRedistributableFirmware = true;
 
@@ -67,6 +69,7 @@
   services.xserver.xkb = {
     layout = "de";
     variant = "";
+    options = "caps:escape";
   };
 
   # Configure console keymap
