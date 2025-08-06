@@ -18,6 +18,8 @@
       bitwarden-cli
       bitwarden-desktop
       xournalpp
+      gimp
+      ungoogled-chromium
     ];
   };
 }
