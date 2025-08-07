@@ -7,6 +7,9 @@
 }:
 
 {
+  imports = [
+    ./yazi.nix
+  ];
   config = {
 
     fonts.packages = with pkgs; [
@@ -59,7 +62,6 @@
       nil
       nixfmt-rfc-style
       nfd
-      yazi
       lazygit
       git
       tldr
