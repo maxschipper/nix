@@ -39,12 +39,13 @@
     hyprshot
     hyprsunset
     hyprsysteminfo
+    hyprpicker # colorpicker
 
     wl-clipboard
 
     waybar
     wofi
     walker
-    hyprpicker # colorpicker
+    swaynotificationcenter
   ];
 }
