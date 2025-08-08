@@ -74,6 +74,7 @@
       ncdu
       baobab
       gemini-cli
+      psmisc # killall, pstree
     ];
   };
 }
