@@ -29,6 +29,8 @@
     hyprls
     hyprpolkitagent
     hyprland-qt-support
+    nwg-displays
+    nwg-look
 
     hyprdim
     hyprcursor
@@ -47,5 +49,6 @@
     wofi
     walker
     swaynotificationcenter
+    libnotify
   ];
 }
