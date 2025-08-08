@@ -4,31 +4,42 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    quickshell = {
+      # add ?ref=<tag> to track a tag
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       nixpkgs-stable,
       disko,
+      quickshell,
       ...
     }:
+    let
+      system = "x86_64-linux";
+    in
     {
       nixosConfigurations = {
         # laptop
         laptop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
           pkgs = import nixpkgs {
-            system = "x86_64-linux";
+            inherit system;
             config = {
-              allowUnfreePredicate =
-                pkg:
-                builtins.elem (nixpkgs.lib.getName pkg) [
-                  # "vivaldi"
-                ];
+              allowUnfree = false;
+              # allowUnfreePredicate =
+              #   pkg:
+              #   builtins.elem (nixpkgs.lib.getName pkg) [
+              #     # "vivaldi"
+              #   ];
             };
           };
           modules = [
@@ -40,6 +51,8 @@
             ./modules/de/gnome.nix
             ./modules/de/hyprland.nix
             ./modules/de/niri.nix
+
+            ./modules/de/quickshell.nix
           ];
         };
         # gaming pc
