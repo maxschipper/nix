@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 
@@ -128,20 +126,11 @@
     tinymist
     typst-live
 
-    # #  wget
-    #   helix
-    #   yazi
-    #   nh
-    #   git
-    #   curl
-    #   wget
-    #   ghostty
-    #   btop
-    #   powertop
-    #   fastfetch
-    #   # cpupower
-    #   # turbostat
-    #   # powermetrics
+    lm_sensors
+
+    s0ix-selftest-tool
+    linuxKernel.packages.linux_6_16.cpupower
+    linuxKernel.packages.linux_6_16.turbostat
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
