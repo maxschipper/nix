@@ -6,7 +6,6 @@
   ];
   # enable Hyprland
   programs.hyprland.enable = true;
-  programs.hyprland.package = pkgs.hyprland;
 
   # required for screen sharing
   xdg.portal = {
@@ -21,16 +20,15 @@
     QT_QPA_PLATFORM = "wayland";
   };
 
-  # enable the sddm display manager with wayland support
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
-
   environment.systemPackages = with pkgs; [
     hyprls
     hyprpolkitagent
     hyprland-qt-support
     nwg-displays
     nwg-look
+
+    upower
+    upower-notify
 
     hyprdim
     hyprcursor
@@ -50,5 +48,11 @@
     walker
     swaynotificationcenter
     libnotify
+
+    nautilus
+    nautilus-open-any-terminal
+    gnome-disk-utility
+    gnome-calendar
+    gnome-font-viewer
   ];
 }
