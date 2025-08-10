@@ -20,6 +20,7 @@
       xournalpp
       gimp
       ungoogled-chromium
+      foot
     ];
   };
 }
