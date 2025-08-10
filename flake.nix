@@ -13,6 +13,14 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +29,8 @@
       nixpkgs-stable,
       disko,
       quickshell,
+      caelestia-cli,
+      caelestia-shell,
       ...
     }:
     let
@@ -42,13 +52,17 @@
               #   ];
             };
           };
+          specialArgs = {
+            inherit quickshell;
+            inherit caelestia-cli;
+            inherit caelestia-shell;
+          };
           modules = [
             disko.nixosModules.disko
             ./hosts/laptop
             ./modules/packages
             ./modules/packages/gui
             ./modules/tailscale.nix
-            ./modules/de/gnome.nix
             ./modules/de/hyprland.nix
             ./modules/de/niri.nix
 
