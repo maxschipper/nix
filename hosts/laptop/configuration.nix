@@ -6,6 +6,30 @@
 {
   networking.hostName = "laptop";
 
+  powerManagement.enable = true;
+  # powerManagement.powertop.enable = true;
+
+  services.upower.enable = true;
+  services.upower.criticalPowerAction = "Hibernate";
+
+  services.fwupd.enable = true;
+
+  services.logind.powerKey = "ignore";
+  services.logind.lidSwitch = "hibernate";
+  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
+
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -27,13 +51,12 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.resumeDevice = "/dev/mapper/crypted";
-  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
-
-  hardware.enableRedistributableFirmware = true;
 
   services.fstrim.enable = true;
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  hardware.enableRedistributableFirmware = true;
+
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
