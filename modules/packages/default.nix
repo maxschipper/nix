@@ -36,8 +36,6 @@
       };
     };
 
-    users.users.max.shell = pkgs.fish;
-
     environment.systemPackages = with pkgs; [
       helix
       zellij
