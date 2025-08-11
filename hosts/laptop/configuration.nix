@@ -16,13 +16,18 @@
 
   services.logind.powerKey = "ignore";
   services.logind.lidSwitch = "hibernate";
-  systemd.sleep.extraConfig = "HibernateDelaySec=1h";
-
+  # systemd.sleep.extraConfig = "HibernateDelaySec=1h";
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=yes
+    AllowHybridSleep=yes
+    AllowSuspendThenHibernate=no
+  '';
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
       governor = "powersave";
-      turbo = "never";
+      turbo = "auto";
     };
     charger = {
       governor = "performance";
@@ -164,16 +169,8 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
