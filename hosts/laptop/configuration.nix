@@ -157,6 +157,9 @@
 
     lm_sensors
 
+    noto-fonts
+    networkmanagerapplet
+
     s0ix-selftest-tool
     linuxKernel.packages.linux_6_16.cpupower
     linuxKernel.packages.linux_6_16.turbostat
