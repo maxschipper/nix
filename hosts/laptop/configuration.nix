@@ -153,6 +153,7 @@
     typst-fmt
     tinymist
     typst-live
+    jq
 
     lm_sensors
 
