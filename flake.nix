@@ -9,16 +9,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {
-      # add ?ref=<tag> to track a tag
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell"; # add ?ref=<tag> to track a tag
       inputs.nixpkgs.follows = "nixpkgs";
     };
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.caelestia-shell.follows = "caelestia-shell";
     };
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.caelestia-cli.follows = "caelestia-cli";
+      inputs.quickshell.follows = "quickshell";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -31,6 +37,7 @@
       quickshell,
       caelestia-cli,
       caelestia-shell,
+      nix-index-database,
       ...
     }:
     let
@@ -59,6 +66,8 @@
           };
           modules = [
             disko.nixosModules.disko
+            nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
             ./hosts/laptop
             ./modules/packages
             ./modules/packages/gui
