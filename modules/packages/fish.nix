@@ -9,4 +9,11 @@
       set -gx NIX_PATH "nixpkgs=flake:nixpkgs"
     '';
   };
+
+  environment.systemPackages = with pkgs; [
+    fish-lsp
+    fishPlugins.puffer
+    fishPlugins.autopair
+  ];
+
 }
