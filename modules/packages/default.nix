@@ -1,13 +1,12 @@
 # ./packages.nix
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 
 {
   imports = [
+    ./fish.nix
     ./yazi.nix
   ];
   config = {
@@ -24,14 +23,6 @@
         flake = "/home/max/nix/";
       };
 
-      fish = {
-        enable = true;
-        useBabelfish = true;
-        interactiveShellInit = ''
-          set -gx NIX_PATH "nixpkgs=flake:nixpkgs"
-        '';
-      };
-
       zoxide = {
         enable = true;
         enableFishIntegration = true;
@@ -39,7 +30,9 @@
 
       bat = {
         enable = true;
-        extraPackages = with pkgs.bat-extras; [ batman ];
+        extraPackages = [
+          pkgs.bat-extras.batman
+        ];
       };
     };
 
