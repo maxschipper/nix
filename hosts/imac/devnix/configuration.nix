@@ -1,13 +1,10 @@
-{ config, lib, pkgs, ... }:
-
 {
-
   boot.kernelParams = [
     "consoleblank=30"
   ];
 
   networking.hostName = "devnix";
-  
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 

@@ -1,24 +1,18 @@
-{
-  pkgs,
-  quickshell,
-  caelestia-cli,
-  caelestia-shell,
-  ...
-}:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = [
-    quickshell.packages.${pkgs.system}.default
-    caelestia-cli.packages.${pkgs.system}.default
-    caelestia-shell.packages.${pkgs.system}.default
+    inputs.quickshell.packages.${pkgs.system}.default
+    inputs.caelestia-cli.packages.${pkgs.system}.default
+    inputs.caelestia-shell.packages.${pkgs.system}.default
 
     # noctalia deps
-    # pkgs.material-symbols
     pkgs.cava
     pkgs.wallust
 
     # cae deps
     pkgs.material-symbols
     pkgs.inotify-tools
+    pkgs.libqalculate
 
     # Dependencies:
 
@@ -30,7 +24,6 @@
     #     cava
     #     networkmanager
     #     lm-sensors
-    #     fish
     #     aubio
     #     libpipewire
     #     glibc

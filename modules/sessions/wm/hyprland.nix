@@ -1,17 +1,18 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./dm.nix
-  ];
-  # enable Hyprland
   programs.hyprland.enable = true;
 
   # required for screen sharing
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
   };
+  # force some apps to use wayland
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -26,9 +27,10 @@
     hyprland-qt-support
     nwg-displays
     nwg-look
+    wl-clipboard
 
-    upower
-    upower-notify
+    upower # TODO: move
+    upower-notify # TODO: move
 
     hyprdim
     hyprcursor
@@ -39,14 +41,12 @@
     hyprshot
     hyprsunset
     hyprsysteminfo
-    hyprpicker # colorpicker
+    hyprpicker
 
-    wl-clipboard
-
-    waybar
-    wofi
+    waybar # TODO: remove
+    wofi # TODO: remove
     walker
-    swaynotificationcenter
+    swaynotificationcenter # TODO: remove
     libnotify
 
     nautilus

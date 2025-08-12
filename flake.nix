@@ -31,54 +31,36 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       nixpkgs-stable,
-      disko,
-      quickshell,
-      caelestia-cli,
-      caelestia-shell,
-      nix-index-database,
       ...
-    }:
+    }@inputs:
     let
       system = "x86_64-linux";
     in
     {
       nixosConfigurations = {
-        # laptop
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
             config = {
               allowUnfree = false;
-              # allowUnfreePredicate =
-              #   pkg:
-              #   builtins.elem (nixpkgs.lib.getName pkg) [
-              #     # "vivaldi"
-              #   ];
+              allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [ "" ];
             };
           };
           specialArgs = {
-            inherit quickshell;
-            inherit caelestia-cli;
-            inherit caelestia-shell;
+            inherit inputs;
           };
           modules = [
-            disko.nixosModules.disko
-            nix-index-database.nixosModules.nix-index
+            inputs.disko.nixosModules.disko
+            inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
             ./hosts/laptop
-            ./modules/packages
-            ./modules/packages/gui
-            ./modules/tailscale.nix
-            ./modules/de/hyprland.nix
-            ./modules/de/niri.nix
-
-            ./modules/de/quickshell.nix
           ];
         };
-        # gaming pc
+        # ----------------------------------------------------------
         pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
@@ -91,6 +73,7 @@
             ./modules/tailscale.nix
           ];
         };
+        # ----------------------------------------------------------
         # imac dev machine
         devnix = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -112,6 +95,7 @@
             ./modules/paperless.nix
           ];
         };
+        # ----------------------------------------------------------
         # imac prod machine
         prodnix = nixpkgs-stable.lib.nixosSystem {
           system = "x86_64-linux";

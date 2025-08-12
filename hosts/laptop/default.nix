@@ -1,15 +1,49 @@
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-
-{
   imports = [
     ./configuration.nix
     ./disko.nix
     ./hardware-configuration.nix
-    ./../common.nix
+
+    # modules/SYSTEM
+    ################
+    ../../modules/system/kernel/latest.nix
+    ../../modules/system/bootloader/systemd.nix
+    ../../modules/system/networking/networkmanager.nix
+    ../../modules/system/nix
+    ../../modules/system/audio
+    ../../modules/system/localization
+    ../../modules/system/users/max.nix
+
+    # modules/SESSIONS
+    ##################
+    ../../modules/sessions/dm/ly.nix
+    ../../modules/sessions/wm/hyprland.nix
+
+    # modules/SERVICES
+    ##################
+    ../../modules/services/tailscale
+    # ../../modules/services/ssh/openssh.nix
+
+    # modules/PROGRAMS
+    ##################
+    ../../modules/programs/shell/fish.nix
+
+    ../../modules/programs/laptop
+    ../../modules/programs/quickshell
+
+    ../../modules/programs/cli
+    ../../modules/programs/fonts
+
+    ../../modules/programs/gui/others
+    ../../modules/programs/gui/terminal/foot.nix
+    ../../modules/programs/gui/browser/chromium.nix
+    ../../modules/programs/gui/browser/firefox.nix
+    ../../modules/programs/gui/mail/thunderbird.nix
+    ../../modules/programs/gui/passwordmanager/bitwarden.nix
+
+    # modules/DEVELOPMENT
+    #####################
+    ../../modules/development/nix.nix
+    ../../modules/development/typst.nix
   ];
 }
