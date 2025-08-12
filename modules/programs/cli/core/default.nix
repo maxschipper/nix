@@ -4,9 +4,17 @@
     EDITOR = "hx";
   };
 
+  programs.git = {
+    enable = true;
+    config = {
+      init.defaultBranch = "main";
+      user.name = "Max S";
+      user.email = "150921823+maxschipper@users.noreply.github.com";
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     helix
-    git
     gh
     lsd
     wget
