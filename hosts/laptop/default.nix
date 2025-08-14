@@ -13,6 +13,7 @@
     ../../modules/system/audio
     ../../modules/system/localization
     ../../modules/system/users/max.nix
+    ../../modules/system/security/nitrokey.nix
 
     # modules/SESSIONS
     ##################
