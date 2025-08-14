@@ -11,6 +11,8 @@
 
     ../../modules/system/bootloader/systemd.nix
     ../../modules/system/initrd/systemd.nix
+    ../../modules/system/initrd/luks-fido2.nix
+
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/nix
     ../../modules/system/audio
