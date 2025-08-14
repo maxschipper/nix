@@ -11,6 +11,6 @@
 
   environment.systemPackages = [
     pkgs.pynitrokey
-    pkgs.nitrokey-nitrokey-app2
+    pkgs.nitrokey-app2
   ];
 }
