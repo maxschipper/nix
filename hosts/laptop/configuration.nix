@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   networking.hostName = "laptop";
 
@@ -30,8 +30,6 @@
       turbo = "auto";
     };
   };
-
-  boot.initrd.systemd.enable = true;
 
   boot.resumeDevice = "/dev/mapper/crypted";
 

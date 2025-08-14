@@ -8,6 +8,7 @@
     ################
     ../../modules/system/kernel/latest.nix
     ../../modules/system/bootloader/systemd.nix
+    ../../modules/system/initrd/systemd.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/nix
     ../../modules/system/audio
