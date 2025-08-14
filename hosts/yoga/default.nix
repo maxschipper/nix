@@ -52,5 +52,6 @@
     #####################
     ../../modules/development/nix.nix
     ../../modules/development/typst.nix
+    ../../modules/development/toml.nix
   ];
 }
