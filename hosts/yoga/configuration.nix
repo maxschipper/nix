@@ -1,6 +1,6 @@
 { ... }:
 {
-  networking.hostName = "laptop";
+  networking.hostName = "yoga";
 
   powerManagement.enable = true;
   # powerManagement.powertop.enable = true;

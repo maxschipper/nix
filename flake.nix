@@ -41,13 +41,18 @@
     in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
+        yoga = nixpkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
             config = {
               allowUnfree = false;
               allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [ "" ];
+
+              permittedInsecurePackages = [
+                # "libsoup-2.74.3"
+              ];
+
             };
           };
           specialArgs = {
@@ -57,7 +62,7 @@
             inputs.disko.nixosModules.disko
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
-            ./hosts/laptop
+            ./hosts/yoga
           ];
         };
         # ----------------------------------------------------------

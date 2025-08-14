@@ -46,6 +46,7 @@
     ../../modules/programs/gui/browser/firefox.nix
     ../../modules/programs/gui/mail/thunderbird.nix
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
+    # ../../modules/programs/gui/cursors
 
     # modules/DEVELOPMENT
     #####################
