@@ -31,8 +31,6 @@
     };
   };
 
-  boot.resumeDevice = "/dev/mapper/crypted";
-
   services.fstrim.enable = true;
 
   hardware.enableRedistributableFirmware = true;

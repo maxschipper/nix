@@ -7,6 +7,8 @@
     # modules/SYSTEM
     ################
     ../../modules/system/kernel/latest.nix
+    ../../modules/system/kernel/kernelParams.nix
+
     ../../modules/system/bootloader/systemd.nix
     ../../modules/system/initrd/systemd.nix
     ../../modules/system/networking/networkmanager.nix
