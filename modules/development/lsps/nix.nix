@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-
   environment.systemPackages = with pkgs; [
-    taplo
-    tombi
+    nixd
+    nil
+    nixfmt-rfc-style
   ];
 }

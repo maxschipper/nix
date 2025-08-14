@@ -50,8 +50,8 @@
 
     # modules/DEVELOPMENT
     #####################
-    ../../modules/development/nix.nix
+    ../../modules/development/lsps
     ../../modules/development/typst.nix
-    ../../modules/development/toml.nix
+
   ];
 }
