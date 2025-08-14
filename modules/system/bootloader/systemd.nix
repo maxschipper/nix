@@ -1,7 +1,11 @@
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.editor = false;
-  boot.loader.systemd-boot.configurationLimit = 5;
-  boot.loader.timeout = 0;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      editor = false;
+      configurationLimit = 5;
+    };
+    timeout = 0;
+  };
 }
