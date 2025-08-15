@@ -15,5 +15,6 @@
 
     fontpreview
     jq
+    ffmpeg-headless
   ];
 }
