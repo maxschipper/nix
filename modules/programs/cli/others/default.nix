@@ -16,5 +16,7 @@
     fontpreview
     jq
     ffmpeg-headless
+
+    icloudpd
   ];
 }
