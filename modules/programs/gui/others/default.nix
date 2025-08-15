@@ -4,5 +4,7 @@
     gparted
     xournalpp
     gimp
+    mpv
+    ffmpeg-full
   ];
 }
