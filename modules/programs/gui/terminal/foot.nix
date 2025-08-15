@@ -2,7 +2,7 @@
   programs.foot = {
     enable = true;
     enableFishIntegration = true;
-    theme = "catppuccin-macchiato";
+    # theme = "catppuccin-macchiato"; # overwrites background color
     settings = {
       main = {
         pad = "15x15";
@@ -18,8 +18,8 @@
       };
       mouse.hide-when-typing = "yes";
       colors = {
-        alpha = 0.9;
-        background = "1e1e2e";
+        alpha = 0.6;
+        background = "1d1f21";
       };
       key-bindings = {
         scrollback-up-page = "Shift+Page_Up";
