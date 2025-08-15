@@ -32,13 +32,12 @@
 
     # modules/PROGRAMS
     ##################
-    ../../modules/programs/shell/fish.nix
+    ../../modules/programs/cli/shell/fish.nix
 
     ../../modules/programs/laptop
     ../../modules/programs/quickshell
 
     ../../modules/programs/cli
-    ../../modules/programs/fonts
 
     ../../modules/programs/gui/others
     ../../modules/programs/gui/terminal/foot.nix
@@ -46,6 +45,8 @@
     ../../modules/programs/gui/browser/firefox.nix
     ../../modules/programs/gui/mail/thunderbird.nix
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
+    ../../modules/programs/gui/virtualization/virt-manager.nix
+    ../../modules/programs/gui/fonts
     # ../../modules/programs/gui/cursors
 
     # modules/DEVELOPMENT
