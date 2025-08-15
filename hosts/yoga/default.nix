@@ -28,6 +28,7 @@
     # modules/SERVICES
     ##################
     ../../modules/services/tailscale
+    ../../modules/services/keyd
     # ../../modules/services/ssh/openssh.nix
 
     # modules/PROGRAMS
