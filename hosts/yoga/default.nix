@@ -49,7 +49,7 @@
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
     ../../modules/programs/gui/virtualization/virt-manager.nix
     ../../modules/programs/gui/fonts
-    # ../../modules/programs/gui/cursors
+    ../../modules/programs/gui/cursors
 
     # modules/DEVELOPMENT
     #####################
