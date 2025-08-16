@@ -1,3 +1,3 @@
 {
-  nhFlake = "home/max/nix";
+  nhFlake = "/home/max/nix";
 }
