@@ -3,6 +3,11 @@
 {
   programs.hyprland.enable = true;
 
+  security.polkit.enable = true;
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   # required for screen sharing
   xdg.portal = {
     enable = true;
@@ -49,10 +54,9 @@
     swaynotificationcenter # TODO: remove
     libnotify
 
-    nautilus
-    nautilus-open-any-terminal
     gnome-disk-utility
     gnome-calendar
     gnome-font-viewer
+    kdePackages.dolphin
   ];
 }
