@@ -1,0 +1,3 @@
+{
+  nhFlake = "home/max/nix";
+}
