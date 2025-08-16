@@ -1,7 +1,8 @@
 let
-  vars = ../../vars.nix;
+  vars = import ../../vars.nix;
 in
 {
+  # doesnt work i just run the script from hyprland
   systemd.user.services.fixProAudio = {
     description = "Fix Pro Audio profile for AMD HD Audio";
     after = [
