@@ -1,7 +1,10 @@
+let
+  vars = import ../../../vars.nix;
+in
 {
   programs.nh = {
     enable = true;
-    flake = "/home/max/nix/";
+    flake = vars.nhFlake;
     clean = {
       enable = false;
       dates = "weekly";
