@@ -20,6 +20,7 @@
     ../../modules/system/localization
     ../../modules/system/users/max.nix
     ../../modules/system/security/nitrokey.nix
+    ../../modules/system/power
 
     # modules/SESSIONS
     ##################
@@ -57,4 +58,5 @@
     ../../modules/development/typst.nix
 
   ];
+  networking.hostName = "yoga";
 }
