@@ -6,6 +6,7 @@
     ./zoxide
     ./bat
     ./power
+    ./monitoring
     ./others
   ];
 }
