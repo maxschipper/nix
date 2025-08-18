@@ -32,6 +32,7 @@
     ##################
     ../../modules/services/tailscale
     ../../modules/services/keyd
+    ../../modules/services/printing
     # ../../modules/services/ssh/openssh.nix
 
     # modules/PROGRAMS

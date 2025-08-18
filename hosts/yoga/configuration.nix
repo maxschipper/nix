@@ -1,6 +1,4 @@
 {
-  services.printing.enable = false;
-
   services.fstrim.enable = true;
   services.fwupd.enable = true;
   hardware.enableRedistributableFirmware = true;

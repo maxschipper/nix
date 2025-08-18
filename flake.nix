@@ -47,8 +47,11 @@
             inherit system;
             config = {
               allowUnfree = false;
-              allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [ "" ];
-
+              allowUnfreePredicate =
+                pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  "hplip"
+                ];
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
               ];
