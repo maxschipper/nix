@@ -13,7 +13,7 @@
       #     matrix -> CMatrix
       #   colormix -> Color mixing shader
       # gameoflife -> John Conway's Game of Life
-      animation = "matrix";
+      animation = "none";
       animation_timeout_sec = 60;
       cmatrix_fg = "0x80111111";
 
