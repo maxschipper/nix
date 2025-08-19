@@ -30,12 +30,7 @@
     hyprls
     hyprpolkitagent
     hyprland-qt-support
-    nwg-displays
-    nwg-look
     wl-clipboard
-
-    upower # TODO: move
-    upower-notify # TODO: move
 
     hyprdim
     hyprcursor
@@ -47,16 +42,16 @@
     hyprsunset
     hyprsysteminfo
     hyprpicker
-
-    waybar # TODO: remove
-    wofi # TODO: remove
     walker
-    swaynotificationcenter # TODO: remove
-    libnotify
+    swayosd
 
-    gnome-disk-utility
-    gnome-calendar
-    gnome-font-viewer
-    kdePackages.dolphin
+    libnotify
+    swayimg
+    udiskie # for automounting usbs
+
+    nwg-displays
+    nwg-look
+    upower # TODO: move
+    upower-notify # TODO: move
   ];
 }
