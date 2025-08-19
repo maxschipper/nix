@@ -50,6 +50,7 @@
     ../../modules/programs/gui/browser/firefox.nix
     ../../modules/programs/gui/mail/thunderbird.nix
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
+    ../../modules/programs/gui/passwordmanager/ente-auth.nix
     ../../modules/programs/gui/virtualization/virt-manager.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
