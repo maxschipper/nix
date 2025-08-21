@@ -60,6 +60,7 @@
     #####################
     ../../modules/development/lsps
     ../../modules/development/typst.nix
+    ../../modules/development/jj.nix
 
   ];
   networking.hostName = "yoga";
