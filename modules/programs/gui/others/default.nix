@@ -3,6 +3,9 @@
   imports = [
     ./desktop-apps.nix
   ];
+
+  programs.localsend.enable = true;
+
   environment.systemPackages = with pkgs; [
     gparted
     xournalpp
