@@ -13,5 +13,6 @@
     mpv
     ffmpeg-full
     btrfs-assistant
+    handbrake
   ];
 }
