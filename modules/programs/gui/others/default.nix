@@ -12,5 +12,6 @@
     gimp
     mpv
     ffmpeg-full
+    btrfs-assistant
   ];
 }
