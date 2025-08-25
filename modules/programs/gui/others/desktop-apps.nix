@@ -7,5 +7,6 @@
     pkgs.gnome-font-viewer
     pkgs.cheese
     pkgs.snapshot
+    pkgs.zathura
   ];
 }
