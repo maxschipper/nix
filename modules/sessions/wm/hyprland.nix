@@ -40,6 +40,7 @@
     hyprlock
     hyprpaper
     hyprshot
+    satty
     hyprsunset
     hyprsysteminfo
     hyprpicker
