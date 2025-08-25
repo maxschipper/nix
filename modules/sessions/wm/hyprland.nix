@@ -24,6 +24,7 @@
     GDK_BACKEND = "wayland,x11";
     XDG_SESSION_TYPE = "wayland";
     QT_QPA_PLATFORM = "wayland";
+    NO_AT_BRIDGE = "1"; # disables gtk accessibility features
   };
 
   environment.systemPackages = with pkgs; [
