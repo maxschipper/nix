@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }:
 {
   environment.systemPackages = [
-    inputs.quickshell.packages.${pkgs.system}.default
     inputs.caelestia-cli.packages.${pkgs.system}.default
     inputs.caelestia-shell.packages.${pkgs.system}.default
 

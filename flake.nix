@@ -8,10 +8,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell"; # add ?ref=<tag> to track a tag
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +17,7 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.caelestia-cli.follows = "caelestia-cli";
-      inputs.quickshell.follows = "quickshell";
+      # inputs.quickshell.follows = "quickshell";
     };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
