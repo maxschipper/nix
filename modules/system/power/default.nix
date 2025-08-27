@@ -5,8 +5,8 @@
   services.upower.enable = true;
   services.upower.criticalPowerAction = "Hibernate";
 
-  services.logind.settings.Login.HandlePowerKey = "ignore";
-  services.logind.settings.Login.HandleLidSwitch = "hibernate";
+  services.logind.powerKey = "ignore";
+  services.logind.lidSwitch = "hibernate";
   # systemd.sleep.extraConfig = "HibernateDelaySec=1h";
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
