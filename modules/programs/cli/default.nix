@@ -5,7 +5,6 @@
     ./nh
     ./zoxide
     ./bat
-    ./power
     ./monitoring
     ./others
   ];

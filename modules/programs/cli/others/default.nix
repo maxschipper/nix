@@ -8,7 +8,6 @@
     starship
     difftastic
     just
-    powertop
     ncdu
 
     gemini-cli
