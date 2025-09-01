@@ -11,6 +11,7 @@
     xournalpp
     gimp
     mpv
+    imv
     ffmpeg-full
     btrfs-assistant
     handbrake
