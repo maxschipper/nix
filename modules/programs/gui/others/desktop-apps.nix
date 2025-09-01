@@ -10,6 +10,8 @@
     pkgs.snapshot
     pkgs.zathura
     pkgs.dragon-drop
+    pkgs.mpv
+    pkgs.imv
   ];
   programs.nautilus-open-any-terminal = {
     enable = true;
