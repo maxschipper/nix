@@ -13,5 +13,6 @@
     ffmpeg-full
     btrfs-assistant
     handbrake
+    freecad-wayland
   ];
 }
