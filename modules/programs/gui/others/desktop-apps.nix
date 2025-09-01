@@ -9,6 +9,7 @@
     pkgs.cheese
     pkgs.snapshot
     pkgs.zathura
+    pkgs.dragon-drop
   ];
   programs.nautilus-open-any-terminal = {
     enable = true;
