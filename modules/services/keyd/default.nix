@@ -11,6 +11,8 @@
       settings = {
         main = {
           "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
+          "leftalt" = "leftmeta";
+          "leftmeta" = "leftalt";
         };
       };
     };
