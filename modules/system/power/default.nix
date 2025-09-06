@@ -8,7 +8,8 @@
 
   # services.logind.powerKey = "ignore";
   # services.logind.lidSwitch = "hibernate";
-  services.logind.lidSwitch = "lock";
+  services.logind.lidSwitch = "hibernate";
+  services.logind.lidSwitchExternalPower = "lock";
   # systemd.sleep.extraConfig = "HibernateDelaySec=1h";
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
