@@ -10,7 +10,8 @@
       ids = [ "*" ];
       settings = {
         main = {
-          "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
+          # "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
+          "leftshift+leftmeta+f23" = "rightmeta"; # bind copilot key to right meta
           "leftalt" = "leftmeta";
           "leftmeta" = "leftalt";
         };
