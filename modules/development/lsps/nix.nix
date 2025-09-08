@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    nixd
-    nil
-    nixfmt-rfc-style
+  environment.systemPackages = [
+    pkgs.nixd
+    pkgs.nil
+    pkgs.nixfmt-rfc-style
   ];
 }
