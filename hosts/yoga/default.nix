@@ -19,7 +19,7 @@
     # ../../modules/system/audio/fixAudio.nix # doesnt work i run the script from hyprland
     ../../modules/system/localization
     ../../modules/system/users/max.nix
-    ../../modules/system/security/nitrokey.nix
+    # ../../modules/system/security/nitrokey.nix
     ../../modules/system/security/tpm.nix
     ../../modules/system/power
 
