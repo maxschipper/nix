@@ -9,12 +9,13 @@
   # };
 
   # plugin deps
-  environment.systemPackages = with pkgs; [
-    yazi
-    mediainfo
-    glow
-    hexyl
-    rich-cli
+  environment.systemPackages = [
+    pkgs.yazi
+    pkgs.mediainfo
+    pkgs.glow
+    pkgs.hexyl
+    pkgs.rich-cli
+    pkgs.trash-cli
   ];
 
 }
