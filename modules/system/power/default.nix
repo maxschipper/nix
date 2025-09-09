@@ -6,10 +6,6 @@
   services.upower.enable = true;
   services.upower.criticalPowerAction = "Hibernate";
 
-  # services.logind.powerKey = "ignore";
-  # services.logind.lidSwitch = "hibernate";
-  services.logind.lidSwitch = "hibernate";
-  services.logind.lidSwitchExternalPower = "lock";
   # systemd.sleep.extraConfig = "HibernateDelaySec=1h";
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
@@ -18,7 +14,9 @@
     AllowSuspendThenHibernate=no
   '';
 
-  services.logind.powerKey = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "hibernate";
+  services.logind.settings.Login.HandleLidSwitchExternalPower = "lock";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
   services.acpid.enable = true;
 
   # this normal powerEventCommands triggers twice per press, use handler with "button/power PBTN" event instead
