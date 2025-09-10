@@ -42,7 +42,6 @@
     ../../modules/programs/cli/shell/fish.nix
 
     ../../modules/programs/laptop
-    ../../modules/programs/quickshell
 
     ../../modules/programs/cli
 
@@ -57,6 +56,7 @@
     ../../modules/programs/gui/virtualization/waydroid.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
+    ../../modules/programs/gui/desktop-shell/quickshell.nix
 
     # modules/DEVELOPMENT
     #####################
