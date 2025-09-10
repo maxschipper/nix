@@ -57,6 +57,7 @@
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
     ../../modules/programs/gui/desktop-shell/quickshell.nix
+    ../../modules/programs/gui/desktop-shell/ignis.nix
 
     # modules/DEVELOPMENT
     #####################
