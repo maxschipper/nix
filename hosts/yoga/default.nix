@@ -36,6 +36,7 @@
     ../../modules/services/printing
     ../../modules/services/paperless
     # ../../modules/services/ssh/openssh.nix
+    ../../modules/services/airplay
 
     # modules/PROGRAMS
     ##################
