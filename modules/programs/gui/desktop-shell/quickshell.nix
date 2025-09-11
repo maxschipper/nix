@@ -4,6 +4,8 @@
     inputs.caelestia-cli.packages.${pkgs.system}.default
     inputs.caelestia-shell.packages.${pkgs.system}.default
 
+    pkgs.kdePackages.qtdeclarative # for qmlls the qml language server
+
     # noctalia deps
     pkgs.cava
     pkgs.wallust
