@@ -69,6 +69,9 @@
     ../../modules/development/tools/jj.nix
     ../../modules/development/tools/direnv.nix
 
+    # games
+    #####################
+    ../../modules/programs/gui/games/minecraft.nix
   ];
   networking.hostName = "yoga";
 }
