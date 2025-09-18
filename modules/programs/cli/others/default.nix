@@ -4,7 +4,6 @@
     pkgs.jujutsu
     pkgs.stow
     pkgs.fastfetch
-    pkgs.lazygit
     pkgs.starship
     pkgs.difftastic
     pkgs.just

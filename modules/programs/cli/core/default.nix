@@ -16,7 +16,9 @@
   environment.systemPackages = [
     pkgs.helix
     pkgs.yazi
+    pkgs.git
     pkgs.gh
+    pkgs.lazygit
     pkgs.lsd
     pkgs.wget
     pkgs.curl

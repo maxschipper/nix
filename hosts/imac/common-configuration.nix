@@ -10,6 +10,7 @@
     ../../modules/programs/cli/core
     ../../modules/programs/cli/nh
     ../../modules/programs/cli/shell/fish.nix
+    ../../modules/programs/cli/zoxide
     ../../modules/services/ssh/openssh.nix
   ];
 }
