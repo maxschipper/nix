@@ -6,13 +6,13 @@
 
   programs.localsend.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    gparted
-    xournalpp
-    gimp
-    ffmpeg-full
-    btrfs-assistant
-    handbrake
-    freecad-wayland
+  environment.systemPackages = [
+    pkgs.gparted
+    pkgs.xournalpp
+    pkgs.gimp
+    pkgs.ffmpeg-full
+    pkgs.btrfs-assistant
+    pkgs.handbrake
+    pkgs.freecad-wayland
   ];
 }

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    ente-auth
+  environment.systemPackages = [
+    pkgs.ente-auth
   ];
 }

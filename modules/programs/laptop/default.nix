@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    lm_sensors
+  environment.systemPackages = [
+    pkgs.brightnessctl
+    pkgs.lm_sensors
+    pkgs.networkmanagerapplet
   ];
 }

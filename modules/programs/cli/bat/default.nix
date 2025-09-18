@@ -2,10 +2,10 @@
 {
   programs.bat = {
     enable = true;
-    extraPackages = with pkgs.bat-extras; [
-      batman
-      batdiff
-      prettybat
+    extraPackages = [
+      pkgs.bat-extras.batman
+      pkgs.bat-extras.batdiff
+      pkgs.bat-extras.prettybat
     ];
   };
 }

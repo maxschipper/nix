@@ -27,33 +27,33 @@
     NO_AT_BRIDGE = "1"; # disables gtk accessibility features
   };
 
-  environment.systemPackages = with pkgs; [
-    hyprls
-    hyprpolkitagent
-    hyprland-qt-support
-    wl-clipboard
+  environment.systemPackages = [
+    pkgs.hyprls
+    pkgs.hyprpolkitagent
+    pkgs.hyprland-qt-support
+    pkgs.wl-clipboard
 
-    hyprdim
-    hyprcursor
-    hyprkeys
-    hypridle
-    hyprlock
-    hyprpaper
-    hyprshot
-    satty
-    hyprsunset
-    hyprsysteminfo
-    hyprpicker
-    walker
-    swayosd
+    pkgs.hyprdim
+    pkgs.hyprcursor
+    pkgs.hyprkeys
+    pkgs.hypridle
+    pkgs.hyprlock
+    pkgs.hyprpaper
+    pkgs.hyprshot
+    pkgs.satty
+    pkgs.hyprsunset
+    pkgs.hyprsysteminfo
+    pkgs.hyprpicker
+    pkgs.walker
+    pkgs.swayosd
 
-    libnotify
-    swayimg
-    udiskie # for automounting usbs
+    pkgs.libnotify
+    pkgs.swayimg
+    pkgs.udiskie # for automounting usbs
 
-    nwg-displays
-    nwg-look
-    upower # TODO: move
-    upower-notify # TODO: move
+    pkgs.nwg-displays
+    pkgs.nwg-look
+    pkgs.upower # TODO: move
+    pkgs.upower-notify # TODO: move
   ];
 }

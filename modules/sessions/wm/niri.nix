@@ -9,9 +9,9 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gnome ]; # Niri uses the gnome portal
   };
 
-  environment.systemPackages = with pkgs; [
-    wofi
-    walker
-    waybar
+  environment.systemPackages = [
+    pkgs.wofi
+    pkgs.walker
+    pkgs.waybar
   ];
 }

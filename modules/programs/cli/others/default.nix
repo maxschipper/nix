@@ -1,21 +1,21 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    jujutsu
-    stow
-    fastfetch
-    lazygit
-    starship
-    difftastic
-    just
-    ncdu
+  environment.systemPackages = [
+    pkgs.jujutsu
+    pkgs.stow
+    pkgs.fastfetch
+    pkgs.lazygit
+    pkgs.starship
+    pkgs.difftastic
+    pkgs.just
+    pkgs.ncdu
 
-    gemini-cli
+    pkgs.gemini-cli
 
-    fontpreview
-    jq
-    ffmpeg-headless
+    pkgs.fontpreview
+    pkgs.jq
+    pkgs.ffmpeg-headless
 
-    icloudpd
+    pkgs.icloudpd
   ];
 }

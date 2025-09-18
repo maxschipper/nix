@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    # matchbox
-    surf
-    unclutter-xfixes
+  environment.systemPackages = [
+    # pkgs.matchbox
+    pkgs.surf
+    pkgs.unclutter-xfixes
   ];
 }

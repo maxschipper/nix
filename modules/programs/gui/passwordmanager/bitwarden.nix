@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    bitwarden-desktop
+  environment.systemPackages = [
+    pkgs.bitwarden-desktop
   ];
 }
