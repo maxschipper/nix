@@ -7,5 +7,4 @@
     enable = true;
     nssmdns = true;
   };
-
 }
