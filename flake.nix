@@ -98,10 +98,6 @@
           };
           modules = [
             ./hosts/imac/devnix
-            ./modules/packages
-            ./modules/packages/gui
-            ./modules/tailscale.nix
-            ./modules/paperless.nix
           ];
         };
         # ----------------------------------------------------------

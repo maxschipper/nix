@@ -10,10 +10,10 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [
-    fish-lsp
-    fishPlugins.puffer
-    fishPlugins.autopair
+  environment.systemPackages = [
+    pkgs.fish-lsp
+    pkgs.fishPlugins.puffer
+    pkgs.fishPlugins.autopair
   ];
 
 }

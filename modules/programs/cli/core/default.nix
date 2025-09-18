@@ -13,16 +13,17 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    helix
-    gh
-    lsd
-    wget
-    curl
-    tldr
-    ripgrep
-    fd
-    btop
-    fzf
+  environment.systemPackages = [
+    pkgs.helix
+    pkgs.yazi
+    pkgs.gh
+    pkgs.lsd
+    pkgs.wget
+    pkgs.curl
+    pkgs.tldr
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.btop
+    pkgs.fzf
   ];
 }

@@ -19,11 +19,11 @@
   services.xserver.enable = true;
   services.xserver.displayManager.startx.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    luakit
-    matchbox
-    xorg.xinit
-    xbanish
+  environment.systemPackages = [
+    pkgs.luakit
+    pkgs.matchbox
+    pkgs.xorg.xinit
+    pkgs.xbanish
   ];
 
   # (optional) Set X11 DPI or scaling for old Mac display
