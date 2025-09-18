@@ -3,6 +3,7 @@
     ../../modules/system/nix
     ../../modules/system/tty/tty.nix
     ../../modules/system/bootloader/systemd.nix
+    ../../modules/system/initrd/systemd.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/localization
     ../../modules/system/users/max.nix
