@@ -38,6 +38,7 @@
     ../../modules/services/paperless
     # ../../modules/services/ssh/openssh.nix
     ../../modules/services/streaming/airplay.nix
+    ../../modules/services/streaming/sunshine.nix
 
     # modules/PROGRAMS
     ##################
