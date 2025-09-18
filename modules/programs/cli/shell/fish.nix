@@ -11,7 +11,6 @@
   };
 
   environment.systemPackages = [
-    pkgs.fish-lsp
     pkgs.fishPlugins.puffer
     pkgs.fishPlugins.autopair
   ];

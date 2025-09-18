@@ -23,5 +23,8 @@
 
     # HELIX Snippets
     pkgs.simple-completion-language-server
+
+    # FISH
+    pkgs.fish-lsp
   ];
 }
