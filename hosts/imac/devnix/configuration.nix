@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
 
@@ -7,14 +12,13 @@
   ];
 
   networking.hostName = "devnix";
-  
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
-    desktopManager.plasma5.enable = false;
   };
 
   services.libinput.enable = true;
