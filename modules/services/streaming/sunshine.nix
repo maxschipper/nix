@@ -3,7 +3,7 @@
   services.sunshine = {
     enable = true;
     autoStart = false;
-    openFirewall = false;
+    openFirewall = true;
     # settings = {
     #   sunshine_name = "nixos";
     # }; # if this is set no config from the webui is possible; same for "applications"
