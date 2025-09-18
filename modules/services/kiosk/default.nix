@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
+{ pkgs, ... }:
 {
   # options.kiosk.enable = lib.mkEnableOption "Minimal kiosk browser setup";
   # config = lib.mkIf config.kiosk.enable {

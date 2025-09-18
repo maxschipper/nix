@@ -1,12 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-
-{
-
   boot.kernelParams = [
     "consoleblank=30"
   ];
@@ -55,4 +47,6 @@
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
+  system.stateVersion = "24.11"; # Did you read the comment?
+
 }
