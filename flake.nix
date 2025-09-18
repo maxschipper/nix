@@ -94,6 +94,9 @@
                 builtins.elem (nixpkgs.lib.getName pkg) [
                   "broadcom-sta"
                 ];
+              permittedInsecurePackages = [
+                "broadcom-sta-6.30.223.271-57-6.12.47"
+              ];
             };
           };
           modules = [
