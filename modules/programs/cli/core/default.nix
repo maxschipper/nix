@@ -19,6 +19,7 @@
     pkgs.git
     pkgs.gh
     pkgs.lazygit
+    pkgs.difftastic
     pkgs.lsd
     pkgs.wget
     pkgs.curl

@@ -5,7 +5,6 @@
     pkgs.stow
     pkgs.fastfetch
     pkgs.starship
-    pkgs.difftastic
     pkgs.just
     pkgs.ncdu
 
