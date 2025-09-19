@@ -27,8 +27,10 @@
 
     # modules/SESSIONS
     ##################
-    ../../modules/sessions/dm/ly.nix
+    # ../../modules/sessions/dm/ly.nix
+    ../../modules/sessions/dm/greetd/tuigreet.nix
     ../../modules/sessions/wm/hyprland.nix
+    ../../modules/sessions/wm/niri.nix
 
     # modules/SERVICES
     ##################
