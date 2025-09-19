@@ -1,6 +1,9 @@
 { pkgs, ... }:
-
 {
+  imports = [
+    ./.common-wayland.nix
+  ];
+
   programs.niri.enable = true;
 
   # Required for screen sharing
@@ -10,8 +13,9 @@
   };
 
   environment.systemPackages = [
+    pkgs.wl-clipboard
     pkgs.wofi
     pkgs.walker
-    pkgs.waybar
+    # pkgs.waybar
   ];
 }

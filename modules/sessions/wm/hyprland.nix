@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./.common-wayland.nix
+  ];
+
   programs.hyprland.enable = true;
 
   security.polkit.enable = true;
@@ -14,17 +18,7 @@
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
-      # pkgs.kdePackages.xdg-desktop-portal-kde
     ];
-  };
-  # force some apps to use wayland
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    GDK_BACKEND = "wayland,x11";
-    XDG_SESSION_TYPE = "wayland";
-    QT_QPA_PLATFORM = "wayland";
-    NO_AT_BRIDGE = "1"; # disables gtk accessibility features
   };
 
   environment.systemPackages = [
@@ -48,7 +42,7 @@
     pkgs.swayosd
 
     pkgs.libnotify
-    pkgs.swayimg
+    # pkgs.swayimg
     pkgs.udiskie # for automounting usbs
 
     pkgs.nwg-displays
