@@ -33,6 +33,7 @@
     # modules/SERVICES
     ##################
     ../../modules/services/tailscale
+    ../../modules/services/tailscale/taildrive.nix
     ../../modules/services/keyd
     ../../modules/services/printing
     ../../modules/services/paperless
