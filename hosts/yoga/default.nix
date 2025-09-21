@@ -59,7 +59,7 @@
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
     ../../modules/programs/gui/passwordmanager/ente-auth.nix
     ../../modules/programs/gui/virtualization/virt-manager.nix
-    ../../modules/programs/gui/virtualization/waydroid.nix
+    # ../../modules/programs/gui/virtualization/waydroid.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
     ../../modules/programs/gui/desktop-shell/quickshell.nix
