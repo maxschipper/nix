@@ -6,6 +6,10 @@
 
   programs.niri.enable = true;
 
+  security.polkit.enable = true;
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   # Required for screen sharing
   xdg.portal = {
     enable = true;
@@ -17,10 +21,19 @@
 
   environment.systemPackages = [
     pkgs.wl-clipboard
-    pkgs.wofi
-    pkgs.walker
+    pkgs.libnotify
+    pkgs.udiskie # for automounting usbs
+    pkgs.nwg-displays
+    pkgs.nwg-look
+
     pkgs.xwayland-satellite
-    pkgs.wl-clipboard
     pkgs.gnome-keyring
+    pkgs.fuzzel
+
+    pkgs.hypridle
+    pkgs.hyprlock
+    pkgs.hyprpicker
+    pkgs.swayosd
+
   ];
 }

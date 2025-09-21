@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   imports = [
     ./.common-wayland.nix
@@ -8,7 +7,6 @@
   programs.hyprland.enable = true;
 
   security.polkit.enable = true;
-
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
@@ -22,17 +20,20 @@
   };
 
   environment.systemPackages = [
+    pkgs.wl-clipboard
+    pkgs.libnotify
+    pkgs.udiskie # for automounting usbs
+    pkgs.nwg-displays
+    pkgs.nwg-look
+
     pkgs.hyprls
     pkgs.hyprpolkitagent
     pkgs.hyprland-qt-support
-    pkgs.wl-clipboard
 
     pkgs.hyprdim
     pkgs.hyprcursor
-    pkgs.hyprkeys
     pkgs.hypridle
     pkgs.hyprlock
-    pkgs.hyprpaper
     pkgs.hyprshot
     pkgs.satty
     pkgs.hyprsunset
@@ -41,12 +42,6 @@
     pkgs.walker
     pkgs.swayosd
 
-    pkgs.libnotify
-    # pkgs.swayimg
-    pkgs.udiskie # for automounting usbs
-
-    pkgs.nwg-displays
-    pkgs.nwg-look
     pkgs.upower # TODO: move
     pkgs.upower-notify # TODO: move
   ];
