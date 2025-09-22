@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   services.displayManager.ly = {
     enable = true;
@@ -6,7 +7,13 @@
       session_log = "/home/max/.local/share/ly-session.log";
       asterisk = "0x2022";
       bigclock = "en";
+      clock = "null";
       hide_version_string = true;
+
+      fg = "0x00111111";
+
+      hide_borders = false;
+      border_fg = "0x00111111";
 
       #       none -> Nothing
       #       doom -> PSX DOOM fire
@@ -24,16 +31,9 @@
       # Color mixing animation third color id
       colormix_col3 = "0x20000000";
 
-      # Brightness increase command
-      # brightness_down_cmd = $PREFIX_DIRECTORY/bin/brightnessctl -q s 10%-
-
-      # Brightness decrease key, or null to disable
+      brightness_down_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q s 10%-";
+      brightness_up_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q s +10%";
       # brightness_down_key = F5
-
-      # Brightness increase command
-      # brightness_up_cmd = $PREFIX_DIRECTORY/bin/brightnessctl -q s +10%
-
-      # Brightness increase key, or null to disable
       # brightness_up_key = F6
     };
   };
