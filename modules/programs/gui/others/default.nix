@@ -12,7 +12,7 @@
     pkgs.gimp
     pkgs.ffmpeg-full
     pkgs.btrfs-assistant
-    pkgs.handbrake
+    # pkgs.handbrake
     pkgs.freecad-wayland
   ];
 }

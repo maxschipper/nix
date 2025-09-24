@@ -4,7 +4,6 @@
     pkgs.kdePackages.dolphin
     pkgs.nautilus
     pkgs.gnome-disk-utility
-    pkgs.gnome-calendar
     pkgs.gnome-font-viewer
     pkgs.cheese
     pkgs.snapshot
