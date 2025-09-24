@@ -9,8 +9,5 @@
     pkgs.linuxKernel.packages.linux_6_16.turbostat
     pkgs.powertop
     pkgs.bottom
-    pkgs.activitywatch
-    pkgs.aw-watcher-window-wayland
-    pkgs.awatcher
   ];
 }
