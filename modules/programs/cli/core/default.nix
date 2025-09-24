@@ -4,6 +4,8 @@
     EDITOR = "hx";
   };
 
+  programs.nix-ld.enable = true;
+
   programs.git = {
     enable = true;
     config = {
