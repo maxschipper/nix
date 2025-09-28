@@ -26,5 +26,7 @@
 
     # FISH
     pkgs.fish-lsp
+
+    # pkgs.typescript-language-server
   ];
 }

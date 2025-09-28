@@ -24,12 +24,15 @@
       enableAudioService = true;
       enableNetworkService = true;
       enableBluetoothService = true;
-      useDartSass = false;
-      useGrassSass = true;
+      useDartSass = true;
+      useGrassSass = false;
       extraPackages = [ ];
     })
 
     pkgs.ty
-  ];
 
+    # exo deps
+    pkgs.gnome-bluetooth
+
+  ];
 }

@@ -7,8 +7,8 @@
     pkgs.kdePackages.qtdeclarative # for qmlls the qml language server
 
     # noctalia deps
-    pkgs.cava
-    pkgs.wallust
+    # pkgs.cava
+    # pkgs.wallust
 
     # cae deps
     pkgs.material-symbols

@@ -19,14 +19,16 @@
       mouse.hide-when-typing = "yes";
       colors = {
         alpha = 0.6;
-        background = "1d1f21";
+        # background = "1d1f21";
+        background = "000000";
       };
       key-bindings = {
-        scrollback-up-page = "Shift+Page_Up";
+        scrollback-up-page = "Page_Up";
+        scrollback-down-page = "Page_Down";
         clipboard-copy = "Control+Shift+c";
-        clipboard-paste = "Control+Shift+v Control+V";
+        clipboard-paste = "Control+Shift+v Control+v";
         search-start = "Control+Shift+f";
-
+        spawn-terminal = "Alt+t";
       };
     };
   };

@@ -26,14 +26,21 @@
     pkgs.nwg-displays
     pkgs.nwg-look
 
+    pkgs.papirus-icon-theme
+
     pkgs.xwayland-satellite
     pkgs.gnome-keyring
     pkgs.fuzzel
+    pkgs.swww
 
     pkgs.hypridle
     pkgs.hyprlock
     pkgs.hyprpicker
     pkgs.swayosd
+    pkgs.sunsetr
+    pkgs.better-control
+
+    pkgs.nirius
 
   ];
 }
