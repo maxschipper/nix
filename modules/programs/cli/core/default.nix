@@ -27,6 +27,7 @@
     pkgs.curl
     pkgs.tldr
     pkgs.ripgrep
+    pkgs.ripgrep-all
     pkgs.fd
     pkgs.btop
     pkgs.fzf
