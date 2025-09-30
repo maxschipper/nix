@@ -15,5 +15,9 @@
     pkgs.ffmpeg-headless
 
     pkgs.icloudpd
+
+    pkgs.taskwarrior3
+    pkgs.taskwarrior-tui
+    pkgs.vault-tasks
   ];
 }
