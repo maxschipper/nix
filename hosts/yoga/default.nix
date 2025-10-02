@@ -33,8 +33,9 @@
 
     # modules/SERVICES
     ##################
-    ../../modules/services/tailscale
-    ../../modules/services/tailscale/taildrive.nix
+    ../../modules/services/vpn/tailscale
+    ../../modules/services/vpn/tailscale/taildrive.nix
+    ../../modules/services/vpn/eduvpn.nix
     ../../modules/services/keyd
     ../../modules/services/printing
     ../../modules/services/paperless
