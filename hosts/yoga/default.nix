@@ -15,6 +15,7 @@
     # ../../modules/system/initrd/luks-fido2.nix
 
     ../../modules/system/networking/networkmanager.nix
+    ../../modules/system/networking/resolved.nix
     ../../modules/system/nix
     ../../modules/system/audio
     ../../modules/system/localization
