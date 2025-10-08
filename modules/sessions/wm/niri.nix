@@ -25,12 +25,15 @@
     pkgs.udiskie # for automounting usbs
     pkgs.nwg-displays
     pkgs.nwg-look
+    pkgs.bluez
+    pkgs.bluez-tools
 
     pkgs.papirus-icon-theme
 
     pkgs.xwayland-satellite
     pkgs.gnome-keyring
     pkgs.fuzzel
+    pkgs.bemoji
     pkgs.swww
 
     pkgs.hypridle
