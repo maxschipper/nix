@@ -62,6 +62,7 @@
     ../../modules/programs/gui/passwordmanager/ente-auth.nix
     ../../modules/programs/gui/virtualization/virt-manager.nix
     # ../../modules/programs/gui/virtualization/waydroid.nix
+    ../../modules/programs/gui/office/libreoffice.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
     ../../modules/programs/gui/desktop-shell/quickshell.nix
