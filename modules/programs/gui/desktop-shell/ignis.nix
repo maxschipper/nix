@@ -32,7 +32,7 @@
     pkgs.ty
 
     # exo deps
-    pkgs.gnome-bluetooth
+    # pkgs.gnome-bluetooth
 
   ];
 }
