@@ -25,7 +25,8 @@
     pkgs.lsd
     pkgs.wget
     pkgs.curl
-    pkgs.tldr
+    # pkgs.tldr
+    pkgs.outfieldr
     pkgs.ripgrep
     pkgs.ripgrep-all
     pkgs.fd
