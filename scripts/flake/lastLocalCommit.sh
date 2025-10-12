@@ -2,7 +2,6 @@
 
 s=$(cat $NH_FLAKE/flake.lock | jq 'now - .nodes.nixpkgs.locked.lastModified | floor')
 
-
 d=$((s/86400)); s=$((s-(d*86400)))
 h=$((s/3600));  s=$((s-(h*3600)))
 m=$((s/60))
@@ -60,16 +59,3 @@ case $subcommand in
     exit 1
     ;;
 esac
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -7,6 +7,6 @@ if [ "$DOWNSTREAM_TIME" -lt "$UPSTREAM_TIME" ]; then
   echo "nixpkgs has new commits"
   exit
 else
-  echo "nixpkgs is up to date"
+  echo "lock for nixpkgs is up to date"
   exit
 fi
