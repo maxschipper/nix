@@ -37,6 +37,7 @@
     ../../modules/services/vpn/tailscale
     ../../modules/services/vpn/tailscale/taildrive.nix
     ../../modules/services/vpn/eduvpn.nix
+    ../../modules/services/vpn/easyroam.nix
     ../../modules/services/keyd
     ../../modules/services/printing
     ../../modules/services/paperless
