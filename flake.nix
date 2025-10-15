@@ -27,7 +27,10 @@
       url = "github:ignis-sh/ignis";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-easyroam.url = "github:0x5a4/nix-easyroam";
+    nix-easyroam = {
+      url = "github:0x5a4/nix-easyroam";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
