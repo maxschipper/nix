@@ -16,6 +16,12 @@
     pkgs.hexyl
     pkgs.rich-cli
     pkgs.trash-cli
+
+    pkgs.clipboard-jh
   ];
+
+  environment.sessionVariables = {
+    CLIPBOARD_NOGUI = "1";
+  };
 
 }
