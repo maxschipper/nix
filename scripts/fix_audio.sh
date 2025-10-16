@@ -8,4 +8,6 @@
 amixer -c 1 set Master unmute
 amixer -c 1 set Speaker unmute
 
+wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 0%
+
 notify-send -e "Done" "Finished fix-audio script"
