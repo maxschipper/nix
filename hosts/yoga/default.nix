@@ -35,7 +35,7 @@
     # modules/SERVICES
     ##################
     ../../modules/services/vpn/tailscale
-    ../../modules/services/vpn/tailscale/taildrive.nix
+    # ../../modules/services/vpn/tailscale/taildrive.nix
     ../../modules/services/vpn/eduvpn.nix
     ../../modules/services/vpn/easyroam.nix
     ../../modules/services/keyd
@@ -67,7 +67,7 @@
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
     ../../modules/programs/gui/desktop-shell/quickshell.nix
-    ../../modules/programs/gui/desktop-shell/ignis.nix
+    # ../../modules/programs/gui/desktop-shell/ignis.nix
 
     # modules/DEVELOPMENT
     #####################
