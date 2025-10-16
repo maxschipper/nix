@@ -10,10 +10,13 @@
       ids = [ "*" ];
       settings = {
         main = {
+          capslock = "esc";
           # "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
           "leftshift+leftmeta+f23" = "rightmeta"; # bind copilot key to right meta
-          "leftalt" = "leftmeta";
-          "leftmeta" = "leftalt";
+
+          # swap super and alt
+          leftalt = "leftmeta";
+          leftmeta = "leftalt";
         };
       };
     };
