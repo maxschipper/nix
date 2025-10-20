@@ -44,14 +44,14 @@
     # ../../modules/services/ssh/openssh.nix
     ../../modules/services/streaming/airplay.nix
     ../../modules/services/streaming/sunshine.nix
+    ../../modules/services/virt/podman.nix
+    ../../modules/services/virt/distrobox.nix
 
     # modules/PROGRAMS
     ##################
-    ../../modules/programs/cli/shell/fish.nix
-
-    ../../modules/programs/laptop
-
     ../../modules/programs/cli
+    ../../modules/programs/cli/shell/fish.nix
+    ../../modules/programs/laptop
 
     ../../modules/programs/gui/others
     ../../modules/programs/gui/others/activitywatch.nix
