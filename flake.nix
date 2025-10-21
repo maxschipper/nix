@@ -23,12 +23,16 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ignis = {
-      url = "github:ignis-sh/ignis";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # ignis = {
+    #   url = "github:ignis-sh/ignis";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix-easyroam = {
       url = "github:0x5a4/nix-easyroam";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mango = {
+      url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -55,7 +59,8 @@
                 pkg:
                 builtins.elem (nixpkgs.lib.getName pkg) [
                   "hplip"
-                  "easyroam-connect-desktop"
+                  "posy-cursors"
+                  "apple_cursor"
                 ];
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
@@ -69,8 +74,10 @@
           modules = [
             inputs.disko.nixosModules.disko
             inputs.nix-index-database.nixosModules.nix-index
-            inputs.nix-easyroam.nixosModules.nix-easyroam
             { programs.nix-index-database.comma.enable = true; }
+            inputs.nix-easyroam.nixosModules.nix-easyroam
+            inputs.mango.nixosModules.mango
+            { programs.mango.enable = true; }
             ./hosts/yoga
           ];
         };
