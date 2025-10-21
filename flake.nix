@@ -8,33 +8,33 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.caelestia-shell.follows = "caelestia-shell";
-    };
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.caelestia-cli.follows = "caelestia-cli";
-      # inputs.quickshell.follows = "quickshell";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # ignis = {
-    #   url = "github:ignis-sh/ignis";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     nix-easyroam = {
       url = "github:0x5a4/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # caelestia-cli = {
+    #   url = "github:caelestia-dots/cli";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.caelestia-shell.follows = "caelestia-shell";
+    # };
+    # caelestia-shell = {
+    #   url = "github:caelestia-dots/shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.caelestia-cli.follows = "caelestia-cli";
+    #   # inputs.quickshell.follows = "quickshell";
+    # };
+    # ignis = {
+    #   url = "github:ignis-sh/ignis";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # mango = {
+    #   url = "github:DreamMaoMao/mango";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
@@ -76,8 +76,8 @@
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
             inputs.nix-easyroam.nixosModules.nix-easyroam
-            inputs.mango.nixosModules.mango
-            { programs.mango.enable = true; }
+            # inputs.mango.nixosModules.mango
+            # { programs.mango.enable = true; }
             ./hosts/yoga
           ];
         };
