@@ -11,7 +11,7 @@
     pkgs.xournalpp
     pkgs.gimp
     pkgs.ffmpeg-full
-    pkgs.btrfs-assistant
+    # pkgs.btrfs-assistant
     # pkgs.handbrake
     pkgs.freecad-wayland
   ];
