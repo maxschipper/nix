@@ -11,8 +11,11 @@
   };
 
   environment.systemPackages = [
+    pkgs.fishPlugins.tide
     pkgs.fishPlugins.puffer
     pkgs.fishPlugins.autopair
+    pkgs.fishPlugins.sponge
+    pkgs.fishPlugins.done
   ];
 
 }
