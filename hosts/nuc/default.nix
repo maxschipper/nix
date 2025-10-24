@@ -8,7 +8,7 @@
     ################
     ../../modules/system/kernel/latest.nix
     # ../../modules/system/kernel/zen.nix
-    # ../../modules/system/kernel/kernelParams.nix
+    ../../modules/system/kernel/kernel/params/nuc.nix
 
     ../../modules/system/bootloader/systemd.nix
     ../../modules/system/initrd/systemd.nix
@@ -41,7 +41,7 @@
     ../../modules/services/keyd
     # ../../modules/services/printing
     ../../modules/services/paperless
-    # ../../modules/services/ssh/openssh.nix
+    ../../modules/services/ssh/openssh.nix
     # ../../modules/services/streaming/airplay.nix
     # ../../modules/services/streaming/sunshine.nix
     # ../../modules/services/virt/podman.nix

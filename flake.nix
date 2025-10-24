@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,7 +82,7 @@
           ];
         };
         # ----------------------------------------------------------
-        nuc = nixpkgs.lib.nixosSystem {
+        nuc = nixpkgs-stable.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
