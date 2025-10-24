@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-caelestia-shell &
+pidof quickshell || caelestia-shell &
+# caelestia-shell &
 
-tailscale systray
+pidof tailscale || tailscale systray
+
+sleep 1 && notify-send "Quickshell" "started successfully"
