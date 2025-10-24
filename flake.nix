@@ -82,7 +82,7 @@
           ];
         };
         # ----------------------------------------------------------
-        nuc = nixpkgs-stable.lib.nixosSystem {
+        nuc = nixpkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
