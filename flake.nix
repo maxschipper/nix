@@ -83,13 +83,13 @@
           ];
         };
         # ----------------------------------------------------------
-        nuc = nixpkgs.lib.nixosSystem {
+        nuc = nixpkgs-stable.lib.nixosSystem {
           inherit system;
-          pkgs = import nixpkgs {
+          pkgs = import nixpkgs-stable {
             inherit system;
             config = {
               allowUnfree = false;
-              allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [ ];
+              allowUnfreePredicate = pkg: builtins.elem (nixpkgs-stable.lib.getName pkg) [ ];
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
               ];

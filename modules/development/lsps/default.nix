@@ -11,7 +11,7 @@
 
     # TOML
     pkgs.taplo
-    pkgs.tombi
+    # pkgs.tombi
 
     # TYPST
     pkgs.typst-fmt
