@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -99,7 +100,7 @@
             inherit inputs;
           };
           modules = [
-            # inputs.disko.nixosModules.disko
+            inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
             ./hosts/nuc
