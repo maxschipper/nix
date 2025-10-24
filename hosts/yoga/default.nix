@@ -29,7 +29,7 @@
     ##################
     ../../modules/sessions/dm/ly.nix
     # ../../modules/sessions/dm/greetd/tuigreet.nix
-    ../../modules/sessions/wm/hyprland.nix
+    # ../../modules/sessions/wm/hyprland.nix
     ../../modules/sessions/wm/niri.nix
 
     # modules/SERVICES
@@ -66,7 +66,7 @@
     ../../modules/programs/gui/office/libreoffice.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
-    ../../modules/programs/gui/desktop-shell/quickshell.nix
+    # ../../modules/programs/gui/desktop-shell/quickshell.nix
     # ../../modules/programs/gui/desktop-shell/ignis.nix
 
     # modules/DEVELOPMENT
