@@ -82,6 +82,30 @@
           ];
         };
         # ----------------------------------------------------------
+        nuc = nixpkgs.lib.nixosSystem {
+          inherit system;
+          pkgs = import nixpkgs {
+            inherit system;
+            config = {
+              allowUnfree = false;
+              allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [ ];
+              permittedInsecurePackages = [
+                # "libsoup-2.74.3"
+              ];
+
+            };
+          };
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            # inputs.disko.nixosModules.disko
+            inputs.nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
+            ./hosts/nuc
+          ];
+        };
+        # ----------------------------------------------------------
         pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
