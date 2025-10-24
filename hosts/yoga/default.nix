@@ -8,7 +8,7 @@
     ################
     # ../../modules/system/kernel/latest.nix
     ../../modules/system/kernel/zen.nix
-    ../../modules/system/kernel/kernel/params/yoga.nix
+    ../../modules/system/kernel/params/yoga.nix
 
     ../../modules/system/bootloader/systemd.nix
     ../../modules/system/initrd/systemd.nix

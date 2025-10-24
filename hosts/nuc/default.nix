@@ -8,7 +8,7 @@
     ################
     ../../modules/system/kernel/latest.nix
     # ../../modules/system/kernel/zen.nix
-    ../../modules/system/kernel/kernel/params/nuc.nix
+    ../../modules/system/kernel/params/nuc.nix
 
     ../../modules/system/bootloader/systemd.nix
     ../../modules/system/initrd/systemd.nix
