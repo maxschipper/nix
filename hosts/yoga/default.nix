@@ -16,6 +16,7 @@
 
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/networking/resolved.nix
+    ../../modules/system/networking/bluetooth.nix
     ../../modules/system/nix
     ../../modules/system/audio
     ../../modules/system/localization

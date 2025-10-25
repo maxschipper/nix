@@ -1,7 +1,6 @@
 {
   environment.localBinInPath = true;
 
-  hardware.bluetooth.enable = true;
   services.fstrim.enable = true;
   services.fwupd.enable = true;
   hardware.enableRedistributableFirmware = true;
