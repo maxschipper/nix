@@ -25,8 +25,8 @@
     pkgs.udiskie # for automounting usbs
     pkgs.nwg-displays
     pkgs.nwg-look
-    pkgs.bluez
-    pkgs.bluez-tools
+
+    pkgs.blueman
 
     pkgs.papirus-icon-theme
 
