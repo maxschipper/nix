@@ -19,6 +19,8 @@
     ];
   };
 
+  programs.gamemode.enable = true;
+
   environment.systemPackages = [
     pkgs.capitaine-cursors
 
