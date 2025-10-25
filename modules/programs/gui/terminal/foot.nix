@@ -10,7 +10,10 @@
         dpi-aware = "no";
         bold-text-in-bright = "palette-based";
       };
-      scrollback.multiplier = 10;
+      scrollback = {
+        multiplier = 10;
+        lines = 10000;
+      };
       cursor = {
         style = "beam";
         blink = "no";
