@@ -47,6 +47,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      pkgs-unstable = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations = {
@@ -98,6 +99,7 @@
             inherit inputs;
           };
           modules = [
+            { _module.args = { inherit pkgs-unstable; }; }
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }

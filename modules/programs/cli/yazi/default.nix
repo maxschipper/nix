@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 {
   # programs.yazi.enable = true; # disables .config/yazi
   # programs.yazi.plugins = { # NOTE: still using ya pack
@@ -9,15 +9,15 @@
   # };
 
   # plugin deps
-  environment.systemPackages = [
-    pkgs.yazi
-    pkgs.mediainfo
-    pkgs.glow
-    pkgs.hexyl
-    pkgs.rich-cli
-    pkgs.trash-cli
+  environment.systemPackages = with pkgs-unstable; [
+    yazi
+    mediainfo
+    glow
+    hexyl
+    rich-cli
+    trash-cli
 
-    pkgs.clipboard-jh
+    clipboard-jh
   ];
 
   environment.sessionVariables = {
