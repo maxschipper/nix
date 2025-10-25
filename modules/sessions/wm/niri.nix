@@ -20,6 +20,8 @@
   };
 
   environment.systemPackages = [
+    pkgs.capitaine-cursors
+
     pkgs.wl-clipboard
     pkgs.libnotify
     pkgs.udiskie # for automounting usbs

@@ -60,8 +60,6 @@
                 pkg:
                 builtins.elem (nixpkgs.lib.getName pkg) [
                   "hplip"
-                  "posy-cursors"
-                  "apple_cursor"
                 ];
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
