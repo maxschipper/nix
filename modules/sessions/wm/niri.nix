@@ -37,6 +37,7 @@
     pkgs.fuzzel
     pkgs.bemoji
     pkgs.swww
+    pkgs.libqalculate
 
     pkgs.waybar
     pkgs.swaynotificationcenter
