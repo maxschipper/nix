@@ -40,7 +40,7 @@
     ../../modules/services/vpn/easyroam.nix
     ../../modules/services/keyd
     ../../modules/services/printing
-    ../../modules/services/paperless
+    ../../modules/services/homelab/paperless
     # ../../modules/services/ssh/openssh.nix
     ../../modules/services/streaming/airplay.nix
     ../../modules/services/streaming/sunshine.nix
