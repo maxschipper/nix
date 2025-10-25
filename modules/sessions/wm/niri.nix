@@ -38,6 +38,8 @@
     pkgs.bemoji
     pkgs.swww
 
+    pkgs.waybar
+    pkgs.swaynotificationcenter
     pkgs.hypridle
     pkgs.hyprlock
     pkgs.hyprpicker
