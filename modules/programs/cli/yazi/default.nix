@@ -1,4 +1,9 @@
-{ pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 {
   # programs.yazi.enable = true; # disables .config/yazi
   # programs.yazi.plugins = { # NOTE: still using ya pack
@@ -9,16 +14,29 @@
   # };
 
   # plugin deps
-  environment.systemPackages = with pkgs-unstable; [
-    yazi
-    mediainfo
-    glow
-    hexyl
-    rich-cli
-    trash-cli
+  environment.systemPackages =
+    if config.networking.hostName == "nuc" then
+      [
+        pkgs-unstable.yazi
+        pkgs-unstable.mediainfo
+        pkgs-unstable.glow
+        pkgs-unstable.hexyl
+        pkgs-unstable.rich-cli
+        pkgs-unstable.trash-cli
 
-    clipboard-jh
-  ];
+        pkgs-unstable.clipboard-jh
+      ]
+    else
+      [
+        pkgs.yazi
+        pkgs.mediainfo
+        pkgs.glow
+        pkgs.hexyl
+        pkgs.rich-cli
+        pkgs.trash-cli
+
+        pkgs.clipboard-jh
+      ];
 
   environment.sessionVariables = {
     CLIPBOARD_NOGUI = "1";
