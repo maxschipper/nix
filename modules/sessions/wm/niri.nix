@@ -41,6 +41,7 @@
     pkgs.swww
     pkgs.libqalculate
 
+    pkgs.walker
     pkgs.waybar
     pkgs.swaynotificationcenter
     pkgs.hypridle
@@ -51,6 +52,7 @@
     pkgs.better-control
 
     pkgs.nirius
+    pkgs.zenity # gui for scripts, used by waybar-hotspot
 
   ];
 }
