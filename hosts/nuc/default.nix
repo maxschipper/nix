@@ -3,6 +3,7 @@
   imports = [
     ../../modules/services/homelab/paperless
     ../../modules/services/homelab/gitea
+    ../../modules/services/homelab/ttyd/btop.nix
 
     ./configuration.nix
     ./hardware-configuration.nix
