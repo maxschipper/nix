@@ -14,5 +14,6 @@
     # pkgs.btrfs-assistant
     # pkgs.handbrake
     pkgs.freecad-wayland
+    pkgs.orca-slicer
   ];
 }
