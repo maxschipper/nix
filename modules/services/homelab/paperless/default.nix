@@ -4,6 +4,7 @@
     address = "0.0.0.0";
     port = 28981; # default
     dataDir = "/var/lib/paperless"; # default
+    consumptionDirIsPublic = true;
     settings = {
       PAPERLESS_URL = "https://paperless.nuc.lab";
       PAPERLESS_CONSUMER_IGNORE_PATTERN = ".DS_STORE";

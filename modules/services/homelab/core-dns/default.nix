@@ -1,6 +1,5 @@
 { lib, ... }:
 {
-
   services.resolved.enable = lib.mkForce false;
 
   services.coredns = {
@@ -10,13 +9,16 @@
     config = ''
       nuc.lab {
         hosts {
-          100.96.128.41 nuc.lab *.nuc.lab
-          fallthrough
+          100.96.128.41 nuc.lab
+          100.96.128.41 paperless.nuc.lab
+          100.96.128.41 gitea.nuc.lab
+          100.96.128.41 btop.nuc.lab
+          100.96.128.41 coredns.nuc.lab
         }
         log
         errors
+        health :8000
       }
     '';
-    # extraArgs = [ "-dns.port=53" ];
   };
 }

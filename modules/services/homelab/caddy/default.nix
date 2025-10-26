@@ -11,6 +11,16 @@
         tls internal
         reverse_proxy localhost:28981
       }
+
+      https://btop.nuc.lab {
+        tls internal
+        reverse_proxy localhost:7682
+      }
+
+      https://coredns.nuc.lab {
+        tls internal
+        reverse_proxy localhost:8000
+      }
     '';
   };
 }
