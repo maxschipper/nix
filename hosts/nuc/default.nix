@@ -4,6 +4,7 @@
     ../../modules/services/homelab/paperless
     ../../modules/services/homelab/gitea
     ../../modules/services/homelab/ttyd/btop.nix
+    ../../modules/services/homelab/caddy
 
     ./configuration.nix
     ./hardware-configuration.nix

@@ -3,7 +3,8 @@
     enable = true;
     appName = "🍵 gitea";
     settings = {
-      server.DOMAIN = "nuc.tail3035bf.ts.net";
+      server.DOMAIN = "nuc.tail3035bf.ts.net/gitea";
+      server.ROOT_URL = "http://nuc.tail3035bf.ts.net/gitea";
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
         DEFAULT_PUSH_CREATE_PRIVATE = false;
