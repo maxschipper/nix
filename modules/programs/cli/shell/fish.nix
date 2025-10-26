@@ -10,6 +10,9 @@
     '';
   };
 
+  # fish enables this by default, but it is super slow when rebuilding
+  documentation.man.generateCaches = false; # cache for `man -k` or `apropos`
+
   environment.systemPackages = [
     pkgs.fishPlugins.tide
     pkgs.fishPlugins.puffer
