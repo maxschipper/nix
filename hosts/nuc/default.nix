@@ -1,6 +1,9 @@
 {
   networking.hostName = "nuc";
   imports = [
+    ../../modules/services/homelab/paperless
+    ../../modules/services/homelab/gitea
+
     ./configuration.nix
     ./hardware-configuration.nix
 
@@ -41,7 +44,6 @@
     # ../../modules/services/vpn/easyroam.nix
     ../../modules/services/keyd
     # ../../modules/services/printing
-    ../../modules/services/homelab/paperless
     ../../modules/services/ssh/openssh.nix
     # ../../modules/services/streaming/airplay.nix
     # ../../modules/services/streaming/sunshine.nix
