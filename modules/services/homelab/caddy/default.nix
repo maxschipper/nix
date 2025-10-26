@@ -2,13 +2,17 @@
   services.caddy = {
     enable = true;
     extraConfig = ''
-      http://gitea.nuc.lab {
+      https://gitea.nuc.lab {
+        tls internal
         reverse_proxy localhost:3000
       }
 
-      http://paperless.nuc.lab {
+      https://paperless.nuc.lab {
+        tls internal
         reverse_proxy localhost:28981
       }
     '';
   };
 }
+
+# the root.crt is at /var/lib/caddy/.local/share/caddy/pki/authorities/local/root.crt
