@@ -10,7 +10,7 @@
     config = ''
       nuc.lab {
         hosts {
-          100.96.128.41 paperless.nuc.lab gitea.nuc.lab
+          100.96.128.41 nuc.lab *.nuc.lab
           fallthrough
         }
         log
