@@ -50,16 +50,19 @@ aprox() {
 
 
 
-
 if [ "$DOWNSTREAM_TIME" -lt "$UPSTREAM_TIME" ]; then
   # echo "nixpkgs has new commits"
   # notify-send "Upgrade available" "The nixpkgs repo has new commits"
-  notify-send -a NixOS "nixpkgs has new commits" "Your lock file was last updated $(aprox)"
+  UPDATE=$(notify-send -e -a NixOS -A Update "nixpkgs has new commits" "Your lock file was last updated $(aprox)")
+  if ((UPDATE==0)); then
+      nix flake update nixpkgs --flake $NH_FLAKE
+      notify-send -e -a NixOS "Updated your lockfile for nixpkgs" "You can now run 'nh os switch' to update"
+  fi
   exit
 else
   # echo "lock for nixpkgs is up to date"
   # notify-send "Up to date" "Your nixpkgs lock is up to date"
-  notify-send -a NixOS "Up to date" "Your lock file was last updated $(aprox)"
+  notify-send -e -a NixOS "Up to date" "Your lock file was last updated $(aprox)"
   exit
 fi
 
