@@ -41,7 +41,7 @@
     ../../modules/services/vpn/easyroam.nix
     ../../modules/services/keyd
     ../../modules/services/printing
-    # ../../modules/services/ssh/openssh.nix
+    #  ../../modules/services/ssh/openssh.nix
     ../../modules/services/streaming/airplay.nix
     ../../modules/services/streaming/sunshine.nix
     ../../modules/services/virt/podman.nix
@@ -66,6 +66,10 @@
     ../../modules/programs/gui/office/libreoffice.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/cursors
+    ../../modules/programs/gui/3d/orcaslicer.nix
+    ../../modules/programs/gui/3d/freecad.nix
+    ../../modules/programs/gui/3d/openscad.nix
+
     # ../../modules/programs/gui/desktop-shell/quickshell.nix
     # ../../modules/programs/gui/desktop-shell/ignis.nix
 

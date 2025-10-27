@@ -13,8 +13,6 @@
     pkgs.ffmpeg-full
     # pkgs.btrfs-assistant
     # pkgs.handbrake
-    pkgs.freecad-wayland
     pkgs.vscodium-fhs
-    pkgs.orca-slicer
   ];
 }
