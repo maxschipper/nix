@@ -21,6 +21,11 @@
         tls internal
         reverse_proxy localhost:8000
       }
+
+      https://fritz.nuc.lab {
+        tls internal
+        reverse_proxy 10.0.0.1
+      }
     '';
   };
 }

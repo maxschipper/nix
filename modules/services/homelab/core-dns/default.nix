@@ -14,6 +14,7 @@
           100.96.128.41 gitea.nuc.lab
           100.96.128.41 btop.nuc.lab
           100.96.128.41 coredns.nuc.lab
+          100.96.128.41 fritz.nuc.lab
         }
         log
         errors
