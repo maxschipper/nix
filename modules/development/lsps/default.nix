@@ -14,7 +14,8 @@
     # pkgs.tombi
 
     # TYPST
-    pkgs.typst-fmt
+    pkgs.typst
+    pkgs.typstyle
     pkgs.tinymist
     # pkgs.typst-live
 
