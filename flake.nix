@@ -92,9 +92,9 @@
           ];
         };
         # ----------------------------------------------------------
-        nuc = nixpkgs-stable.lib.nixosSystem {
+        nuc = nixpkgs.lib.nixosSystem {
           inherit system;
-          pkgs = import nixpkgs-stable {
+          pkgs = import nixpkgs {
             inherit system;
             config = {
               allowUnfree = false;
