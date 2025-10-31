@@ -36,6 +36,7 @@
 
     pkgs.xwayland-satellite
     pkgs.gnome-keyring
+    pkgs.nautilus
     pkgs.fuzzel
     pkgs.bemoji
     pkgs.swww
