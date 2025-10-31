@@ -17,6 +17,10 @@
       url = "github:0x5a4/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # caelestia-cli = {
     #   url = "github:caelestia-dots/cli";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -65,7 +69,6 @@
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
               ];
-
             };
           };
           specialArgs = {
@@ -76,6 +79,13 @@
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
             inputs.nix-easyroam.nixosModules.nix-easyroam
+
+            # inputs.niri-flake.nixosModules.niri
+            # {
+            #   nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
+            #   programs.niri.package = nixpkgs.niri-unstable;
+            # }
+
             # inputs.mango.nixosModules.mango
             # { programs.mango.enable = true; }
             ./hosts/yoga
