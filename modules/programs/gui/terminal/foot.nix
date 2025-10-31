@@ -21,7 +21,7 @@
       };
       mouse.hide-when-typing = "yes";
       colors = {
-        alpha = 0.6;
+        alpha = 1.0;
         # background = "1d1f21";
         background = "000000";
       };
