@@ -25,6 +25,7 @@
     ../../modules/system/security/tpm.nix
     ../../modules/system/power
     ../../modules/system/env-vars/xdg.nix
+    ../../modules/system/tty/tty.nix
 
     # modules/SESSIONS
     ##################
@@ -46,6 +47,7 @@
     ../../modules/services/streaming/sunshine.nix
     ../../modules/services/virt/podman.nix
     ../../modules/services/virt/distrobox.nix
+    ../../modules/services/iio
 
     # modules/PROGRAMS
     ##################

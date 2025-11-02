@@ -6,6 +6,8 @@
 
   programs.niri.enable = true;
 
+  services.iio-niri.enable = true;
+
   security.polkit.enable = true;
   services.udisks2.enable = true;
   services.gvfs.enable = true;
