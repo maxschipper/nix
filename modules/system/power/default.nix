@@ -14,7 +14,8 @@
     AllowSuspendThenHibernate=no
   '';
 
-  services.logind.settings.Login.HandleLidSwitch = "hibernate";
+  # services.logind.settings.Login.HandleLidSwitch = "hibernate";
+  services.logind.settings.Login.HandleLidSwitch = "lock";
   services.logind.settings.Login.HandleLidSwitchExternalPower = "lock";
   services.logind.settings.Login.HandlePowerKey = "ignore";
   services.acpid.enable = true;
