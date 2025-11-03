@@ -6,6 +6,7 @@
     ../../modules/services/homelab/ttyd/btop.nix
     ../../modules/services/homelab/caddy
     ../../modules/services/homelab/core-dns
+    ../../modules/services/homelab/pdf/stirling-pdf.nix
 
     ./configuration.nix
     ./hardware-configuration.nix
