@@ -26,6 +26,11 @@
         tls internal
         reverse_proxy 10.0.0.1
       }
+
+      https://pdf.nuc.lab {
+        tls internal
+        reverse_proxy localhost:8592
+      }
     '';
   };
 }

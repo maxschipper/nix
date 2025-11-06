@@ -47,7 +47,7 @@
     ../../modules/services/streaming/sunshine.nix
     ../../modules/services/virt/podman.nix
     ../../modules/services/virt/distrobox.nix
-    ../../modules/services/iio
+    ../../modules/system/sensors/iio.nix
 
     # modules/PROGRAMS
     ##################

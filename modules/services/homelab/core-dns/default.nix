@@ -15,6 +15,7 @@
           100.96.128.41 btop.nuc.lab
           100.96.128.41 coredns.nuc.lab
           100.96.128.41 fritz.nuc.lab
+          100.96.128.41 pdf.nuc.lab
         }
         log
         errors
