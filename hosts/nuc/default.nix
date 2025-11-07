@@ -46,7 +46,8 @@
     # ../../modules/services/vpn/tailscale/taildrive.nix
     # ../../modules/services/vpn/eduvpn.nix
     # ../../modules/services/vpn/easyroam.nix
-    ../../modules/services/keyd
+    ../../modules/services/remap/keyd.nix
+    ../../modules/services/remap/makima.nix
     # ../../modules/services/printing
     ../../modules/services/ssh/openssh.nix
     # ../../modules/services/streaming/airplay.nix
