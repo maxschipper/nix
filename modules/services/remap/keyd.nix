@@ -7,7 +7,11 @@
   services.keyd = {
     enable = true;
     keyboards.default = {
-      ids = [ "*" ];
+      ids = [
+        "*"
+        "-045e:0b22:a9ce7264" # id of controller found with
+        # "0001:0001:09b4e68d" # yoga internal keyboard
+      ];
       settings = {
         main = {
           capslock = "esc";
