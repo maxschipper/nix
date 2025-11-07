@@ -54,6 +54,7 @@
     ../../modules/programs/cli
     ../../modules/programs/cli/shell/fish.nix
     ../../modules/programs/laptop
+    # ../../modules/programs/flatpak
 
     ../../modules/programs/gui/others
     ../../modules/programs/gui/others/activitywatch.nix
