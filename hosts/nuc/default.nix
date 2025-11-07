@@ -1,6 +1,7 @@
 {
   networking.hostName = "nuc";
   imports = [
+    ../../modules/services/homelab/dashboard/glance.nix
     ../../modules/services/homelab/paperless
     ../../modules/services/homelab/gitea
     ../../modules/services/homelab/ttyd/btop.nix
