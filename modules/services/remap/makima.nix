@@ -29,6 +29,7 @@
     GRAB_DEVICE = "true"
   '';
 
+  # TODO: SPACE for pause
   environment.etc."makima/Chromecast Remote.toml".text = ''
     [remap]
     KEY_SELECT = ["KEY_ENTER"]

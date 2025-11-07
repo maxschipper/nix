@@ -1,11 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./.common-wayland.nix
-  ];
-  environment.systemPackages = [
-    pkgs.cage
-  ];
+  imports = [ ./. ];
   services.cage = {
     enable = true;
     user = "max";
@@ -20,4 +15,5 @@
       WLR_LIBINPUT_NO_DEVICES = "1"; # to also run without any input devices
     };
   };
+
 }

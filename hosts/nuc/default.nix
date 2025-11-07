@@ -8,6 +8,13 @@
     ../../modules/services/homelab/core-dns
     ../../modules/services/homelab/pdf/stirling-pdf.nix
 
+    ../../modules/programs/gui/browser/chromium.nix
+    ../../modules/sessions/wm/cage/youtube.nix
+
+    ############################################
+    ############################################
+    ############################################
+    ############################################
     ./configuration.nix
     ./hardware-configuration.nix
 
@@ -63,7 +70,6 @@
     # ../../modules/programs/gui/others
     # ../../modules/programs/gui/others/activitywatch.nix
     # ../../modules/programs/gui/terminal/foot.nix
-    # ../../modules/programs/gui/browser/chromium.nix
     # ../../modules/programs/gui/browser/firefox.nix
     # ../../modules/programs/gui/mail/thunderbird.nix
     # ../../modules/programs/gui/passwordmanager/bitwarden.nix
