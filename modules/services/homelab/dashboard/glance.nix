@@ -161,6 +161,9 @@
                   ];
                 }
                 {
+                  type = "to-do";
+                }
+                {
                   type = "hacker-news";
                   limit = 15;
                   collapse-after = 5;
