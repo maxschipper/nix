@@ -31,6 +31,7 @@
     pkgs.ripgrep-all
     pkgs.fd
     pkgs.btop
+    pkgs.glances
     pkgs.fzf
   ];
 }
