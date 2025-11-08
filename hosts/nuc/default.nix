@@ -8,6 +8,7 @@
     ../../modules/services/homelab/caddy
     ../../modules/services/homelab/caddy/tls-cert/trust.nix
     ../../modules/services/homelab/dns/core-dns.nix
+    ../../modules/services/homelab/dns/adguard-home.nix
     ../../modules/services/homelab/pdf/stirling-pdf.nix
 
     ../../modules/programs/gui/browser/chromium.nix
