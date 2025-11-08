@@ -6,6 +6,7 @@
     ../../modules/services/homelab/gitea
     ../../modules/services/homelab/ttyd/btop.nix
     ../../modules/services/homelab/caddy
+    ../../modules/services/homelab/caddy/tls-cert/trust.nix
     ../../modules/services/homelab/core-dns
     ../../modules/services/homelab/pdf/stirling-pdf.nix
 
