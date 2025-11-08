@@ -33,5 +33,6 @@
     pkgs.btop
     pkgs.glances
     pkgs.fzf
+    pkgs.lm_sensors
   ];
 }

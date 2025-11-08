@@ -2,6 +2,11 @@
   services.caddy = {
     enable = true;
     extraConfig = ''
+      https://nuc.lab {
+        tls internal
+        reverse_proxy localhost:5678
+      }
+
       https://gitea.nuc.lab {
         tls internal
         reverse_proxy localhost:3000
