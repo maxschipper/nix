@@ -59,6 +59,7 @@
 
     ../../modules/programs/gui/others
     ../../modules/programs/gui/others/activitywatch.nix
+    ../../modules/programs/gui/others/livebook.nix
     ../../modules/programs/gui/terminal/foot.nix
     ../../modules/programs/gui/browser/chromium.nix
     ../../modules/programs/gui/browser/firefox.nix
