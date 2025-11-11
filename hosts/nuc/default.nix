@@ -35,7 +35,7 @@
     ../../modules/system/networking/resolved.nix
     ../../modules/system/networking/bluetooth.nix
     ../../modules/system/nix
-    # ../../modules/system/audio
+    ../../modules/system/audio
     ../../modules/system/localization
     ../../modules/system/users/max.nix
     # ../../modules/system/security/nitrokey.nix
