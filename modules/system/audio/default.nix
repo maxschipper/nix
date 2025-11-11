@@ -17,5 +17,6 @@
     pkgs.alsa-utils
     pkgs.pavucontrol
     pkgs.pulseaudio
+    pkgs.pulsemixer
   ];
 }
