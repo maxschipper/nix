@@ -4,7 +4,8 @@
   services.cage = {
     enable = true;
     user = "max";
-    program = "${pkgs.ungoogled-chromium}/bin/chromium --app='https://youtube.com/tv'";
+    program = "${pkgs.chromium}/bin/chromium --app='https://youtube.com/tv'";
+    # program = "${pkgs.chromium}/bin/chromium";
     extraArguments = [
       "-s" # Allow VT switching
       "-d" # Don't draw client side decorations, when possible
