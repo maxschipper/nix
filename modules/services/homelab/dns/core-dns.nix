@@ -16,6 +16,8 @@
           100.96.128.41 coredns.nuc.lab
           100.96.128.41 fritz.nuc.lab
           100.96.128.41 pdf.nuc.lab
+          100.96.128.41 adguard.nuc.lab
+          100.96.128.41 dns.adguard.nuc.lab
         }
         log
         errors

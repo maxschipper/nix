@@ -36,6 +36,16 @@
         tls internal
         reverse_proxy localhost:8592
       }
+
+      https://adguard.nuc.lab {
+        tls internal
+        reverse_proxy localhost:3001
+      }
+
+      https://dns.adguard.nuc.lab {
+        tls internal
+        reverse_proxy localhost:54
+      }
     '';
   };
 }
