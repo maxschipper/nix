@@ -10,6 +10,7 @@
     ../../modules/services/homelab/dns/core-dns.nix
     ../../modules/services/homelab/dns/adguard-home.nix
     ../../modules/services/homelab/pdf/stirling-pdf.nix
+    ../../modules/services/homelab/livebook
 
     ../../modules/programs/gui/browser/chromium.nix
     ../../modules/sessions/wm/cage/youtube.nix
