@@ -1,0 +1,26 @@
+server:
+  # Leave blank to listen on all interfaces
+  host:
+
+  # Port to listen on
+  port: 27973
+
+  # Optional token for authenticating API requests
+  token: 8h8jBUG#Q34gsJ
+
+system:
+  # When blank, the agent will attempt to infer the correct CPU temperature sensor, however
+  # if it is unable to or it gets it wrong, you can override it using this option.
+  # To list the available sensors, run `agent sensors:print`
+  cpu-temp-sensor:
+
+  # Whether to hide all mountpoints by default. Individual mountpoints
+  # can then be shown using the `hide: false` option as seen below
+  hide-mountpoints-by-default: true
+
+  # List of mountpoints to show/hide in the API response, keyed by the mountpoint path
+  # Optionally, also set a name to be displayed in the widget when hovering over the disk usage
+  mountpoints:
+    "/":
+      name: Root
+      hide: false
