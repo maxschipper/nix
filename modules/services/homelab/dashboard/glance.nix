@@ -24,12 +24,12 @@
             positive-color = "115 54 76";
             negative-color = "347 70 65";
           };
-          kanagawa = {
-            background-color = "240 13 14";
-            primary-color = "51 33 68";
-            negative-color = "358 100 68";
-            contrast-multiplier = 1.2;
-          };
+          # kanagawa = {
+          #   background-color = "240 13 14";
+          #   primary-color = "51 33 68";
+          #   negative-color = "358 100 68";
+          #   contrast-multiplier = 1.2;
+          # };
           catppuccin_latte = {
             light = true;
             background-color = "220 23 95";
@@ -133,6 +133,11 @@
                         };
                       };
                     }
+                    {
+                      type = "remote";
+                      url = "http://100.78.152.127:27973";
+                      token = "8h8jBUG#Q34gsJ";
+                    }
                   ];
                 }
                 {
@@ -173,6 +178,17 @@
                   limit = 15;
                   collapse-after = 5;
                 }
+              ];
+            }
+          ];
+        }
+        {
+          name = "News";
+          columns = [
+            {
+              size = "full";
+              widgets = [
+
               ];
             }
           ];
