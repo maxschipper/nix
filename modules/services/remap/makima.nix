@@ -5,45 +5,52 @@
   ];
 
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
+    [commands]
+    BTN_NORTH = ["pactl set-sink-volume 104 -10%"] #X
+    BTN_WEST = ["pactl set-sink-volume 104 +10%"] #Y
+
     [remap]
-    BTN_SOUTH = ["KEY_ENTER"]
-    BTN_WEST = ["KEY_BACKSPACE"]
-    BTN_SELECT = ["KEY_F2"]
-    BTN_START = ["KEY_F3" ]
-    BTN_MODE = ["KEY_ESC"]
-    BTN_DPAD_UP = ["KEY_UP"]
-    BTN_DPAD_RIGHT = ["KEY_RIGHT"]
-    BTN_DPAD_DOWN = ["KEY_DOWN"]
-    BTN_DPAD_LEFT = ["KEY_LEFT"]
-    RSTICK_UP = ["KEY_UP"]
-    RSTICK_DOWN = ["KEY_DOWN"]
+    BTN_SOUTH = ["KEY_ENTER"] #A
+    BTN_EAST = ["KEY_BACKSPACE"] #B
+    BTN_TR = ["BTN_LEFT"] #RB
+    BTN_TL = ["KEY_TAB"] #LB
+    BTN_SELECT = ["KEY_F11"] #back
+    BTN_START = ["KEY_ESC" ] #start
+    BTN_THUMBR = ["KEY_LEFTCTRL"] #RS
+    BTN_THUMBL = ["KEY_LEFTSHIFT"] #LS
+    BTN_MODE = ["KEY_ESC"] #Xbox button
+    BTN_DPAD_UP = ["KEY_UP"] #directional pad up
+    BTN_DPAD_RIGHT = ["KEY_RIGHT"] #directional pad right
+    BTN_DPAD_DOWN = ["KEY_DOWN"] #directional pad down
+    BTN_DPAD_LEFT = ["KEY_LEFT"] #directional pad left
 
     [settings]
-    LSTICK_SENSITIVITY = "6"
-    RSTICK_SENSITIVITY = "6"
-    LSTICK = "disabled"
-    RSTICK = "bind"
-    LSTICK_DEADZONE = "5"
-    RSTICK_DEADZONE = "10"
-    16_BIT_AXIS = "true"
-    GRAB_DEVICE = "true"
+    LSTICK = "disabled" #cursor, scroll, bind or disabled
+    RSTICK = "disabled" #cursor, scroll, bind or disabled
+    16_BIT_AXIS = "true" #necessary for Xbox controllers and Switch joycons, use false for other controllers
+    GRAB_DEVICE = "true" #gain exclusivity on the device
   '';
 
   # TODO: SPACE for pause
   environment.etc."makima/Chromecast Remote.toml".text = ''
+    [commands]
+    KEY_VOLUMEDOWN = ["pactl set-sink-volume 104 -10%"] #X
+    KEY_VOLUMEUP = ["pactl set-sink-volume 104 +10%"] #Y
+    # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
+
     [remap]
     KEY_SELECT = ["KEY_ENTER"]
     KEY_BACK = ["KEY_BACKSPACE"]
     KEY_HOMEPAGE = ["KEY_ESC"]
-    KEY_VOLUMEUP = ["KEY_F3"]
-    KEY_MUTE = ["KEY_F1"]
-    KEY_VOLUMEDOWN = ["KEY_F2"]
-    KEY_TV = ["KEY_F10"]
+    # KEY_VOLUMEUP = ["KEY_F3"]
+    # KEY_VOLUMEDOWN = ["KEY_F2"]
+    KEY_MUTE = ["KEY_SPACE"]
+    KEY_TV = ["KEY_F11"]
 
     # not working?
-    # KEY_SCREENLOCK = ["KEY_"]
-    # KEY_CAMERA_ACCESS_DISABLE = ["KEY_"]
-    # KEY_CAMERA_ACCESS_TOGGLE = ["KEY_"]
+    KEY_SCREENLOCK = ["KEY_F11"]
+    KEY_CAMERA_ACCESS_DISABLE = ["KEY_F11"]
+    KEY_CAMERA_ACCESS_TOGGLE = ["KEY_F11"]
 
     [settings]
     GRAB_DEVICE = "true" #gain exclusivity on the device
@@ -115,4 +122,7 @@
 
   # [Install]
   # WantedBy=default.target
+  # services.udev.extraRules = ''
+  #   ACTION=="add|change", SUBSYSTEM=="input", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="9450", TAG-="power-switch"
+  # '';
 }
