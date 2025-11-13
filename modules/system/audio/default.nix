@@ -18,5 +18,6 @@
     pkgs.pavucontrol
     pkgs.pulseaudio
     pkgs.pulsemixer
+    pkgs.wiremix
   ];
 }
