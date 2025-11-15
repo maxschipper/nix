@@ -15,9 +15,7 @@
   #   };
   #   extensions = [
   #     "ddkjiahejlhfcafbddmgiahcphecmpfh" # ublock origin lite
-  #     "epcnnfbjfcgphgdmggkamkmgojdagdnn" # ublock origin
   #     "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
-  #     "djflhoibgkdhkhhcedjiklpkjnoahfmg" # User-Agent Switcher for Chrome
   #   ];
   # };
 }
