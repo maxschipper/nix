@@ -1,10 +1,45 @@
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  # theme-catppuccin = pkgs.fetchzip {
+  #   url = "https://github.com/catppuccin/gitea/releases/latest/download/catppuccin-gitea.tar.gz";
+  #   sha256 = "sha256-rZHLORwLUfIFcB6K9yhrzr+UwdPNQVSadsw6rg8Q7gs=";
+  #   stripRoot = true;
+  # };
+  theme-github = pkgs.fetchzip {
+    url = "https://github.com/lutinglt/gitea-github-theme/releases/latest/download/theme-github-base.tar.gz";
+    sha256 = "sha256-neRyrTL9rTdU/eK5dRR77P+rVs+9g537uGlYBHqbDIA=";
+    stripRoot = true;
+  };
+  gitea-assets-dir = "${config.services.gitea.stateDir}/custom/public/assets";
+in
+{
+  systemd.services.gitea = {
+    preStart = lib.mkAfter ''
+      mkdir -p ${gitea-assets-dir}/css
+      # rm -rf ${gitea-assets-dir}/css/ # not working, permission error use cp -f instead
+
+      for theme in ${theme-github}; do
+        cp -rfs "$theme"/. ${gitea-assets-dir}/css
+      done
+    '';
+    # for theme in ${theme-catppuccin} ${theme-github}; do
+  };
+
   services.gitea = {
     enable = true;
     appName = "🍵 gitea";
     settings = {
-      server.DOMAIN = "gitea.nuc.lab";
-      server.ROOT_URL = "https://gitea.nuc.lab";
+      server = {
+        DOMAIN = "gitea.nuc.lab";
+        ROOT_URL = "https://${config.services.gitea.settings.server.DOMAIN}";
+        HTTP_PORT = 3000;
+      };
+
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
         DEFAULT_PUSH_CREATE_PRIVATE = false;
@@ -19,19 +54,9 @@
       };
       ui = {
         SHOW_USER_EMAIL = false;
+        DEFAULT_THEME = "github-auto";
+        # THEMES = "gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-dark";
       };
-
-      # "cron.sync_external_users" = {
-      #   RUN_AT_START = true;
-      #   SCHEDULE = "@every 24h";
-      #   UPDATE_EXISTING = true;
-      # };
-      # mailer = {
-      #   ENABLED = true;
-      #   MAILER_TYPE = "sendmail";
-      #   FROM = "do-not-reply@example.org";
-      #   SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
-      # };
       other = {
         SHOW_FOOTER_VERSION = false;
       };
