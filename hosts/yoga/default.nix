@@ -38,7 +38,7 @@
     ##################
     ../../modules/services/vpn/tailscale
     # ../../modules/services/vpn/tailscale/taildrive.nix
-    ../../modules/services/vpn/eduvpn.nix
+    # ../../modules/services/vpn/eduvpn.nix
     ../../modules/services/vpn/easyroam.nix
     ../../modules/services/remap/keyd.nix
     ../../modules/services/remap/makima.nix
