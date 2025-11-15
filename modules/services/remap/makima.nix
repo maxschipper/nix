@@ -6,8 +6,8 @@
 
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
     [commands]
-    BTN_NORTH = ["pactl set-sink-volume 104 -10%"] #X
-    BTN_WEST = ["pactl set-sink-volume 104 +10%"] #Y
+    BTN_NORTH = ["pulsemixer --change-volume -10"] #X
+    BTN_WEST = ["pulsemixer --change-volume -10"] #Y
 
     [remap]
     BTN_SOUTH = ["KEY_ENTER"] #A
@@ -34,8 +34,8 @@
   # TODO: SPACE for pause
   environment.etc."makima/Chromecast Remote.toml".text = ''
     [commands]
-    KEY_VOLUMEDOWN = ["pactl set-sink-volume 104 -10%"] #X
-    KEY_VOLUMEUP = ["pactl set-sink-volume 104 +10%"] #Y
+    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -10"]
+    KEY_VOLUMEUP = ["pulsemixer --change-volume +10"]
     # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
 
     [remap]
@@ -56,73 +56,62 @@
     GRAB_DEVICE = "true" #gain exclusivity on the device
   '';
 
-  # couldnt get systemd services to work. works fine when launchin manually with `sudo [-b] MAKIMA_CONFIG=/etc/makima makima`
+  # couldnt get systemd services to work. works fine when launching manually with `sudo [-b] MAKIMA_CONFIG=/etc/makima makima`
   # or `sudo -E[b] makima` for quick testing with ~/.config/makima
 
-  # systemd.services.makima = {
-  #   enable = false;
-  #   description = "Makima remapping daemon";
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     Restart = "always";
-  #     RestartSec = 3;
-  #     # ExecStart = "${pkgs.makima}/bin/makima";
-  #     ExecStart = "${pkgs.bash}/bin/bash -lc 'exec ${pkgs.makima}/bin/makima'";
-  #     # User = "root";
-  #     User = "max";
-  #     Group = "input";
-  #     # Environment = "MAKIMA_CONFIG=/etc/makima";
-  #     # Environment = "PATH=${
-  #     #   pkgs.lib.makeBinPath [
-  #     #     pkgs.coreutils
-  #     #     pkgs.bash
-  #     #   ]
-  #     # }";
-  #     # Path = pkgs.lib.makeBinPath [
-  #     #   pkgs.coreutils
-  #     #   pkgs.bash
-  #     # ]; # coreutils provides 'id' and bash/sh are needed
+  systemd.services.makima = {
+    enable = false;
+    description = "Makima remapping daemon";
+    wantedBy = [ "default.target" ];
+    environment = {
+      # RUST_BACKTRACE = "1";
+      MAKIMA_CONFIG = "/etc/makima";
+      XDG_SESSION_TYPE = "wayland";
+    };
+    path = [
+      pkgs.bash
+      pkgs.coreutils
+      pkgs.systemd
+    ];
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 3;
+      ExecStart = "${pkgs.makima}/bin/makima";
+      # User = "root";
+      User = "max";
+      Group = "input";
+      # SupplementaryGroups = [ "input" ];
+    };
+  };
 
-  #     # To ensure the service can use the 'input' group, you might need to
-  #     # add the service's user (root by default, or your specified user)
-  #     # to that group, or ensure it has permission to access input devices.
-  #     # For a service running as root, this is often sufficient, but for a
-  #     # non-root user, you might need:
-  #     # SupplementaryGroups = [ "input" ];
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  #   # Note: 'default.target' on NixOS usually resolves to 'multi-user.target' or 'graphical.target',
-  #   # but 'multi-user.target' is the common, reliable choice for non-GUI services.
-  # };
+  systemd.user.services.makima = {
+    enable = false;
+    description = "Makima remapping daemon";
+    wantedBy = [ "default.target" ];
+    environment = {
+      # RUST_BACKTRACE = "1";
+      # DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/user/1000/bus";
+      MAKIMA_CONFIG = "/etc/makima";
+      XDG_SESSION_TYPE = "wayland";
+    };
+    path = [
+      pkgs.bash
+      pkgs.systemd
+      pkgs.coreutils
+    ];
+    serviceConfig = {
+      Type = "simple";
+      Restart = "always";
+      RestartSec = 5;
+      ExecStart = "${pkgs.makima}/bin/makima";
+    };
+  };
 
-  # systemd.user.services.makima = {
-  #   enable = true;
-  #   description = "Makima remapping daemon";
-  #   wantedBy = [ "default.target" ];
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     Restart = "always";
-  #     RestartSec = 5;
-  #     ExecStart = "${pkgs.makima}/bin/makima";
-  #     User = "max";
-  #     Group = "input";
-  #   };
-  # };
-
-  # [Unit]
-  # Description=Makima remapping daemon
-
-  # [Service]
-  # Type=simple
-  # Restart=always
-  # RestartSec=3
-  # ExecStart=/usr/bin/makima
-  # User=
-  # Group=input
-
-  # [Install]
-  # WantedBy=default.target
+  # boot.kernelModules = [ "uinput" ];
+  # users.users.max.extraGroups = [ "input" ];
   # services.udev.extraRules = ''
-  #   ACTION=="add|change", SUBSYSTEM=="input", ATTRS{idVendor}=="18d1", ATTRS{idProduct}=="9450", TAG-="power-switch"
+  #   # Rule for Makima to gain access to uinput device for creating virtual keyboard
+  #   SUBSYSTEM=="misc", KERNEL=="uinput", MODE="0660", GROUP="input", TAG+="uaccess"
   # '';
 }
