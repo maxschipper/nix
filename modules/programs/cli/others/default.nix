@@ -8,7 +8,7 @@
     pkgs.just
     pkgs.ncdu
 
-    pkgs.gemini-cli
+    pkgs.gemini-cli-bin
 
     pkgs.fontpreview
     pkgs.jq
