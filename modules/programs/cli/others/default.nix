@@ -8,8 +8,6 @@
     pkgs.just
     pkgs.ncdu
 
-    pkgs.gemini-cli-bin
-
     pkgs.fontpreview
     pkgs.jq
     pkgs.ffmpeg-headless

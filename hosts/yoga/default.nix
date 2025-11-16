@@ -53,6 +53,7 @@
     # modules/PROGRAMS
     ##################
     ../../modules/programs/cli
+    ../../modules/programs/cli/others/gemini.nix
     ../../modules/programs/cli/shell/fish.nix
     ../../modules/programs/laptop
     # ../../modules/programs/flatpak
