@@ -3,7 +3,7 @@ let
 in
 {
   services.livebook = {
-    enableUserService = false;
+    enableUserService = true;
     environmentFile = vars.nhFlake + "/modules/services/homelab/livebook/livebook.env";
     environment = {
       LIVEBOOK_PORT = 3002;
