@@ -7,6 +7,7 @@
       prefix = "/";
       permissions = "CRUD";
       directory = "/var/lib/webdav/default";
+      debug = true;
       cors = {
         enabled = true;
         credentials = true;
@@ -40,8 +41,9 @@
     };
   };
 
-  # systemd.tmpfiles.rules = [
-  #   "d /var/lib/webdav/default 0750 webdav webdav"
-  #   "d /var/lib/webdav/superprod 0750 webdav webdav"
-  # ];
+  systemd.tmpfiles.rules = [
+    "d /var/lib/webdav/default 0750 webdav webdav"
+    "d /var/lib/webdav/superprod 0750 webdav webdav"
+    "d /var/lib/webdav/superprod/super-productivity 0750 webdav webdav"
+  ];
 }
