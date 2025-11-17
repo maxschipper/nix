@@ -14,5 +14,6 @@
     # pkgs.btrfs-assistant
     # pkgs.handbrake
     pkgs.vscodium-fhs
+    pkgs.super-productivity
   ];
 }
