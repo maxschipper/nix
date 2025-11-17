@@ -6,8 +6,8 @@
 
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
     [commands]
-    BTN_NORTH = ["pulsemixer --change-volume -10"] #X
-    BTN_WEST = ["pulsemixer --change-volume -10"] #Y
+    BTN_NORTH = ["pulsemixer --change-volume -5"] #X
+    BTN_WEST = ["pulsemixer --change-volume -5"] #Y
 
     [remap]
     BTN_SOUTH = ["KEY_ENTER"] #A
@@ -34,8 +34,8 @@
   # TODO: SPACE for pause
   environment.etc."makima/Chromecast Remote.toml".text = ''
     [commands]
-    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -10"]
-    KEY_VOLUMEUP = ["pulsemixer --change-volume +10"]
+    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -5"]
+    KEY_VOLUMEUP = ["pulsemixer --change-volume +5"]
     # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
 
     [remap]
