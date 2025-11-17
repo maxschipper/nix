@@ -30,13 +30,12 @@
       "IS_COMPRESSION_ENABLED" = "true";
       "IS_ENCRYPTION_ENABLED" = "false";
       "SYNC_INTERVAL" = "15";
-      # "WEBDAV_BASE_URL" = "http://localhost:2345/";
-      "WEBDAV_BASE_URL" = "http://host.containers.internal:2345/";
+      "WEBDAV_BASE_URL" = "https://webdav.nuc.lab";
       "WEBDAV_SYNC_FOLDER_PATH" = "super-productivity";
       "WEBDAV_USERNAME" = "super-productivity";
     };
     ports = [
-      "8080:80/tcp"
+      "3002:80/tcp"
     ];
     log-driver = "journald";
     extraOptions = [
