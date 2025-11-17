@@ -46,6 +46,17 @@
         tls internal
         reverse_proxy localhost:54
       }
+
+      https://todo.nuc.lab {
+        tls internal
+        reverse_proxy localhost:3002
+      }
+
+      https://webdav.nuc.lab {
+        tls internal
+        reverse_proxy localhost:2345
+      }
+
     '';
   };
 }

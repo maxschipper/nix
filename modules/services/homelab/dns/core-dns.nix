@@ -17,6 +17,8 @@
           100.96.128.41 pdf.nuc.lab
           100.96.128.41 adguard.nuc.lab
           100.96.128.41 dns.adguard.nuc.lab
+          100.96.128.41 todo.nuc.lab
+          100.96.128.41 webdav.nuc.lab
         }
         log
         errors
