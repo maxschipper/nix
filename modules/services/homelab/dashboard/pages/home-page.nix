@@ -9,6 +9,7 @@ let
   releases = import ../widgets/releases.nix;
   search = import ../widgets/search.nix;
   server-stats = import ../widgets/server-stats.nix;
+  todo = import ../widgets/todo.nix;
   weather = import ../widgets/weather.nix;
 in
 {
@@ -45,6 +46,8 @@ in
         # clock
         markets
         weather
+        todo
+
         # calendar
         # bookmarks
       ];
