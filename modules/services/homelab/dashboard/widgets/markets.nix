@@ -18,10 +18,10 @@
       symbol = "SPY";
       name = "S&P 500";
     }
-    {
-      symbol = "NDQ";
-      name = "Nasdaq";
-    }
+    # {
+    #   symbol = "NDQ";
+    #   name = "Nasdaq";
+    # }
     # {
     #   symbol = "NVDA";
     #   name = "Nvidia";
