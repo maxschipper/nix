@@ -9,12 +9,13 @@
     keyboards.default = {
       ids = [
         "*"
-        "-045e:0b22:a9ce7264" # id of controller found with
+        "-045e:0b22:a9ce7264" # id of controller found with keyd monitor
         # "0001:0001:09b4e68d" # yoga internal keyboard
       ];
       settings = {
         main = {
-          capslock = "esc";
+          # capslock = "esc";
+          capslock = "overload(shift, esc)";
           # "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
           "leftshift+leftmeta+f23" = "rightmeta"; # bind copilot key to right meta
 
