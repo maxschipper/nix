@@ -4,7 +4,7 @@
     pkgs.jujutsu
     pkgs.stow
     pkgs.fastfetch
-    pkgs.starship
+    # pkgs.starship
     pkgs.just
     pkgs.ncdu
 
