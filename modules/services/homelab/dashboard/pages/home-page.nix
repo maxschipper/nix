@@ -46,9 +46,9 @@ in
         # clock
         markets
         weather
-        todo
 
-        # calendar
+        # todo
+        calendar
         # bookmarks
       ];
     }
