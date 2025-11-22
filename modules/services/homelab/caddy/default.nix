@@ -22,6 +22,9 @@
       https://gitea.nuc.lab {
         reverse_proxy localhost:3000
       }
+      https://git.nuc.lab {
+        redir https://gitea.nuc.lab{uri} permanent
+      }
 
       https://paperless.nuc.lab {
         reverse_proxy localhost:28981
