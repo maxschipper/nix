@@ -1,5 +1,6 @@
 {
   services.tailscale.extraSetFlags = [
+    "--accept-dns=false"
     "--advertise-routes"
     "10.0.0.0/30"
   ];
