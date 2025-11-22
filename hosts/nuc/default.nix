@@ -16,7 +16,7 @@
     ../../modules/services/homelab/todo/super-productivity
 
     ../../modules/programs/gui/browser/chromium.nix
-    ../../modules/sessions/wm/cage/youtube.nix
+    # ../../modules/sessions/wm/cage/youtube.nix
 
     ############################################
     ############################################
