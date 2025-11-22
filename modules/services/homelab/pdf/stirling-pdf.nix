@@ -1,6 +1,6 @@
 {
   services.stirling-pdf = {
-    enable = true;
+    enable = false;
     environment = {
       SERVER_PORT = 8592;
       # INSTALL_BOOK_AND_ADVANCED_HTML_OPS = "true";
