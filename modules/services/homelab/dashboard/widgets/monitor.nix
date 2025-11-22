@@ -23,11 +23,16 @@
     {
       title = "WebDAV";
       url = "https://webdav.nuc.lab";
-      icon = "sh:file-station";
-      basic-auth = {
-        username = "super-productivity";
-        password = "superprod";
-      };
+      # icon = "sh:file-station";
+      icon = "sh:filesync";
+      alt-status-codes = [
+        401
+        207
+      ];
+      # basic-auth = {
+      # username = "super-productivity";
+      # password = "";
+      # };
     }
     {
       title = "Adguard Home";
