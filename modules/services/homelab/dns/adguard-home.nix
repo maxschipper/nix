@@ -10,24 +10,26 @@
         # port = 53; # default dns port
         # port = 54;
         bind_hosts = [
+          "127.0.0.1"
           "10.0.0.2" # local ip for router
           "100.96.128.41" # tailscale ip for tailnet
         ];
       };
-      filtering = {
-        rewrites = [
-          # if using this declaratively the rewrites are disabeld by default
-          # so one would have to enable them after every config change
-          # {
-          #   domain = "*.nuc.lab";
-          #   answer = "10.0.0.2";
-          # }
-          # {
-          #   domain = "nuc.lab";
-          #   answer = "10.0.0.2";
-          # }
-        ];
-      };
+      # filtering = {
+      # rewrites = [
+      # if using this declaratively the rewrites are disabeld by default
+      # so one would have to enable them after every config change
+      # {
+      #   domain = "*.nuc.lab";
+      #   answer = "10.0.0.2";
+      # }
+      # {
+      #   domain = "nuc.lab";
+      #   answer = "10.0.0.2";
+      # }
+      # ];
+      # };
+
       # ratelimit = 0; # DDoS protection
     };
   };
