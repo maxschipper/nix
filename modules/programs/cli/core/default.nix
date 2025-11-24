@@ -20,6 +20,7 @@
     pkgs.yazi
     pkgs.git
     pkgs.gh
+    pkgs.tea
     pkgs.lazygit
     pkgs.difftastic
     pkgs.lsd
