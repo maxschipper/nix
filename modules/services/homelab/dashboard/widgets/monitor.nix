@@ -39,10 +39,10 @@
       url = "https://adguard.nuc.lab";
       icon = "sh:adguard-home";
     }
-    {
-      title = "Stirling PDF";
-      url = "https://pdf.nuc.lab";
-      icon = "sh:stirling-pdf";
-    }
+    # {
+    #   title = "Stirling PDF";
+    #   url = "https://pdf.nuc.lab";
+    #   icon = "sh:stirling-pdf";
+    # }
   ];
 }
