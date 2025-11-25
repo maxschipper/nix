@@ -1,4 +1,7 @@
 {
+  networking.firewall.allowedTCPPorts = [ 53 ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
+
   services.adguardhome = {
     enable = true;
     host = "0.0.0.0";
@@ -7,18 +10,17 @@
     extraArgs = [ ]; # extra cli args
     settings = {
       dns = {
-        # port = 53; # default dns port
-        # port = 54;
+        port = 53; # default dns port
         bind_hosts = [
           "127.0.0.1"
           "10.0.0.2" # local ip for router
           "100.96.128.41" # tailscale ip for tailnet
         ];
       };
-      # filtering = {
-      # rewrites = [
       # if using this declaratively the rewrites are disabeld by default
       # so one would have to enable them after every config change
+      # filtering = {
+      # rewrites = [
       # {
       #   domain = "*.nuc.lab";
       #   answer = "10.0.0.2";
