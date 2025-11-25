@@ -18,6 +18,9 @@
     ../../modules/programs/gui/browser/chromium.nix
     # ../../modules/sessions/wm/cage/youtube.nix
 
+    ../../modules/sessions/wm/xserver
+    ../../modules/sessions/wm/xserver/matchbox.nix
+
     ############################################
     ############################################
     ############################################

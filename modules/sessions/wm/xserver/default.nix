@@ -1,6 +1,8 @@
 {
   services.xserver = {
     enable = true;
-    layout = "de";
+    xkb.layout = "de";
+    displayManager.lightdm.enable = false;
+    displayManager.startx.enable = true;
   };
 }
