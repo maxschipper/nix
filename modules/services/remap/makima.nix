@@ -4,6 +4,21 @@
     pkgs.makima
   ];
 
+  security.sudo.extraRules = [
+    {
+      users = [ "max" ];
+      commands = [
+        {
+          command = "${pkgs.makima}/bin/makima";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+      ];
+    }
+  ];
+
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
     [commands]
     BTN_NORTH = ["pulsemixer --change-volume -5"] #X
