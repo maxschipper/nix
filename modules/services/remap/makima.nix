@@ -9,7 +9,8 @@
       users = [ "max" ];
       commands = [
         {
-          command = "${pkgs.makima}/bin/makima";
+          # command = "${pkgs.makima}/bin/makima";
+          command = "/run/current-system/sw/bin/makima";
           options = [
             "NOPASSWD"
             "SETENV"
@@ -23,6 +24,8 @@
     [commands]
     BTN_NORTH = ["pulsemixer --change-volume -5"] #X
     BTN_WEST = ["pulsemixer --change-volume -5"] #Y
+    BTN_MODE = ["DISPLAY=:0 chromium --disable-infobars --user-agent="Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" https://youtube.com/tv > ~/makita-chromium.log 2>&1"] #Xbox button
+
 
     [remap]
     BTN_SOUTH = ["KEY_ENTER"] #A
@@ -33,7 +36,7 @@
     BTN_START = ["KEY_ESC" ] #start
     BTN_THUMBR = ["KEY_LEFTCTRL"] #RS
     BTN_THUMBL = ["KEY_LEFTSHIFT"] #LS
-    BTN_MODE = ["KEY_ESC"] #Xbox button
+    # BTN_MODE = ["KEY_ESC"] #Xbox button
     BTN_DPAD_UP = ["KEY_UP"] #directional pad up
     BTN_DPAD_RIGHT = ["KEY_RIGHT"] #directional pad right
     BTN_DPAD_DOWN = ["KEY_DOWN"] #directional pad down
