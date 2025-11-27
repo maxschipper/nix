@@ -3,6 +3,10 @@
     enable = true;
     xkb.layout = "de";
     displayManager.lightdm.enable = false;
-    displayManager.startx.enable = true;
+    displayManager.startx = {
+      enable = true;
+      # generateScript = false;
+      # extraCommands = '''';
+    };
   };
 }

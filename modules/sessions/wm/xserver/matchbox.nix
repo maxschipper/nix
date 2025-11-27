@@ -3,11 +3,6 @@
   environment.systemPackages = [
     pkgs.matchbox
     pkgs.unclutter-xfixes
+    pkgs.kitty
   ];
-
-  # services.xserver.displayManager.startx = {
-  #   enable = false;
-  # generateScript = ;
-  # extraCommands = ;
-  # };
 }
