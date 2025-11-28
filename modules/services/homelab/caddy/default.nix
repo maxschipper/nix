@@ -57,6 +57,10 @@
       https://webdav.nuc.lab {
         reverse_proxy localhost:2345
       }
+
+      https://immich.nuc.lab {
+        reverse_proxy localhost:2283
+      }
     '';
   };
 }
