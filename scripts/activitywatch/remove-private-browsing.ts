@@ -27,7 +27,7 @@ const SEARCH_EVENTS_CONTAINING = ['mozilla firefox private browsing'];
 const DELETE_MATCHED_EVENTS = true;
 const main = async () => {
    for (const BUCKET of BUCKETS) {
-      const events = (await (await fetch(`http://localhost:5600/api/0/buckets/${BUCKET}/events?limit=100000`)).json()) as any[];
+      const events = (await (await fetch(`http://localhost:5600/api/0/buckets/${BUCKET}/events?limit=500000`)).json()) as any[];
 
       for (const event of events) {
          // Default Windows AW data is in this format:
