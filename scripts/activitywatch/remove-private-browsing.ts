@@ -24,8 +24,12 @@ import { fetch } from 'bun';
 
 const BUCKETS = ['aw-watcher-window_yoga'];
 const SEARCH_EVENTS_CONTAINING = ['mozilla firefox private browsing'];
+// const SEARCH_EVENTS_CONTAINING = ['- mpv'];
 const DELETE_MATCHED_EVENTS = true;
 const main = async () => {
+
+   let totalMatches = 0;
+   
    for (const BUCKET of BUCKETS) {
       const events = (await (await fetch(`http://localhost:5600/api/0/buckets/${BUCKET}/events?limit=500000`)).json()) as any[];
 
@@ -37,6 +41,8 @@ const main = async () => {
          const searchString = ((event.data.url || '') + (event.data.title || '')).toLowerCase();
          if (SEARCH_EVENTS_CONTAINING.some((search) => searchString.includes(search))) {
             console.log('Found:', searchString);
+            totalMatches++;
+
             if (DELETE_MATCHED_EVENTS) {
                await fetch(`http://localhost:5600/api/0/buckets/${BUCKET}/events/${event.id}`, { method: 'DELETE' });
                console.log('Deleted:', searchString, ' with id ', event.id);
@@ -45,5 +51,7 @@ const main = async () => {
       }
       console.log('Done searching total events:', events.length, 'in bucket:', BUCKET);
    }
+
+   console.log('Total matches found across all buckets:', totalMatches);
 };
 main().catch((err) => console.error('Error:', err));
