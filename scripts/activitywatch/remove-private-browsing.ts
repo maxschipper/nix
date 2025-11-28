@@ -1,4 +1,11 @@
-#!/usr/bin/env -S , bun run
+#! /usr/bin/env nix-shell
+/*
+#! nix-shell -i "bun run" -p bun
+needs to be a comment because bun tries to interpret this as ts code
+*/
+
+
+
 /*
 fetches/prints/deletes data from local activitywatch server based on your filter
 based on: https://forum.activitywatch.net/t/add-an-exclude-list/345/17
