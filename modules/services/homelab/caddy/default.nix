@@ -50,10 +50,6 @@
         reverse_proxy localhost:54
       }
 
-      https://todo.nuc.lab {
-        reverse_proxy localhost:3002
-      }
-
       https://webdav.nuc.lab {
         reverse_proxy localhost:2345
       }
