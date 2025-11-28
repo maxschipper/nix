@@ -16,6 +16,11 @@
       icon = "sh:paperless-ngx";
     }
     {
+      title = "Immich";
+      url = "https://immich.nuc.lab";
+      icon = "sh:immich";
+    }
+    {
       title = "Super Productivity";
       url = "https://todo.nuc.lab";
       icon = "sh:super-productivity";
