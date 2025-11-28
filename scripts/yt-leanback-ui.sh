@@ -1,6 +1,8 @@
 #! /bin/sh
 
+# user data flag needed so other chromium instances dont disable the other flags
 chromium \
+  --user-data-dir="$XDG_DATA_HOME/chromium/yt-leanback" \
   --kiosk \
   --disable-infobars \
   --enable-extensions \
