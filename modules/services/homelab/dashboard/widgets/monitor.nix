@@ -21,11 +21,6 @@
       icon = "sh:immich";
     }
     {
-      title = "Super Productivity";
-      url = "https://todo.nuc.lab";
-      icon = "sh:super-productivity";
-    }
-    {
       title = "WebDAV";
       url = "https://webdav.nuc.lab";
       # icon = "sh:file-station";
