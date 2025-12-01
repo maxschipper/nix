@@ -5,7 +5,7 @@
     # theme = "catppuccin-macchiato"; # overwrites background color
     settings = {
       main = {
-        pad = "15x15";
+        pad = "10x10";
         font = "JetBrains Mono Nerd Font:size=13";
         dpi-aware = "no";
         bold-text-in-bright = "palette-based";
