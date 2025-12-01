@@ -20,6 +20,9 @@
     }
   ];
 
+  # h in yt leanback ui is skip back
+  # and ü or corrensponding qwerty key is skip forward
+
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
     [commands]
     BTN_NORTH = ["pulsemixer --change-volume -5"] #X
