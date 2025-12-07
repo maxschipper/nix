@@ -6,7 +6,7 @@
 
   programs.niri.enable = true;
 
-  services.iio-niri.enable = true;
+  services.iio-niri.enable = false; # sometimes flips output upside down after resume from hibernation
 
   security.polkit.enable = true;
   services.udisks2.enable = true;
