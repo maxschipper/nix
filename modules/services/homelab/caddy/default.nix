@@ -57,6 +57,10 @@
       https://immich.nuc.lab {
         reverse_proxy localhost:2283
       }
+
+      https://hass.nuc.lab {
+        reverse_proxy localhost:8123
+      }
     '';
   };
 }
