@@ -11,6 +11,7 @@
     ../../modules/services/homelab/dns/adguard-home.nix
     ../../modules/services/homelab/pdf/stirling-pdf.nix
     ../../modules/services/homelab/immich
+    ../../modules/services/homelab/home-assistant
 
     ../../modules/services/homelab/webdav
 
