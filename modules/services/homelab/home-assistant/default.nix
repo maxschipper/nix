@@ -44,7 +44,8 @@
       "assist_pipeline"
       "conversation"
       "bluetooth"
-      "configuration"
+      "configurator"
+      "config"
       # "dhcp"
       "esphome"
       # "my"
@@ -54,6 +55,19 @@
       "matter"
       "shelly"
     ];
+    # REMOVED
+    # [R.] python3.13-aiodhcpwatcher      1.2.1
+    # [R.] python3.13-aiodiscover         2.7.1
+    # [R.] python3.13-async-upnp-client   0.46.0
+    # [R.] python3.13-av                  16.0.1
+    # [R.] python3.13-cached-ipaddress    1.0.1
+    # [R.] python3.13-file-read-backwards 3.2.0
+    # [R.] python3.13-go2rtc-client       0.3.0
+    # [R.] python3.13-netifaces           0.11.0
+    # [R.] python3.13-pyroute2            0.9.5
+    # [R.] python3.13-python-didl-lite    1.4.1
+    # [R.] python3.13-scapy               2.6.1
+
     customComponents = with pkgs.home-assistant-custom-components; [
       # prometheus_sensor
       # xiaomi_miot
