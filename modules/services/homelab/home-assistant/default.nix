@@ -4,43 +4,54 @@
     enable = true;
     config.http = {
       server_port = 8123;
-      server_host = "0.0.0.0";
+      use_x_forwarded_for = true;
+      trusted_proxies = [
+        "127.0.0.1"
+        "::1"
+      ];
     };
     configWritable = true; # but will be overwritten on rebuild
     # extraArgs = [ "--debug" ];
-    defaultIntegrations = [
-      "application_credentials"
-      "frontend"
-      "hardware"
-      "logger"
-      "network"
-      "system_health"
-      "automation"
-      "person"
-      "scene"
-      "script"
-      "tag"
-      "zone"
-      "counter"
-      "input_boolean"
-      "input_button"
-      "input_datetime"
-      "input_number"
-      "input_select"
-      "input_text"
-      "schedule"
-      "timer"
-      "backup"
-    ];
+    # defaultIntegrations = [ # lib.mkForce?
+    #   "application_credentials"
+    #   "frontend"
+    #   "hardware"
+    #   "logger"
+    #   "network"
+    #   "system_health"
+    #   "automation"
+    #   "person"
+    #   "scene"
+    #   "script"
+    #   "tag"
+    #   "zone"
+    #   "counter"
+    #   "input_boolean"
+    #   "input_button"
+    #   "input_datetime"
+    #   "input_number"
+    #   "input_select"
+    #   "input_text"
+    #   "schedule"
+    #   "timer"
+    #   "backup"
+    # ];
     extraComponents = [
-      "analytics"
-      "default_config"
+      # "default_config"
+      # "analytics"
+      "isal"
+      "mobile_app"
+      "assist_pipeline"
+      "conversation"
+      "bluetooth"
+      "configuration"
+      # "dhcp"
       "esphome"
       # "my"
       # "shopping_list"
-      # "wled"
-      # "homekit"
-      # "matter"
+      "wled"
+      "homekit"
+      "matter"
       "shelly"
     ];
     customComponents = with pkgs.home-assistant-custom-components; [
@@ -63,7 +74,6 @@
       # frontend = {
       #   themes = "!include_dir_merge_named themes";
       # };
-      feedreader.urls = [ "https://nixos.org/blogs.xml" ];
     };
   };
 }
