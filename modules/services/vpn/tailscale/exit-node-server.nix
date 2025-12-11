@@ -1,11 +1,7 @@
-{ config, ... }:
-let
-  cfg = config;
-in
 {
   services.tailscale = {
     extraSetFlags = [ "--advertise-exit-node" ];
-    useRoutingFeatures = if (cfg.networking.hostName == "nuc") then "server" else "client";
+    useRoutingFeatures = "server";
   };
 
   # boot.kernel.sysctl = {
