@@ -60,7 +60,8 @@
     # modules/SERVICES
     ##################
     ../../modules/services/vpn/tailscale
-    ../../modules/services/vpn/tailscale/tailscale-subnet-router.nix
+    ../../modules/services/vpn/tailscale/subnet-router.nix
+    ../../modules/services/vpn/tailscale/exit-node.nix
     # ../../modules/services/vpn/tailscale/taildrive.nix
     # ../../modules/services/vpn/eduvpn.nix
     # ../../modules/services/vpn/easyroam.nix
