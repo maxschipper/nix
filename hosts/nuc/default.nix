@@ -59,6 +59,8 @@
 
     # modules/SERVICES
     ##################
+    ../../modules/services/vpn/netbird/server.nix
+
     ../../modules/services/vpn/tailscale
     ../../modules/services/vpn/tailscale/subnet-router.nix
     ../../modules/services/vpn/tailscale/exit-node-server.nix
