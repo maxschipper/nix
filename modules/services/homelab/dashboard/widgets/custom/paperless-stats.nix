@@ -1,5 +1,6 @@
 let
-  PAPERLESS_URL = "paperless.nuc.lab";
+  domain = "nuc.lab";
+  PAPERLESS_URL = "paperless.${domain}";
   PAPERLESS_KEY = "";
 in
 {

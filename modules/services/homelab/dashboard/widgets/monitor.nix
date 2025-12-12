@@ -1,3 +1,6 @@
+let
+  domain = "nuc.lab";
+in
 {
   type = "monitor";
   hide-header = true;
@@ -7,22 +10,22 @@
   sites = [
     {
       title = "Gitea";
-      url = "https://gitea.nuc.lab";
+      url = "https://gitea.${domain}";
       icon = "sh:gitea";
     }
     {
       title = "Paperless";
-      url = "https://paperless.nuc.lab";
+      url = "https://paperless.${domain}";
       icon = "sh:paperless-ngx";
     }
     {
       title = "Immich";
-      url = "https://immich.nuc.lab";
+      url = "https://immich.${domain}";
       icon = "sh:immich";
     }
     {
       title = "WebDAV";
-      url = "https://webdav.nuc.lab";
+      url = "https://webdav.${domain}";
       # icon = "sh:file-station";
       icon = "sh:filesync";
       alt-status-codes = [
@@ -36,12 +39,12 @@
     }
     {
       title = "Adguard Home";
-      url = "https://adguard.nuc.lab";
+      url = "https://adguard.${domain}";
       icon = "sh:adguard-home";
     }
     # {
     #   title = "Stirling PDF";
-    #   url = "https://pdf.nuc.lab";
+    #   url = "https://pdf.${domain}";
     #   icon = "sh:stirling-pdf";
     # }
   ];

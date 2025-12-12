@@ -5,6 +5,7 @@
   ...
 }:
 let
+  domain = "nuc.lab";
   # theme-catppuccin = pkgs.fetchzip {
   #   url = "https://github.com/catppuccin/gitea/releases/latest/download/catppuccin-gitea.tar.gz";
   #   sha256 = "sha256-rZHLORwLUfIFcB6K9yhrzr+UwdPNQVSadsw6rg8Q7gs=";
@@ -35,7 +36,7 @@ in
     appName = "🍵 gitea";
     settings = {
       server = {
-        DOMAIN = "gitea.nuc.lab";
+        DOMAIN = "gitea.${domain}";
         ROOT_URL = "https://${config.services.gitea.settings.server.DOMAIN}";
         HTTP_PORT = 3000;
       };

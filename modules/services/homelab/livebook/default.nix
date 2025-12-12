@@ -1,4 +1,5 @@
 let
+  domain = "nuc.lab";
   vars = import ../../../vars.nix;
 in
 {
@@ -8,7 +9,7 @@ in
     environment = {
       LIVEBOOK_PORT = 3002;
       # LIVEBOOK_IP = "0.0.0.0";
-      # LIVEBOOK_BASE_URL_PATH = "https://livebook.nuc.lab";
+      # LIVEBOOK_BASE_URL_PATH = "https://livebook.${domain}";
       LIVEBOOK_SHUTDOWN_ENABLED = true;
     };
     # extraPackages = with pkgs; [

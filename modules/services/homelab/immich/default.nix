@@ -1,3 +1,6 @@
+let
+  domain = "nuc.lab";
+in
 {
   services.immich = {
     enable = true;
@@ -13,7 +16,7 @@
     #   # };
     # };
     settings = {
-      server.externalDomain = "https://immich.nuc.lab";
+      server.externalDomain = "https://immich.${domain}";
     };
   };
 

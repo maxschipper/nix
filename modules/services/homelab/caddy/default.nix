@@ -1,3 +1,6 @@
+let
+  domain = "nuc.lab";
+in
 {
   services.caddy = {
     enable = true;
@@ -8,57 +11,57 @@
     '';
     extraConfig = ''
 
-      https://fritz.nuc.lab {
+      https://fritz.${domain} {
         reverse_proxy 10.0.0.1
       }
 
-      https://nuc.lab {
+      https://${domain} {
         reverse_proxy localhost:5678
       }
-      https://dash.nuc.lab https://www.nuc.lab {
-        redir https://nuc.lab{uri} permanent
+      https://dash.${domain} https://www.${domain} {
+        redir https://${domain}{uri} permanent
       }
 
-      https://gitea.nuc.lab {
+      https://gitea.${domain} {
         reverse_proxy localhost:3000
       }
-      https://git.nuc.lab {
-        redir https://gitea.nuc.lab{uri} permanent
+      https://git.${domain} {
+        redir https://gitea.${domain}{uri} permanent
       }
 
-      https://paperless.nuc.lab {
+      https://paperless.${domain} {
         reverse_proxy localhost:28981
       }
 
-      https://btop.nuc.lab {
+      https://btop.${domain} {
         reverse_proxy localhost:7682
       }
 
-      https://coredns.nuc.lab {
+      https://coredns.${domain} {
         reverse_proxy localhost:8000
       }
 
-      https://pdf.nuc.lab {
+      https://pdf.${domain} {
         reverse_proxy localhost:8592
       }
 
-      https://adguard.nuc.lab {
+      https://adguard.${domain} {
         reverse_proxy localhost:3001
       }
 
-      https://dns.adguard.nuc.lab {
+      https://dns.adguard.${domain} {
         reverse_proxy localhost:54
       }
 
-      https://webdav.nuc.lab {
+      https://webdav.${domain} {
         reverse_proxy localhost:2345
       }
 
-      https://immich.nuc.lab {
+      https://immich.${domain} {
         reverse_proxy localhost:2283
       }
 
-      https://hass.nuc.lab {
+      https://hass.${domain} {
         reverse_proxy localhost:8123
       }
     '';

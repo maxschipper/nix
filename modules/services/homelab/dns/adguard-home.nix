@@ -1,3 +1,6 @@
+let
+  domain = "nuc.lab";
+in
 {
   networking.firewall.allowedTCPPorts = [
     53
@@ -26,11 +29,11 @@
       # filtering = {
       # rewrites = [
       # {
-      #   domain = "*.nuc.lab";
+      #   domain = "*.${domain}";
       #   answer = "10.0.0.2";
       # }
       # {
-      #   domain = "nuc.lab";
+      #   domain = "${domain}";
       #   answer = "10.0.0.2";
       # }
       # ];

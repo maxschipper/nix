@@ -1,3 +1,7 @@
+let
+  domain = "nuc.lab";
+in
+
 {
   name = "all";
   columns = [
@@ -17,7 +21,7 @@
           sites = [
             {
               title = "Gitea";
-              url = "https://gitea.nuc.lab";
+              url = "https://gitea.${domain}";
               icon = "sh:gitea";
             }
             {
@@ -27,12 +31,12 @@
             }
             {
               title = "Paperless";
-              url = "https://paperless.nuc.lab";
+              url = "https://paperless.${domain}";
               icon = "sh:paperless-ngx";
             }
             {
               title = "Stirling PDF";
-              url = "https://pdf.nuc.lab";
+              url = "https://pdf.${domain}";
               icon = "sh:stirling-pdf";
             }
           ];
@@ -66,7 +70,7 @@
         # {
         #   type = "dns-stats";
         #   service = "adguard";
-        #   url = "adguard.nuc.lab";
+        #   url = "adguard.${domain}";
         #   username = "admin";
         #   password = "\${ADGUARD_PASSWORD}";
         #   hour-format = "24h";
@@ -148,7 +152,7 @@
           sites = [
             {
               title = "Gitea";
-              url = "https://gitea.nuc.lab";
+              url = "https://gitea.${domain}";
               icon = "sh:gitea";
             }
             {
@@ -158,12 +162,12 @@
             }
             {
               title = "Paperless";
-              url = "https://paperless.nuc.lab";
+              url = "https://paperless.${domain}";
               icon = "sh:paperless-ngx";
             }
             {
               title = "Stirling PDF";
-              url = "https://pdf.nuc.lab";
+              url = "https://pdf.${domain}";
               icon = "sh:stirling-pdf";
             }
           ];
@@ -197,7 +201,7 @@
         # {
         #   type = "dns-stats";
         #   service = "adguard";
-        #   url = "adguard.nuc.lab";
+        #   url = "adguard.${domain}";
         #   username = "admin";
         #   password = "\${ADGUARD_PASSWORD}";
         #   hour-format = "24h";

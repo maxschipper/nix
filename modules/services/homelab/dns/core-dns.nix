@@ -1,3 +1,6 @@
+let
+  domain = "nuc.lab";
+in
 {
   services.coredns = {
     enable = false;
@@ -7,21 +10,21 @@
 
     # TODO: could use CNAMEs for everything after nuc.lab
     config = ''
-      nuc.lab {
+      ${domain} {
         bind 100.96.128.41
         hosts {
-          100.96.128.41 nuc.lab
-          100.96.128.41 dash.nuc.lab
-          100.96.128.41 paperless.nuc.lab
-          100.96.128.41 gitea.nuc.lab
-          100.96.128.41 btop.nuc.lab
-          100.96.128.41 coredns.nuc.lab
-          100.96.128.41 fritz.nuc.lab
-          100.96.128.41 pdf.nuc.lab
-          100.96.128.41 adguard.nuc.lab
-          100.96.128.41 dns.adguard.nuc.lab
-          100.96.128.41 todo.nuc.lab
-          100.96.128.41 webdav.nuc.lab
+          100.96.128.41 ${domain}
+          100.96.128.41 dash.${domain}
+          100.96.128.41 paperless.${domain}
+          100.96.128.41 gitea.${domain}
+          100.96.128.41 btop.${domain}
+          100.96.128.41 coredns.${domain}
+          100.96.128.41 fritz.${domain}
+          100.96.128.41 pdf.${domain}
+          100.96.128.41 adguard.${domain}
+          100.96.128.41 dns.adguard.${domain}
+          100.96.128.41 todo.${domain}
+          100.96.128.41 webdav.${domain}
         }
         log
         errors
