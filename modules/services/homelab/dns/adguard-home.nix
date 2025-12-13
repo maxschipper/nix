@@ -50,6 +50,11 @@ in
           "2620:fe::fe"
           "2620:fe::f9"
         ];
+        use_private_ptr_resolvers = true;
+        local_ptr_upstreams = [
+          "[10.0.0.1]"
+        ];
+
       };
 
       # if using this declaratively the rewrites are disabeld by default
