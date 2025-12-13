@@ -29,6 +29,26 @@ in
           "10.0.0.2" # local ip for router
           "100.96.128.41" # tailscale ip for tailnet
         ];
+        upstream_mode = "parallel";
+        upstream_dns = [
+          "quic://unfiltered.adguard-dns.com"
+          "quic://p0.freedns.controld.com"
+          #"https://dns10.quad9.net/dns-query"
+          # "quic://dns.quad9.net"
+          #"quic://dot.sb"
+        ];
+        fallback_dns = [
+          "tls://dns.quad9.net"
+          "https://dns.quad9.net/dns-query"
+        ];
+        bootstrap_dns = [
+          # "1.1.1.1"
+          # "8.8.8.8"
+          "9.9.9.9"
+          "149.112.112.112"
+          "2620:fe::fe"
+          "2620:fe::f9"
+        ];
       };
       # if using this declaratively the rewrites are disabeld by default
       # so one would have to enable them after every config change
