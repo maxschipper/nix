@@ -9,7 +9,8 @@
     keyboards.default = {
       ids = [
         "*"
-        "-045e:0b22:a9ce7264" # id of controller found with keyd monitor
+        "-045e:0b22:a9ce7264" # id of xbox controller found with keyd monitor
+        "-04F3:327E" # yoga touchpad emits numlock and kpminus events; NOT WORKING??
         # "0001:0001:09b4e68d" # yoga internal keyboard
       ];
       settings = {
@@ -18,10 +19,18 @@
           capslock = "overload(shift, esc)";
           # "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
           "leftshift+leftmeta+f23" = "rightmeta"; # bind copilot key to right meta
+          # TODO: create alias for copilot key?
 
           # swap super and alt
-          leftalt = "leftmeta";
-          leftmeta = "leftalt";
+          leftalt = "layer(meta)";
+          leftmeta = "layer(alt)";
+        };
+
+        # Tapping both shift keys will activate capslock.
+        # NOT WORKING
+        shift = {
+          leftshift = "capslock";
+          rightshift = "capslock";
         };
       };
     };
