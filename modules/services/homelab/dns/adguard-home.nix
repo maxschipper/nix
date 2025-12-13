@@ -52,18 +52,34 @@ in
       };
       # if using this declaratively the rewrites are disabeld by default
       # so one would have to enable them after every config change
-      # filtering = {
-      # rewrites = [
-      # {
-      #   domain = "*.${domain}";
-      #   answer = "10.0.0.2";
-      # }
-      # {
-      #   domain = "${domain}";
-      #   answer = "10.0.0.2";
-      # }
-      # ];
-      # };
+      filtering = {
+        rewrites_enabled = true;
+        rewrites = [
+          # lan
+          {
+            domain = "*.${domain}";
+            answer = "10.0.0.2";
+            enabled = true;
+          }
+          {
+            domain = "${domain}";
+            answer = "10.0.0.2";
+            enabled = true;
+          }
+
+          # tailscale
+          {
+            domain = "*.${domain}";
+            answer = "100.96.128.41";
+            enabled = true;
+          }
+          {
+            domain = "${domain}";
+            answer = "100.96.128.41";
+            enabled = true;
+          }
+        ];
+      };
 
       # ratelimit = 0; # DDoS protection
     };
