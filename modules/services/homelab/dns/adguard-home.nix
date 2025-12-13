@@ -1,5 +1,10 @@
 let
-  domain = "nuc.lab";
+  my-domain = "nuc.lab";
+
+  lan-ip = "10.0.0.2";
+  tailscale-ip = "100.96.128.41";
+  netbird-ip = "100.64.0.230";
+
 in
 {
   networking.firewall.allowedTCPPorts = [
@@ -64,37 +69,29 @@ in
         rewrites = [
           # lan
           {
-            domain = "*.${domain}";
-            answer = "10.0.0.2";
-            enabled = true;
-          }
-          {
-            domain = "${domain}";
-            answer = "10.0.0.2";
+            domain = my-domain;
+            answer = lan-ip;
             enabled = true;
           }
 
           # tailscale
           {
-            domain = "*.${domain}";
-            answer = "100.96.128.41";
-            enabled = true;
-          }
-          {
-            domain = "${domain}";
-            answer = "100.96.128.41";
+            domain = my-domain;
+            answer = tailscale-ip;
             enabled = true;
           }
 
           # netbird
           {
-            domain = "*.${domain}";
-            answer = "100.64.0.230";
+            domain = my-domain;
+            answer = netbird-ip;
             enabled = true;
           }
+
+          # CNAME for subdomains
           {
-            domain = "${domain}";
-            answer = "100.64.0.230";
+            domain = "*.${my-domain}";
+            answer = my-domain;
             enabled = true;
           }
         ];
