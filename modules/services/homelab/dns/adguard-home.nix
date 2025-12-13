@@ -51,6 +51,7 @@ in
           "2620:fe::f9"
         ];
       };
+
       # if using this declaratively the rewrites are disabeld by default
       # so one would have to enable them after every config change
       filtering = {
@@ -77,6 +78,18 @@ in
           {
             domain = "${domain}";
             answer = "100.96.128.41";
+            enabled = true;
+          }
+
+          # netbird
+          {
+            domain = "*.${domain}";
+            answer = "100.64.0.230";
+            enabled = true;
+          }
+          {
+            domain = "${domain}";
+            answer = "100.64.0.230";
             enabled = true;
           }
         ];
