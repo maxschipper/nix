@@ -10,7 +10,8 @@
       clock = "null";
       hide_version_string = true;
 
-      fg = "0x00111111";
+      # fg = "0x00111111";
+      fg = "0x00444444";
 
       hide_borders = false;
       border_fg = "0x00111111";
@@ -35,6 +36,14 @@
       brightness_up_cmd = "${pkgs.brightnessctl}/bin/brightnessctl -q s +10%";
       # brightness_down_key = F5
       # brightness_up_key = F6
+      inactivity_cmd = "shutdown now";
+      inactivity_delay = 900; # 15min in seconds
+
+      # broken?
+      # auto_login_user = "max";
+      # auto_login_session = "niri";
+
+      battery_id = "BAT0";
     };
   };
 }
