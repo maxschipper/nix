@@ -28,6 +28,7 @@ in
           "127.0.0.1"
           "10.0.0.2" # local ip for router
           "100.96.128.41" # tailscale ip for tailnet
+          "100.64.0.230" # netbird
         ];
         upstream_mode = "parallel";
         upstream_dns = [
