@@ -4,7 +4,7 @@ in
 {
   type = "monitor";
   hide-header = true;
-  cache = "1m";
+  # cache = "1m";
   title = "Services";
   # style = "compact";
   sites = [
