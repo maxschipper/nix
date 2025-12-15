@@ -3,6 +3,7 @@ let
 in
 {
   type = "dns-stats";
+  cache = "30s";
   service = "adguard";
   url = "https://adguard.${domain}";
   username = "max";
