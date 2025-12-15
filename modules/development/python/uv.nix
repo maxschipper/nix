@@ -4,7 +4,7 @@
     systemPackages = with pkgs; [
       uv
     ];
-    variables = {
+    sessionVariables = {
       UV_PYTHON_DOWNLOADS = "never";
     };
     localBinInPath = lib.mkDefault true;
