@@ -87,6 +87,7 @@
     #####################
     ../../modules/development/lsps
     ../../modules/development/typst.nix
+    ../../modules/development/python/python3.nix
     ../../modules/development/python/uv.nix
 
     # devtools
