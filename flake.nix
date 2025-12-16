@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    # nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     disko = {
       url = "github:nix-community/disko";
@@ -46,16 +46,15 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs-unstable = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations = {
-        yoga = nixpkgs.lib.nixosSystem {
+        yoga = pkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
@@ -63,7 +62,7 @@
               allowUnfree = false;
               allowUnfreePredicate =
                 pkg:
-                builtins.elem (nixpkgs.lib.getName pkg) [
+                builtins.elem (pkgs.lib.getName pkg) [
                   "hplip"
                 ];
               permittedInsecurePackages = [
@@ -82,8 +81,8 @@
 
             # inputs.niri-flake.nixosModules.niri
             # {
-            #   nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
-            #   programs.niri.package = nixpkgs.niri-unstable;
+            #   pkgs.overlays = [ inputs.niri-flake.overlays.niri ];
+            #   programs.niri.package = pkgs.niri-unstable;
             # }
 
             # inputs.mango.nixosModules.mango
@@ -92,13 +91,13 @@
           ];
         };
         # ----------------------------------------------------------
-        nuc = nixpkgs.lib.nixosSystem {
+        nuc = pkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
             config = {
               allowUnfree = false;
-              allowUnfreePredicate = pkg: builtins.elem (nixpkgs-stable.lib.getName pkg) [ ];
+              allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [ ];
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
               ];
@@ -109,7 +108,7 @@
             inherit inputs;
           };
           modules = [
-            { _module.args = { inherit pkgs-unstable; }; }
+            { _module.args = { inherit pkgs; }; }
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
@@ -117,7 +116,7 @@
           ];
         };
         # ----------------------------------------------------------
-        pc = nixpkgs.lib.nixosSystem {
+        pc = pkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -131,14 +130,14 @@
         };
         # ----------------------------------------------------------
         # imac dev machine
-        devnix = nixpkgs.lib.nixosSystem {
+        devnix = pkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
             system = "x86_64-linux";
             config = {
               allowUnfreePredicate =
                 pkg:
-                builtins.elem (nixpkgs.lib.getName pkg) [
+                builtins.elem (pkgs.lib.getName pkg) [
                   "broadcom-sta"
                 ];
               permittedInsecurePackages = [
@@ -148,27 +147,6 @@
           };
           modules = [
             ./hosts/imac/devnix
-          ];
-        };
-        # ----------------------------------------------------------
-        # imac prod machine
-        prodnix = nixpkgs-stable.lib.nixosSystem {
-          system = "x86_64-linux";
-          pkgs = import nixpkgs-stable {
-            system = "x86_64-linux";
-            config = {
-              allowUnfreePredicate =
-                pkg:
-                builtins.elem (nixpkgs-stable.lib.getName pkg) [
-                  "broadcom-sta"
-                ];
-            };
-          };
-          modules = [
-            ./hosts/imac/prodnix
-            ./modules/packages
-            ./modules/tailscale.nix
-            ./modules/paperless.nix
           ];
         };
       };
