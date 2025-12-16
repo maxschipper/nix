@@ -54,7 +54,7 @@
     in
     {
       nixosConfigurations = {
-        yoga = pkgs.lib.nixosSystem {
+        yoga = nixpkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
@@ -91,7 +91,7 @@
           ];
         };
         # ----------------------------------------------------------
-        nuc = pkgs.lib.nixosSystem {
+        nuc = nixpkgs.lib.nixosSystem {
           inherit system;
           pkgs = import nixpkgs {
             inherit system;
@@ -116,7 +116,7 @@
           ];
         };
         # ----------------------------------------------------------
-        pc = pkgs.lib.nixosSystem {
+        pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -130,7 +130,7 @@
         };
         # ----------------------------------------------------------
         # imac dev machine
-        devnix = pkgs.lib.nixosSystem {
+        devnix = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = import nixpkgs {
             system = "x86_64-linux";
