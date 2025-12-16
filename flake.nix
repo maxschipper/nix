@@ -64,6 +64,7 @@
                 pkg:
                 builtins.elem (pkgs.lib.getName pkg) [
                   "hplip"
+                  "lmstudio"
                 ];
               permittedInsecurePackages = [
                 # "libsoup-2.74.3"
