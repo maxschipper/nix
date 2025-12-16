@@ -58,6 +58,7 @@
     ../../modules/programs/cli
     ../../modules/programs/cli/others/gemini.nix
     ../../modules/programs/cli/shell/fish.nix
+    ../../modules/programs/cli/llm/lmstudio
     ../../modules/programs/laptop
     # ../../modules/programs/flatpak
 
