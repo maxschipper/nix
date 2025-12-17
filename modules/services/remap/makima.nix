@@ -25,8 +25,8 @@
 
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
     [commands]
-    BTN_NORTH = ["pulsemixer --change-volume -5 --max-volume 100"] #X
-    BTN_WEST = ["pulsemixer --change-volume -5 --max-volume 100"] #Y
+    BTN_NORTH = ["pulsemixer --change-volume -5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe"] #X
+    BTN_WEST = ["pulsemixer --change-volume -5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe"] #Y
     BTN_MODE = ["DISPLAY=:0 chromium --disable-infobars --user-agent="Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" https://youtube.com/tv > ~/makita-chromium.log 2>&1"] #Xbox button
 
 
@@ -55,10 +55,10 @@
   # TODO: SPACE for pause
   environment.etc."makima/Chromecast Remote.toml".text = ''
     [commands]
-    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -5 --max-volume 100"]
-    KEY_VOLUMEUP = ["pulsemixer --change-volume +5 --max-volume 100"]
+    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe"]
+    KEY_VOLUMEUP = ["pulsemixer --change-volume +5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe"]
+    KEY_MUTE = ["KEY_MUTE = ["pulsemixer --toggle-mute --get-mute --get-volume | awk 'NR==1{m=$1} NR==2{print $1 (m==1 ? "!" : "")}' > /tmp/xob.pipe"]"]
     # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
-    KEY_MUTE = ["pulsemixer --toggle-mute"]
 
     [remap]
     KEY_SELECT = ["KEY_ENTER"]
