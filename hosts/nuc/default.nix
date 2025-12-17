@@ -20,6 +20,7 @@
 
     ../../modules/sessions/wm/xserver
     ../../modules/sessions/wm/xserver/matchbox.nix
+    ../../modules/sessions/wm/xserver/xob.nix
 
     ############################################
     ############################################
