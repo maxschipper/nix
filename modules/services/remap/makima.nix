@@ -30,7 +30,7 @@ in
   # and ü or corrensponding qwerty key is skip forward
 
   environment.etc."makima/Xbox Wireless Controller.toml".source =
-    tomlFormat.generate "makima-chromecast-config"
+    tomlFormat.generate "makima-xbox_controller-config"
       {
         commands = {
           BTN_NORTH = [ cmd-volume-down ]; # X
