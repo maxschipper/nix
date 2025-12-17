@@ -25,8 +25,8 @@
 
   environment.etc."makima/Xbox Wireless Controller.toml".text = ''
     [commands]
-    BTN_NORTH = ["pulsemixer --change-volume -5"] #X
-    BTN_WEST = ["pulsemixer --change-volume -5"] #Y
+    BTN_NORTH = ["pulsemixer --change-volume -5 --max-volume 100"] #X
+    BTN_WEST = ["pulsemixer --change-volume -5 --max-volume 100"] #Y
     BTN_MODE = ["DISPLAY=:0 chromium --disable-infobars --user-agent="Mozilla/5.0 (PS4; Leanback Shell) Gecko/20100101 Firefox/65.0 LeanbackShell/01.00.01.75 Sony PS4/ (PS4, , no, CH)" https://youtube.com/tv > ~/makita-chromium.log 2>&1"] #Xbox button
 
 
@@ -55,8 +55,8 @@
   # TODO: SPACE for pause
   environment.etc."makima/Chromecast Remote.toml".text = ''
     [commands]
-    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -5"]
-    KEY_VOLUMEUP = ["pulsemixer --change-volume +5"]
+    KEY_VOLUMEDOWN = ["pulsemixer --change-volume -5 --max-volume 100"]
+    KEY_VOLUMEUP = ["pulsemixer --change-volume +5 --max-volume 100"]
     # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
 
     [remap]
