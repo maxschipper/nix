@@ -56,6 +56,7 @@
       nixosConfigurations = {
         yoga = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs; };
           pkgs = import nixpkgs {
             inherit system;
             config = {
@@ -70,9 +71,6 @@
                 # "libsoup-2.74.3"
               ];
             };
-          };
-          specialArgs = {
-            inherit inputs;
           };
           modules = [
             inputs.disko.nixosModules.disko
@@ -94,6 +92,7 @@
         # ----------------------------------------------------------
         nuc = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs; };
           pkgs = import nixpkgs {
             inherit system;
             config = {
@@ -105,11 +104,8 @@
 
             };
           };
-          specialArgs = {
-            inherit inputs;
-          };
           modules = [
-            { _module.args = { inherit pkgs; }; }
+            # { _module.args = { inherit pkgs; }; }
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
