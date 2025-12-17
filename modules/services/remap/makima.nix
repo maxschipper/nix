@@ -1,5 +1,6 @@
 { pkgs, ... }:
 let
+  tomlFormat = pkgs.formats.toml { };
   cmd-volume-down = "pulsemixer --change-volume -5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe";
   cmd-volume-up = "pulsemixer --change-volume +5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe";
   cmd-volume-mute = "pulsemixer --toggle-mute --get-mute --get-volume | awk 'NR==1{m=$1} NR==2{print $1 (m==1 ? \"!\" : \"\")}' > /tmp/xob.pipe";
@@ -29,7 +30,7 @@ in
   # and ü or corrensponding qwerty key is skip forward
 
   environment.etc."makima/Xbox Wireless Controller.toml".source =
-    pkgs.formats.toml.generate "makima-chromecast-config"
+    tomlFormat.generate "makima-chromecast-config"
       {
         commands = {
           BTN_NORTH = [ cmd-volume-down ]; # X
@@ -62,7 +63,7 @@ in
       };
 
   environment.etc."makima/Chromecast Remote.toml".source =
-    pkgs.formats.toml.generate "makima-chromecast-config"
+    tomlFormat.generate "makima-chromecast-config"
       {
         commands = {
           KEY_VOLUMEDOWN = [ cmd-volume-down ];
