@@ -58,6 +58,7 @@
     KEY_VOLUMEDOWN = ["pulsemixer --change-volume -5 --max-volume 100"]
     KEY_VOLUMEUP = ["pulsemixer --change-volume +5 --max-volume 100"]
     # KEY_MUTE = ["pactl set-sink-mute 104 toggle"]
+    KEY_MUTE = ["pulsemixer --toggle-mute"]
 
     [remap]
     KEY_SELECT = ["KEY_ENTER"]
@@ -65,7 +66,7 @@
     KEY_HOMEPAGE = ["KEY_ESC"]
     # KEY_VOLUMEUP = ["KEY_F3"]
     # KEY_VOLUMEDOWN = ["KEY_F2"]
-    KEY_MUTE = ["KEY_SPACE"]
+    # KEY_MUTE = ["KEY_SPACE"]
     KEY_TV = ["KEY_F11"]
 
     # not working?
