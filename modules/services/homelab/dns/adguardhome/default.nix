@@ -62,8 +62,6 @@ in
 
       };
 
-      # if using this declaratively the rewrites are disabeld by default
-      # so one would have to enable them after every config change
       filtering = {
         rewrites_enabled = true;
         rewrites = [
