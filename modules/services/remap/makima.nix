@@ -1,8 +1,8 @@
 { pkgs, ... }:
 let
   tomlFormat = pkgs.formats.toml { };
-  cmd-volume-down = "pulsemixer --change-volume -5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe";
-  cmd-volume-up = "pulsemixer --change-volume +5 --max-volume 100 --get-volume | awk '{print $1}' > /tmp/xob.pipe";
+  cmd-volume-down = "pulsemixer --change-volume -5 --max-volume 100 --get-mute --get-volume | awk 'NR==1{m=$1} NR==2{print $1 (m==1 ? \"!\" : \"\")}' > /tmp/xob.pipe";
+  cmd-volume-up = "pulsemixer --change-volume +5 --max-volume 100 --get-mute --get-volume | awk 'NR==1{m=$1} NR==2{print $1 (m==1 ? \"!\" : \"\")}' > /tmp/xob.pipe";
   cmd-volume-mute = "pulsemixer --toggle-mute --get-mute --get-volume | awk 'NR==1{m=$1} NR==2{print $1 (m==1 ? \"!\" : \"\")}' > /tmp/xob.pipe";
 in
 {
