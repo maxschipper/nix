@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-tailscale systray &
+# tailscale systray &
+netbird-ui &
+# lmstudio &
