@@ -43,6 +43,7 @@
     ../../modules/system/networking/resolved.nix
     ../../modules/system/networking/bluetooth.nix
     ../../modules/system/nix
+    ../../modules/system/nix/nh.nix
     ../../modules/system/audio
     ../../modules/system/localization
     ../../modules/system/users/max.nix

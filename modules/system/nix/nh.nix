@@ -1,6 +1,5 @@
-{ pkgs, ... }:
 let
-  vars = import ../../../vars.nix;
+  vars = import ../../vars.nix;
 in
 {
   programs.nh = {
@@ -12,7 +11,4 @@ in
       extraArgs = "--keep 5 --keep-since 3d";
     };
   };
-  environment.systemPackages = with pkgs; [
-    rippkgs
-  ];
 }
