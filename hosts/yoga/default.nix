@@ -21,6 +21,7 @@
     ../../modules/system/nix/nh.nix
     ../../modules/system/nix/nix-lsps.nix
     ../../modules/system/nix/nix-ld.nix
+    ../../modules/system/nix/rippkgs.nix
     ../../modules/system/audio
     ../../modules/system/localization
     ../../modules/system/users/max.nix
