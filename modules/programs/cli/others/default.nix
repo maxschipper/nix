@@ -4,7 +4,6 @@
     pkgs.jujutsu
     pkgs.stow
     pkgs.fastfetch
-    # pkgs.starship
     pkgs.just
     pkgs.ncdu
 
@@ -13,7 +12,10 @@
     pkgs.ffmpeg-headless
 
     pkgs.icloudpd
-
-    pkgs.vault-tasks
   ];
+
+  programs.television = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
