@@ -59,6 +59,20 @@ in
       same-tab = true;
       timeout = "5s";
     }
+    {
+      title = "Navidrome";
+      url = "https://navidrome.${domain}";
+      icon = "sh:navidrome";
+      same-tab = true;
+      timeout = "5s";
+    }
+    {
+      title = "btop";
+      url = "https://btop.${domain}";
+      icon = "sh:top";
+      same-tab = true;
+      timeout = "5s";
+    }
     # {
     #   title = "Stirling PDF";
     #   url = "https://pdf.${domain}";

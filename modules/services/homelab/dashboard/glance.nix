@@ -1,7 +1,7 @@
 let
   # page-all = import ./pages/all.nix;
   page-home = import ./pages/home-page.nix;
-  page-test = import ./pages/test.nix;
+  # page-test = import ./pages/test.nix;
 in
 {
   services.glance = {
@@ -17,7 +17,7 @@ in
       pages = [
         page-home
         # page-all
-        page-test
+        # page-test
       ];
       theme = {
         # catppuccin mocha

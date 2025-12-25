@@ -64,6 +64,10 @@ in
       https://hass.${domain} {
         reverse_proxy localhost:8123
       }
+
+      https://navidrome.${domain} {
+        reverse_proxy localhost:4533
+      }
     '';
   };
 }
