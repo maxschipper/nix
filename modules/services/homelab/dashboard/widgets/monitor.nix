@@ -52,6 +52,13 @@ in
       same-tab = true;
       timeout = "5s";
     }
+    {
+      title = "Home Assistant";
+      url = "https://hass.${domain}";
+      icon = "sh:home-assistant";
+      same-tab = true;
+      timeout = "5s";
+    }
     # {
     #   title = "Stirling PDF";
     #   url = "https://pdf.${domain}";
