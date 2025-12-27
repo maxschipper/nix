@@ -31,9 +31,9 @@ in
         port = 53; # default dns port
         bind_hosts = [
           "127.0.0.1"
-          "10.0.0.2" # local ip for router
-          "100.96.128.41" # tailscale ip for tailnet
-          "100.64.0.230" # netbird
+          lan-ip
+          tailscale-ip
+          netbird-ip
         ];
         upstream_mode = "parallel";
         upstream_dns = [
