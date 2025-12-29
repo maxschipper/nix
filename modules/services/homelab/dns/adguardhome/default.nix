@@ -1,7 +1,7 @@
 { config, lib, ... }:
 let
   homelab = config.homelab;
-  cfg = config.homelab.adguard;
+  cfg = config.homelab.services.adguard;
 in
 {
   # networking.firewall.allowedTCPPorts = [
@@ -55,14 +55,14 @@ in
         rewrites_enabled = true;
         rewrites =
           (lib.map (ip: {
-            domain = homelab.domain;
+            domain = cfg.basedomain;
             answer = ip;
             enabled = true;
           }) homelab.ips)
           ++ [
             {
-              domain = "*.${homelab.domain}";
-              answer = homelab.domain;
+              domain = "*.${cfg.basedomain}";
+              answer = cfg.basedomain;
               enabled = true;
             }
           ];
