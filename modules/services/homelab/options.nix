@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 let
   mkOpt = type: default: lib.mkOption { inherit type default; };
 in
@@ -21,7 +21,16 @@ in
                 options = {
 
                   enable = lib.mkEnableOption "this service";
+
+                  basedomain = lib.mkOption {
+                    types = lib.types.str;
+                    default = config.homelab.domain;
+                    readOnly = true;
+                    description = "The globla base domain (inherited)";
+                  };
+
                   port = mkOpt lib.types.port 0;
+                  subdomain = mkOpt lib.types.str name;
                   ip = mkOpt lib.types.str "127.0.0.1";
 
                   proxy = lib.mkOption {
@@ -30,7 +39,6 @@ in
                       options = {
 
                         enable = mkOpt lib.types.bool true;
-                        subdomain = mkOpt lib.types.str name;
                         type = mkOpt (lib.types.enum [
                           "http"
                           "https"

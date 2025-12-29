@@ -4,10 +4,10 @@ let
 
   mkAddress = subdomain: "https://${subdomain}.${cfg.domain}";
 
-  enabledServices = lib.filterAttrs (n: v: v.enable && v.proxy.enable) cfg.services;
+  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.proxy.enable) cfg.services;
 
   autoHosts = lib.mapAttrs' (name: svc: {
-    name = mkAddress svc.proxy.subdomain;
+    name = mkAddress svc.subdomain;
     value = {
       extraConfig = ''
         reverse_proxy ${svc.ip}:${toString svc.port}

@@ -17,12 +17,12 @@
       glances = {
         enable = true;
         port = 5678;
-        proxy.subdomain = "dash";
+        subdomain = "dash";
       };
 
       gitea = {
         enable = true;
-        port = 0;
+        port = 3000;
       };
 
       paperless = {
