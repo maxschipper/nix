@@ -23,7 +23,7 @@ in
                   enable = lib.mkEnableOption "this service";
 
                   basedomain = lib.mkOption {
-                    types = lib.types.str;
+                    type = lib.types.str;
                     default = config.homelab.domain;
                     readOnly = true;
                     description = "The globla base domain (inherited)";
