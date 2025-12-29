@@ -1,16 +1,19 @@
+{ config, ... }:
 let
+  cfg = config.homelab.glances;
+
   # page-all = import ./pages/all.nix;
   page-home = import ./pages/home-page.nix;
   # page-test = import ./pages/test.nix;
 in
 {
   services.glance = {
-    enable = true;
+    enable = cfg.enable;
     openFirewall = false;
     settings = {
       server = {
-        host = "0.0.0.0";
-        port = 5678;
+        host = cfg.ip;
+        port = cfg.port;
         proxied = true;
       };
       branding.hide-footer = true;

@@ -1,7 +1,7 @@
 let
   bookmarks = import ../widgets/bookmarks.nix;
   calendar = import ../widgets/calendar.nix;
-  clock = import ../widgets/clock.nix;
+  # clock = import ../widgets/clock.nix;
   dns-stats = import ../widgets/dns-stats.nix;
   markets = import ../widgets/markets.nix;
   monitor = import ../widgets/monitor.nix;
@@ -9,7 +9,7 @@ let
   releases = import ../widgets/releases.nix;
   search = import ../widgets/search.nix;
   server-stats = import ../widgets/server-stats.nix;
-  todo = import ../widgets/todo.nix;
+  # todo = import ../widgets/todo.nix;
   weather = import ../widgets/weather.nix;
   netbird = import ../widgets/custom/netbird-devices.nix;
 in
