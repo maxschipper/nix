@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  cfg = config.homelab.glances;
+  cfg = config.homelab.services.glances;
 
   # page-all = import ./pages/all.nix;
   page-home = import ./pages/home-page.nix;
