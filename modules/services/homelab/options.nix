@@ -26,11 +26,19 @@ in
                     type = lib.types.str;
                     default = config.homelab.domain;
                     readOnly = true;
-                    description = "The globla base domain (inherited)";
+                    description = "The global base domain (inherited)";
                   };
 
-                  port = mkOpt lib.types.port 0;
                   subdomain = mkOpt lib.types.str name;
+                  url = lib.mkOption {
+                    type = lib.types.str;
+                    default = "${config.homelab.services.${name}.proxy.type}://${
+                      config.homelab.services.${name}.subdomain
+                    }.${config.homelab.domain}";
+                    readOnly = true;
+                    description = "The full url [https://subdomain.domain.tld]";
+                  };
+                  port = mkOpt lib.types.port 0;
                   ip = mkOpt lib.types.str "127.0.0.1";
 
                   proxy = lib.mkOption {
