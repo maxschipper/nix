@@ -2,12 +2,10 @@
 let
   cfg = config.homelab;
 
-  mkAddress = subdomain: "https://${subdomain}.${cfg.domain}";
-
   enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.proxy.enable) cfg.services;
 
   autoHosts = lib.mapAttrs' (name: svc: {
-    name = mkAddress svc.subdomain;
+    name = svc.url;
     value = {
       extraConfig = ''
         reverse_proxy ${svc.ip}:${toString svc.port}
