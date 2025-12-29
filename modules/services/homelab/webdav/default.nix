@@ -1,9 +1,13 @@
+{ config, ... }:
+let
+  cfg = config.homelab.services.webdav;
+in
 {
   services.webdav = {
-    enable = true;
+    enable = cfg.enable;
     settings = {
-      address = "0.0.0.0";
-      port = 2345;
+      address = cfg.ip;
+      port = cfg.port;
       prefix = "/";
       permissions = "CRUD";
       directory = "/var/lib/webdav/default";
