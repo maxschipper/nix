@@ -1,9 +1,13 @@
+{ config, ... }:
+let
+  cfg = config.homelab.services.navidrome;
+in
 {
   services.navidrome = {
-    enable = true;
+    enable = cfg.enable;
     settings = {
-      Port = 4533;
-      Address = "127.0.0.1";
+      Port = cfg.port;
+      Address = cfg.ip;
       MusicFolder = "/home/max/Music";
       DataFolder = "/var/lib/navidrome";
       CacheFolder = "/var/cache/navidrome";
