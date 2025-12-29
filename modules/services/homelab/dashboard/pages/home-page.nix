@@ -1,17 +1,25 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  bookmarks = import ../widgets/bookmarks.nix;
-  calendar = import ../widgets/calendar.nix;
-  # clock = import ../widgets/clock.nix;
-  dns-stats = import ../widgets/dns-stats.nix;
-  markets = import ../widgets/markets.nix;
-  monitor = import ../widgets/monitor.nix;
-  news = import ../widgets/news.nix;
-  releases = import ../widgets/releases.nix;
-  search = import ../widgets/search.nix;
-  server-stats = import ../widgets/server-stats.nix;
-  # todo = import ../widgets/todo.nix;
-  weather = import ../widgets/weather.nix;
-  netbird = import ../widgets/custom/netbird-devices.nix;
+  call = import-path: import import-path { inherit config lib pkgs; };
+
+  bookmarks = call ../widgets/bookmarks.nix;
+  calendar = call ../widgets/calendar.nix;
+  # clock = call ../widgets/clock.nix;
+  dns-stats = call ../widgets/dns-stats.nix;
+  markets = call ../widgets/markets.nix;
+  monitor = call ../widgets/monitor.nix;
+  news = call ../widgets/news.nix;
+  releases = call ../widgets/releases.nix;
+  search = call ../widgets/search.nix;
+  server-stats = call ../widgets/server-stats.nix;
+  # todo = call ../widgets/todo.nix;
+  weather = call ../widgets/weather.nix;
+  netbird = call ../widgets/custom/netbird-devices.nix;
 in
 {
   name = "Homepage";

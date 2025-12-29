@@ -1,3 +1,4 @@
+{ ... }:
 {
   type = "custom-api";
   title = "Steam Specials";

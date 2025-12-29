@@ -1,3 +1,4 @@
+{ ... }:
 let
   NETBIRD_API_KEY = "";
 in

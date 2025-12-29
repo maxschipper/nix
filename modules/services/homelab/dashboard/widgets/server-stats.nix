@@ -1,3 +1,4 @@
+{ ... }:
 {
   type = "server-stats";
   hide-header = true;

@@ -14,7 +14,7 @@
 
     services = {
 
-      glances = {
+      glance = {
         enable = true;
         port = 5678;
         subdomain = "dash";

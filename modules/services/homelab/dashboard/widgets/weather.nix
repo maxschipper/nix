@@ -1,3 +1,4 @@
+{ ... }:
 {
   type = "weather";
   hide-header = true;

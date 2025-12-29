@@ -1,3 +1,4 @@
+{ ... }:
 {
   type = "bookmarks";
   hide-header = true;

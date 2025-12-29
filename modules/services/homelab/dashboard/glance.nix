@@ -1,9 +1,16 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  cfg = config.homelab.services.glances;
+  cfg = config.homelab.services.glance;
+
+  call = import-path: import import-path { inherit config lib pkgs; };
 
   # page-all = import ./pages/all.nix;
-  page-home = import ./pages/home-page.nix;
+  page-home = call ./pages/home-page.nix;
   # page-test = import ./pages/test.nix;
 in
 {
