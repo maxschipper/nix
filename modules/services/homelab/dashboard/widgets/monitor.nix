@@ -1,8 +1,8 @@
 { config, lib, ... }:
 let
-  cfg = config.homelab;
+  allServices = config.homelab.services;
 
-  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.monitor.enable) cfg.services;
+  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.monitor.enable) allServices;
 
   monitor = lib.mapAttrsToList (name: svc: {
     title = name;
