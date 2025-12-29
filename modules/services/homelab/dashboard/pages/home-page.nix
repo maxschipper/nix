@@ -11,6 +11,7 @@ let
   server-stats = import ../widgets/server-stats.nix;
   todo = import ../widgets/todo.nix;
   weather = import ../widgets/weather.nix;
+  netbird = import ../widgets/custom/netbird-devices.nix;
 in
 {
   name = "Homepage";
@@ -25,6 +26,7 @@ in
       size = "small";
       widgets = [
         server-stats
+        netbird
         dns-stats
         releases
       ];
