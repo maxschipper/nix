@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  homelab = config.homelab;
+  all_ips = config.homelab.ips;
   cfg = config.homelab.services.adguard;
 in
 {
@@ -26,7 +26,7 @@ in
     settings = {
       dns = {
         port = 53; # default dns port
-        bind_hosts = [ "127.0.0.1" ] ++ homelab.ips;
+        bind_hosts = [ "127.0.0.1" ] ++ all_ips;
         upstream_mode = "parallel";
         upstream_dns = [
           "quic://unfiltered.adguard-dns.com"
@@ -58,7 +58,7 @@ in
             domain = cfg.basedomain;
             answer = ip;
             enabled = true;
-          }) homelab.ips)
+          }) all_ips)
           ++ [
             {
               domain = "*.${cfg.basedomain}";
