@@ -1,7 +1,9 @@
+{ config, ... }:
 let
-  domain = "nuc.lab";
+  domain = config.homelab.domain;
 in
 {
+  imports = [ ./auto.nix ];
   services.caddy = {
     enable = true;
     logFormat = "level INFO";
@@ -9,66 +11,74 @@ in
       # debug
       local_certs
     '';
-    extraConfig = ''
+    virtualHosts = {
+      "https://fritz.${domain}".extraConfig = "reverse_proxy 10.0.0.1";
 
-      https://fritz.${domain} {
-        reverse_proxy 10.0.0.1
-      }
+      "https://${domain}".extraConfig = "redir https://dash.${domain}{uri} permanent";
+      "https://www.${domain}".extraConfig = "redir https://dash.${domain}{uri} permanent";
 
-      https://${domain} {
-        reverse_proxy localhost:5678
-      }
-      https://dash.${domain} https://www.${domain} {
-        redir https://${domain}{uri} permanent
-      }
+      "https://git.${domain}".extraConfig = "redir https://gitea.${domain}{uri} permanent";
+    };
+    # extraConfig = ''
 
-      https://gitea.${domain} {
-        reverse_proxy localhost:3000
-      }
-      https://git.${domain} {
-        redir https://gitea.${domain}{uri} permanent
-      }
+    #   https://fritz.${domain} {
+    #     reverse_proxy 10.0.0.1
+    #   }
 
-      https://paperless.${domain} {
-        reverse_proxy localhost:28981
-      }
+    #   https://${domain} {
+    #     reverse_proxy localhost:5678
+    #   }
+    #   https://dash.${domain} https://www.${domain} {
+    #     redir https://${domain}{uri} permanent
+    #   }
 
-      https://btop.${domain} {
-        reverse_proxy localhost:7682
-      }
+    #   https://gitea.${domain} {
+    #     reverse_proxy localhost:3000
+    #   }
+    #   https://git.${domain} {
+    #     redir https://gitea.${domain}{uri} permanent
+    #   }
 
-      https://coredns.${domain} {
-        reverse_proxy localhost:8000
-      }
+    #   https://paperless.${domain} {
+    #     reverse_proxy localhost:28981
+    #   }
 
-      https://pdf.${domain} {
-        reverse_proxy localhost:8592
-      }
+    #   https://btop.${domain} {
+    #     reverse_proxy localhost:7682
+    #   }
 
-      https://adguard.${domain} {
-        reverse_proxy localhost:3001
-      }
+    #   https://coredns.${domain} {
+    #     reverse_proxy localhost:8000
+    #   }
 
-      https://dns.adguard.${domain} {
-        reverse_proxy localhost:54
-      }
+    #   https://pdf.${domain} {
+    #     reverse_proxy localhost:8592
+    #   }
 
-      https://webdav.${domain} {
-        reverse_proxy localhost:2345
-      }
+    #   https://adguard.${domain} {
+    #     reverse_proxy localhost:3001
+    #   }
 
-      https://immich.${domain} {
-        reverse_proxy localhost:2283
-      }
+    #   https://dns.adguard.${domain} {
+    #     reverse_proxy localhost:54
+    #   }
 
-      https://hass.${domain} {
-        reverse_proxy localhost:8123
-      }
+    #   https://webdav.${domain} {
+    #     reverse_proxy localhost:2345
+    #   }
 
-      https://navidrome.${domain} {
-        reverse_proxy localhost:4533
-      }
-    '';
+    #   https://immich.${domain} {
+    #     reverse_proxy localhost:2283
+    #   }
+
+    #   https://hass.${domain} {
+    #     reverse_proxy localhost:8123
+    #   }
+
+    #   https://navidrome.${domain} {
+    #     reverse_proxy localhost:4533
+    #   }
+    # '';
   };
 }
 
