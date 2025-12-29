@@ -1,17 +1,14 @@
+{ config, lib, ... }:
 let
-  my-domain = "nuc.lab";
-
-  lan-ip = "10.0.0.2";
-  tailscale-ip = "100.96.128.41";
-  netbird-ip = "100.64.0.230";
-
+  homelab = config.homelab;
+  cfg = config.homelab.adguard;
 in
 {
-  networking.firewall.allowedTCPPorts = [
-    53
-    80
-    443
-  ];
+  # networking.firewall.allowedTCPPorts = [
+  #   53
+  #   80
+  #   443
+  # ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 
   # https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes
@@ -21,20 +18,15 @@ in
   };
 
   services.adguardhome = {
-    enable = true;
+    enable = cfg.enable;
     host = "0.0.0.0";
-    port = 3001; # web ui
+    port = cfg.port; # web ui
     mutableSettings = true; # changes made in the web ui persist between restarts
     extraArgs = [ ]; # extra cli args
     settings = {
       dns = {
         port = 53; # default dns port
-        bind_hosts = [
-          "127.0.0.1"
-          lan-ip
-          tailscale-ip
-          netbird-ip
-        ];
+        bind_hosts = [ "127.0.0.1" ] ++ homelab.ips;
         upstream_mode = "parallel";
         upstream_dns = [
           "quic://unfiltered.adguard-dns.com"
@@ -56,46 +48,25 @@ in
           "2620:fe::f9"
         ];
         use_private_ptr_resolvers = true;
-        local_ptr_upstreams = [
-          "[10.0.0.1]"
-        ];
-
+        local_ptr_upstreams = [ "[10.0.0.1]" ];
       };
 
       filtering = {
         rewrites_enabled = true;
-        rewrites = [
-          # lan
-          {
-            domain = my-domain;
-            answer = lan-ip;
+        rewrites =
+          (lib.map (ip: {
+            domain = homelab.domain;
+            answer = ip;
             enabled = true;
-          }
-
-          # tailscale
-          {
-            domain = my-domain;
-            answer = tailscale-ip;
-            enabled = true;
-          }
-
-          # netbird
-          {
-            domain = my-domain;
-            answer = netbird-ip;
-            enabled = true;
-          }
-
-          # CNAME for subdomains
-          {
-            domain = "*.${my-domain}";
-            answer = my-domain;
-            enabled = true;
-          }
-        ];
+          }) homelab.ips)
+          ++ [
+            {
+              domain = "*.${homelab.domain}";
+              answer = homelab.domain;
+              enabled = true;
+            }
+          ];
       };
-
-      # ratelimit = 0; # DDoS protection
     };
   };
 }

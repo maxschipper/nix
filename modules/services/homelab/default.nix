@@ -7,8 +7,9 @@
   homelab = {
     domain = "nuc.lab";
     ips = [
-      "10.0.0.2"
-      "100.64.0.230"
+      "10.0.0.2" # lan
+      "100.96.128.41" # tailscale
+      "100.64.0.230" # netbird
     ];
 
     services = {
