@@ -1,6 +1,6 @@
+{ config, ... }:
 let
-  domain = "nuc.lab";
-  PAPERLESS_URL = "paperless.${domain}";
+  cfg = config.homelab.services.paperless;
   PAPERLESS_KEY = "";
 in
 {
@@ -8,8 +8,8 @@ in
   test = {
     type = "custom-api";
     title = "Paperless-NGX";
-    title-url = "https://${PAPERLESS_URL}";
-    url = "https://${PAPERLESS_URL}/api/statistics/";
+    title-url = cfg.url;
+    url = "${cfg.url}/api/statistics/";
     headers = {
       Authorization = "Token ${PAPERLESS_KEY}";
       Accept = "application/json";
