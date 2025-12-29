@@ -1,9 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  cfg = config.homelab.services.hass;
+in
 {
   services.home-assistant = {
-    enable = true;
+    enable = cfg.enable;
     config.http = {
-      server_port = 8123;
+      server_port = cfg.port;
       use_x_forwarded_for = true;
       trusted_proxies = [
         "127.0.0.1"
