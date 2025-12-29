@@ -1,11 +1,12 @@
+{ config, ... }:
 let
-  domain = "nuc.lab";
+  cfg = config.homelab.services.immich;
 in
 {
   services.immich = {
-    enable = true;
-    port = 2283;
-    host = "0.0.0.0";
+    enable = cfg.enable;
+    port = cfg.port;
+    host = cfg.ip;
     mediaLocation = "/var/lib/immich";
     # accelerationDevices = [ "/dev/dri/renderD128" ];
     accelerationDevices = null;
@@ -16,7 +17,7 @@ in
     #   # };
     # };
     settings = {
-      server.externalDomain = "https://immich.${domain}";
+      server.externalDomain = "https://${cfg.subdomain}.${cfg.basedomain}";
     };
   };
 
