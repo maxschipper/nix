@@ -1,11 +1,13 @@
 { config, lib, ... }:
 let
   allServices = config.homelab.services;
-
   enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.monitor.enable) allServices;
 
+  capitalize =
+    s: if s == "" then "" else (lib.toUpper (builtins.substring 0 1 s)) + (builtins.substring 1 (-1) s);
+
   monitor = lib.mapAttrsToList (name: svc: {
-    title = name;
+    title = capitalize name;
     url = svc.url;
     icon = svc.monitor.icon;
     same-tab = true;
