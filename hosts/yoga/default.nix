@@ -82,6 +82,8 @@
     # ../../modules/programs/gui/virtualization/waydroid.nix
     ../../modules/programs/gui/office/libreoffice.nix
     ../../modules/programs/gui/fonts
+    ../../modules/programs/gui/fonts/iosevka.nix
+    ../../modules/programs/gui/fonts/ibm-plex-mono.nix
     ../../modules/programs/gui/cursors
     ../../modules/programs/gui/3d/orcaslicer.nix
     ../../modules/programs/gui/3d/freecad.nix
