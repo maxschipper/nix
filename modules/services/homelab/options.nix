@@ -1,6 +1,8 @@
 { lib, config, ... }:
 let
   mkOpt = type: default: lib.mkOption { inherit type default; };
+  capitalize =
+    s: if s == "" then "" else (lib.toUpper (builtins.substring 0 1 s)) + (builtins.substring 1 (-1) s);
 in
 {
   options.homelab = lib.mkOption {
@@ -64,9 +66,10 @@ in
                       options = {
 
                         enable = mkOpt lib.types.bool true;
+                        displayName = mkOpt lib.types.str (capitalize name);
                         icon = mkOpt lib.types.str "sh:${name}";
                         category = mkOpt lib.types.str "General";
-                        url = mkOpt lib.types.str ""; # Optional override if not using the subdomain
+                        url = mkOpt lib.types.str config.homelab.services.${name}.subdomain; # Optional override if not using the subdomain
 
                       };
                     };

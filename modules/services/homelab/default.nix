@@ -33,11 +33,16 @@
       adguard = {
         enable = true;
         port = 3001;
+        monitor = {
+          displayName = "AdGuard Home";
+          icon = "sh:adguard-home";
+        };
       };
 
       webdav = {
         enable = true;
         port = 2345;
+        monitor.displayName = "WebDAV";
       };
 
       immich = {
@@ -48,6 +53,10 @@
       hass = {
         enable = true;
         port = 8123;
+        monitor = {
+          displayName = "Home Assistant";
+          icon = "sh:home-assistant";
+        };
       };
 
       navidrome = {
