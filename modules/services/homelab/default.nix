@@ -18,6 +18,7 @@
         enable = true;
         port = 5678;
         subdomain = "dash";
+        monitor.enable = false;
       };
 
       gitea = {
@@ -28,6 +29,7 @@
       paperless = {
         enable = true;
         port = 28981;
+        monitor.icon = "sh:paperless-ngx";
       };
 
       adguard = {
@@ -42,7 +44,14 @@
       webdav = {
         enable = true;
         port = 2345;
-        monitor.displayName = "WebDAV";
+        monitor = {
+          displayName = "WebDAV";
+          icon = "sh:filesync";
+          statusCodes = [
+            207
+            401
+          ];
+        };
       };
 
       immich = {
