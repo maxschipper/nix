@@ -6,7 +6,7 @@
     ../../modules/services/homelab/dashboard/glance.nix
     ../../modules/services/homelab/paperless
     ../../modules/services/homelab/git/gitea
-    ../../modules/services/homelab/ttyd/btop.nix
+    # ../../modules/services/homelab/ttyd/btop.nix
     ../../modules/services/homelab/caddy
     ../../modules/services/homelab/caddy/tls-cert/trust.nix
     # ../../modules/services/homelab/dns/core-dns
