@@ -69,8 +69,8 @@ in
                         displayName = mkOpt lib.types.str (capitalize name);
                         icon = mkOpt lib.types.str "sh:${name}";
                         category = mkOpt lib.types.str "General";
-                        url = mkOpt lib.types.str config.homelab.services.${name}.subdomain; # Optional override if not using the subdomain
-
+                        url = mkOpt lib.types.str config.homelab.services.${name}.url; # Optional override if not using the subdomain
+                        statusCodes = mkOpt (lib.types.listOf (lib.types.ints.between 100 511)) [ ];
                       };
                     };
                   };
