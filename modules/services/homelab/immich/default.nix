@@ -17,7 +17,7 @@ in
     #   # };
     # };
     settings = {
-      server.externalDomain = "${cfg.proxy.type}://${cfg.subdomain}.${cfg.basedomain}";
+      server.externalDomain = cfg.url;
     };
   };
 
