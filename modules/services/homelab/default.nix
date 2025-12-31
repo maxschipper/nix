@@ -72,6 +72,27 @@
         enable = true;
         port = 4533;
       };
+
+      grafana = {
+        enable = true;
+        port = 3002;
+      };
+
+      prometheus = {
+        enable = true;
+        port = 9090;
+      };
+
+      node-exporter = {
+        enable = true;
+        port = 9100;
+      };
+
+      smart-exporter = {
+        enable = true;
+        port = 9633;
+      };
+
     };
   };
 }
