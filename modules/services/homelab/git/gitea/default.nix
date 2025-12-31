@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.homelab.services.gitea;
+  basedomain = config.homelab.domain;
 
   # theme-catppuccin = pkgs.fetchzip {
   #   url = "https://github.com/catppuccin/gitea/releases/latest/download/catppuccin-gitea.tar.gz";
@@ -37,7 +38,7 @@ in
     appName = "🍵 gitea";
     settings = {
       server = {
-        DOMAIN = "${cfg.subdomain}.${cfg.basedomain}";
+        DOMAIN = "${cfg.subdomain}.${basedomain}";
         ROOT_URL = "${cfg.proxy.type}://${config.services.gitea.settings.server.DOMAIN}";
         HTTP_PORT = cfg.port;
       };

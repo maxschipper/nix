@@ -24,13 +24,6 @@ in
 
                   enable = lib.mkEnableOption "this service";
 
-                  basedomain = lib.mkOption {
-                    type = lib.types.str;
-                    default = config.homelab.domain;
-                    readOnly = true;
-                    description = "The global base domain (inherited)";
-                  };
-
                   subdomain = mkOpt lib.types.str name;
                   url = lib.mkOption {
                     type = lib.types.str;
