@@ -60,7 +60,7 @@ in
                     };
                   };
 
-                  monitor = lib.mkOption {
+                  dash = lib.mkOption {
                     default = { };
                     type = lib.types.submodule {
                       options = {

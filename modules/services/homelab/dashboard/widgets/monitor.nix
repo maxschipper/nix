@@ -1,13 +1,13 @@
 { config, lib, ... }:
 let
   allServices = config.homelab.services;
-  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.monitor.enable) allServices;
+  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.dash.enable) allServices;
 
-  monitor = lib.mapAttrsToList (name: svc: {
-    title = svc.monitor.displayName;
-    url = svc.monitor.url;
-    icon = svc.monitor.icon;
-    alt-status-codes = svc.monitor.statusCodes;
+  monitorContent = lib.mapAttrsToList (name: svc: {
+    title = svc.dash.displayName;
+    url = svc.dash.url;
+    icon = svc.dash.icon;
+    alt-status-codes = svc.dash.statusCodes;
     same-tab = true;
     timeout = "1s";
   }) enabledServices;
@@ -19,5 +19,5 @@ in
   cache = "5s";
   title = "Services";
   # style = "compact";
-  sites = monitor;
+  sites = monitorContent;
 }

@@ -18,7 +18,7 @@
         enable = true;
         port = 5678;
         subdomain = "dash";
-        monitor.enable = false;
+        dash.enable = false;
       };
 
       gitea = {
@@ -29,13 +29,13 @@
       paperless = {
         enable = true;
         port = 28981;
-        monitor.icon = "sh:paperless-ngx";
+        dash.icon = "sh:paperless-ngx";
       };
 
       adguard = {
         enable = true;
         port = 3001;
-        monitor = {
+        dash = {
           displayName = "AdGuard Home";
           icon = "sh:adguard-home";
         };
@@ -44,7 +44,7 @@
       webdav = {
         enable = true;
         port = 2345;
-        monitor = {
+        dash = {
           displayName = "WebDAV";
           icon = "sh:filesync";
           statusCodes = [
@@ -62,7 +62,7 @@
       hass = {
         enable = true;
         port = 8123;
-        monitor = {
+        dash = {
           displayName = "Home Assistant";
           icon = "sh:home-assistant";
         };
