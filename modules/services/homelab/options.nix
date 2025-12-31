@@ -83,4 +83,35 @@ in
       };
     };
   };
+
+  config = {
+    assertions =
+      let
+        enabledServices = lib.filterAttrs (_: v: v.enable && v.port != 0) config.homelab.services;
+
+        serviceList = lib.mapAttrsToList (name: cfg: {
+          inherit name;
+          inherit (cfg) port;
+        }) enabledServices;
+
+        portMap = lib.foldl' (
+          acc: service:
+          let
+            p = toString service.port;
+            existing = acc.${p} or [ ];
+          in
+          acc // { ${p} = existing ++ [ service.name ]; }
+        ) { } serviceList;
+
+        duplicates = lib.filterAttrs (_: names: builtins.length names > 1) portMap;
+
+        msgs = lib.mapAttrsToList (
+          port: names: "Duplicate service port ${port} used by: ${lib.concatStringsSep ", " names}"
+        ) duplicates;
+      in
+      map (msg: {
+        assertion = false;
+        message = msg;
+      }) msgs;
+  };
 }
