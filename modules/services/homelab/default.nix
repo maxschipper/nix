@@ -86,11 +86,13 @@
       node-exporter = {
         enable = true;
         port = 9100;
+        dash.enable = false;
       };
 
       smart-exporter = {
         enable = true;
         port = 9633;
+        dash.enable = false;
       };
 
     };
