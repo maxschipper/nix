@@ -12,16 +12,16 @@ in
     stateDir = "prometheus2"; # will be under /var/lib/
     rules = [ ];
     globalConfig.scrape_interval = "15s";
-    scrapeConfigs = {
-      node = {
-        jobName = "node";
-        staticConfigs = [ { targets = [ "${cfgNode.ip}:${cfgNode.port}" ]; } ];
-      };
-      smart = {
-        jobName = "smart";
-        staticConfigs = [ { targets = [ "${cfgSmart.ip}:${cfgSmart.port}" ]; } ];
-      };
-    };
+    scrapeConfigs = [
+      {
+        job_name = "node";
+        static_configs = [ { targets = [ "${cfgNode.ip}:${toString cfgNode.port}" ]; } ];
+      }
+      {
+        job_name = "smart";
+        static_configs = [ { targets = [ "${cfgSmart.ip}:${toString cfgSmart.port}" ]; } ];
+      }
+    ];
 
   };
 }
