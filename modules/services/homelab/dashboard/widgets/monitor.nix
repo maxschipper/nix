@@ -8,7 +8,7 @@ let
     url = svc.dash.url;
     icon = svc.dash.icon;
     alt-status-codes = svc.dash.statusCodes;
-    same-tab = true;
+    same-tab = false;
     timeout = "1s";
   }) enabledServices;
 
