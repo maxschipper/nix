@@ -1,85 +1,28 @@
 { config, ... }:
 let
   domain = config.homelab.domain;
+  homePageURL = config.homelab.services.glance.url;
+  gitServerUrl = config.homelab.services.gitea.url;
 in
 {
   imports = [ ./auto.nix ];
   services.caddy = {
     enable = true;
-    logFormat = "level INFO";
+    # logFormat = "level INFO";
+    logFormat = "level ERROR";
+
+    # TODO: Reload Caddy instead of restarting it when configuration file changes.
+    # If you enable this option, consider setting grace_period to a non-infinite value in services.caddy.globalConfig to prevent Caddy waiting for active connections to finish, which could delay the reload essentially indefinitely.
     globalConfig = ''
       # debug
+      # the root.crt is at /var/lib/caddy/.local/share/caddy/pki/authorities/local/root.crt
       local_certs
     '';
-    virtualHosts = {
-      "https://fritz.${domain}".extraConfig = "reverse_proxy 10.0.0.1";
-
-      "https://${domain}".extraConfig = "redir https://dash.${domain}{uri} permanent";
-      "https://www.${domain}".extraConfig = "redir https://dash.${domain}{uri} permanent";
-
-      "https://git.${domain}".extraConfig = "redir https://gitea.${domain}{uri} permanent";
-    };
-    # extraConfig = ''
-
-    #   https://fritz.${domain} {
-    #     reverse_proxy 10.0.0.1
-    #   }
-
-    #   https://${domain} {
-    #     reverse_proxy localhost:5678
-    #   }
-    #   https://dash.${domain} https://www.${domain} {
-    #     redir https://${domain}{uri} permanent
-    #   }
-
-    #   https://gitea.${domain} {
-    #     reverse_proxy localhost:3000
-    #   }
-    #   https://git.${domain} {
-    #     redir https://gitea.${domain}{uri} permanent
-    #   }
-
-    #   https://paperless.${domain} {
-    #     reverse_proxy localhost:28981
-    #   }
-
-    #   https://btop.${domain} {
-    #     reverse_proxy localhost:7682
-    #   }
-
-    #   https://coredns.${domain} {
-    #     reverse_proxy localhost:8000
-    #   }
-
-    #   https://pdf.${domain} {
-    #     reverse_proxy localhost:8592
-    #   }
-
-    #   https://adguard.${domain} {
-    #     reverse_proxy localhost:3001
-    #   }
-
-    #   https://dns.adguard.${domain} {
-    #     reverse_proxy localhost:54
-    #   }
-
-    #   https://webdav.${domain} {
-    #     reverse_proxy localhost:2345
-    #   }
-
-    #   https://immich.${domain} {
-    #     reverse_proxy localhost:2283
-    #   }
-
-    #   https://hass.${domain} {
-    #     reverse_proxy localhost:8123
-    #   }
-
-    #   https://navidrome.${domain} {
-    #     reverse_proxy localhost:4533
-    #   }
-    # '';
+    virtualHosts.${homePageURL}.serverAliases = [
+      domain
+      "www.${domain}"
+    ];
+    virtualHosts.${gitServerUrl}.serverAliases = [ "https://git.${domain}" ];
+    virtualHosts."https://fritz.${domain}".extraConfig = "reverse_proxy 10.0.0.1";
   };
 }
-
-# the root.crt is at /var/lib/caddy/.local/share/caddy/pki/authorities/local/root.crt
