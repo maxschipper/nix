@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-easyroam = {
-      url = "github:0x5a4/nix-easyroam";
+      url = "github:einetuer/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # niri-flake = {
