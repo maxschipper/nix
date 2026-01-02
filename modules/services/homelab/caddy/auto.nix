@@ -7,7 +7,6 @@ let
   autoHosts = lib.mapAttrs' (name: svc: {
     name = svc.url;
     value = {
-      listenAddresses = cfg.ips;
       extraConfig = ''
         reverse_proxy ${svc.ip}:${toString svc.port}
       '';

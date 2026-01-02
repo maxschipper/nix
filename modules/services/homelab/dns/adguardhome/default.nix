@@ -5,11 +5,6 @@ let
   all_ips = config.homelab.ips;
 in
 {
-  # networking.firewall.allowedTCPPorts = [
-  #   53
-  #   80
-  #   443
-  # ];
   networking.firewall.allowedUDPPorts = [ 53 ];
 
   # https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes
