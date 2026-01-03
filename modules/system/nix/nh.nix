@@ -4,7 +4,7 @@ in
 {
   programs.nh = {
     enable = true;
-    flake = vars.nhFlake;
+    flake = vars.nixosConfigPath;
     clean = {
       enable = false;
       dates = "weekly";

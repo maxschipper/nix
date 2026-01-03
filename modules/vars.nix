@@ -1,3 +1,3 @@
 {
-  nhFlake = "/home/max/nix";
+  nixosConfigPath = "/home/max/nix";
 }

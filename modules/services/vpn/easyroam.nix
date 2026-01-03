@@ -12,6 +12,6 @@ in
   services.easyroam = {
     enable = true;
     networkmanager.enable = true;
-    pkcsFile = vars.nhFlake + "/modules/services/vpn/yoga.p12";
+    pkcsFile = vars.nixosConfigPath + "/modules/services/vpn/yoga.p12";
   };
 }
