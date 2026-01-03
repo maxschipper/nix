@@ -15,6 +15,7 @@ in
       # root_command = "doas";
       use_nvd = true;
       apply.use_nom = true;
+      confirmation.empty = "default-yes";
       aliases = {
         test = [
           "apply"
