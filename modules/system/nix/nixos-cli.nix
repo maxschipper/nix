@@ -1,3 +1,9 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   vars = import ../../vars.nix;
 in
@@ -17,4 +23,8 @@ in
       };
     };
   };
+
+  environment.systemPackages =
+    lib.optionals config.services.nixos-cli.config.apply.use_nom [ pkgs.nix-output-monitor ]
+    ++ lib.optionals config.services.nixos-cli.config.use_nvd [ pkgs.nvd ];
 }
