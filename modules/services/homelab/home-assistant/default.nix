@@ -1,96 +1,34 @@
-{ pkgs, config, ... }:
+{ config, lib, ... }:
 let
   cfg = config.homelab.services.hass;
 in
 {
-  services.home-assistant = {
-    enable = cfg.enable;
-    config.http = {
-      server_port = cfg.port;
-      use_x_forwarded_for = true;
-      trusted_proxies = [
-        "127.0.0.1"
-        "::1"
-      ];
-    };
-    configWritable = true; # but will be overwritten on rebuild
-    # extraArgs = [ "--debug" ];
-    # defaultIntegrations = [ # lib.mkForce?
-    #   "application_credentials"
-    #   "frontend"
-    #   "hardware"
-    #   "logger"
-    #   "network"
-    #   "system_health"
-    #   "automation"
-    #   "person"
-    #   "scene"
-    #   "script"
-    #   "tag"
-    #   "zone"
-    #   "counter"
-    #   "input_boolean"
-    #   "input_button"
-    #   "input_datetime"
-    #   "input_number"
-    #   "input_select"
-    #   "input_text"
-    #   "schedule"
-    #   "timer"
-    #   "backup"
-    # ];
-    extraComponents = [
-      # "default_config"
-      # "analytics"
-      "isal"
-      "mobile_app"
-      "assist_pipeline"
-      "conversation"
-      "bluetooth"
-      "configurator"
-      "config"
-      # "dhcp"
-      "esphome"
-      # "my"
-      # "shopping_list"
-      "wled"
-      "homekit"
-      "matter"
-      "shelly"
-    ];
-    # REMOVED
-    # [R.] python3.13-aiodhcpwatcher      1.2.1
-    # [R.] python3.13-aiodiscover         2.7.1
-    # [R.] python3.13-async-upnp-client   0.46.0
-    # [R.] python3.13-av                  16.0.1
-    # [R.] python3.13-cached-ipaddress    1.0.1
-    # [R.] python3.13-file-read-backwards 3.2.0
-    # [R.] python3.13-go2rtc-client       0.3.0
-    # [R.] python3.13-netifaces           0.11.0
-    # [R.] python3.13-pyroute2            0.9.5
-    # [R.] python3.13-python-didl-lite    1.4.1
-    # [R.] python3.13-scapy               2.6.1
+  config = lib.mkIf cfg.enable {
 
-    customComponents = with pkgs.home-assistant-custom-components; [
-      # prometheus_sensor
-      # xiaomi_miot
-      smartir
-      samsungtv-smart
-      dwd
-    ];
+    networking.firewall.allowedTCPPorts = [ cfg.port ];
 
-    config = {
-      homeassistant = {
-        name = "Nuc";
-        unit_system = "metric";
-        # time_zone = "CET"; # CET for winter and CEST for summer
-        # latitude = "!secret latitude";
-        # longitude = "!secret longitude";
-        # elevation = "!secret elevation";
+    virtualisation = {
+      docker = {
+        enable = true;
+        autoPrune.enable = true;
       };
-      # frontend = {
-      #   themes = "!include_dir_merge_named themes";
-      # };
+      oci-containers = {
+        backend = "docker";
+
+        containers.homeassistant = lib.mkIf cfg.enable {
+          image = "ghcr.io/home-assistant/home-assistant:stable";
+          extraOptions = [ "--network=host" ]; # Mandatory for device discovery
+          volumes = [
+            "/var/lib/home-assistant:/config"
+            "/etc/localtime:/etc/localtime:ro"
+          ];
+          environment.TZ = "Europe/Berlin";
+        };
+      };
     };
+
+    services.caddy.virtualHosts.${cfg.url}.extraConfig =
+      "reverse_proxy ${cfg.ip}:${toString cfg.port} ";
+
   };
 }
