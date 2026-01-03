@@ -87,7 +87,7 @@
     ../../modules/programs/gui/fonts/ibm-plex-mono.nix
     ../../modules/programs/gui/cursors
     ../../modules/programs/gui/3d/orcaslicer.nix
-    ../../modules/programs/gui/3d/freecad.nix
+    # ../../modules/programs/gui/3d/freecad.nix
     ../../modules/programs/gui/3d/openscad.nix
 
     # ../../modules/programs/gui/desktop-shell/quickshell.nix
