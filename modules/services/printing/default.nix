@@ -7,7 +7,4 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-  environment.systemPackages = [
-    pkgs.system-config-printer
-  ];
 }
