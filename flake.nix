@@ -5,6 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-cli = {
+      url = "github:nix-community/nixos-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +48,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       ...
     }@inputs:
@@ -73,6 +76,7 @@
             };
           };
           modules = [
+            inputs.nixos-cli.nixosModules.nixos-cli
             inputs.disko.nixosModules.disko
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
