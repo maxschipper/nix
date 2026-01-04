@@ -21,6 +21,9 @@ in
           "apply"
           "--no-boot"
         ];
+        a = [
+          "apply"
+        ];
       };
     };
   };
