@@ -114,6 +114,7 @@
           };
           modules = [
             # { _module.args = { inherit pkgs; }; }
+            inputs.nixos-cli.nixosModules.nixos-cli
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
