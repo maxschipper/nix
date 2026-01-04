@@ -13,12 +13,10 @@
   # fish enables this by default, but it is super slow when rebuilding
   documentation.man.generateCaches = false; # cache for `man -k` or `apropos`
 
-  environment.systemPackages = [
-    pkgs.fishPlugins.tide
-    pkgs.fishPlugins.puffer
-    pkgs.fishPlugins.autopair
-    pkgs.fishPlugins.sponge
-    pkgs.fishPlugins.done
+  environment.systemPackages = with pkgs; [
+    fishPlugins.puffer
+    fishPlugins.autopair
+    fishPlugins.sponge
+    fishPlugins.done
   ];
-
 }

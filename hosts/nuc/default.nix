@@ -93,6 +93,7 @@
     ##################
     ../../modules/programs/cli
     ../../modules/programs/cli/shell/fish.nix
+    ../../modules/programs/cli/shell/starship.nix
 
     # ../../modules/programs/gui/others
     # ../../modules/programs/gui/others/activitywatch.nix
