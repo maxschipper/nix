@@ -9,6 +9,10 @@
       url = "github:nix-community/nixos-cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -77,6 +81,7 @@
           };
           modules = [
             inputs.nixos-cli.nixosModules.nixos-cli
+            inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
@@ -110,6 +115,7 @@
           };
           modules = [
             # { _module.args = { inherit pkgs; }; }
+            inputs.sops-nix.nixosModules.sops
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }

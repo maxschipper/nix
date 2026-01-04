@@ -26,6 +26,7 @@
     ../../modules/system/audio
     ../../modules/system/localization
     ../../modules/system/users/max.nix
+    ../../modules/system/security/sops.nix
     # ../../modules/system/security/nitrokey.nix
     ../../modules/system/security/tpm.nix
     ../../modules/system/power
