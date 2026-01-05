@@ -1,5 +1,6 @@
 { lib, config, ... }:
 let
+  rootConfig = config;
   mkOpt = type: default: lib.mkOption { inherit type default; };
   capitalize =
     s: if s == "" then "" else (lib.toUpper (builtins.substring 0 1 s)) + (builtins.substring 1 (-1) s);
@@ -11,14 +12,14 @@ in
     type = lib.types.submodule {
       options = {
 
-        domain = mkOpt lib.types.str "";
+        domain = mkOpt lib.types.str "example.org";
         ips = mkOpt (lib.types.listOf lib.types.str) [ ];
 
         services = lib.mkOption {
           default = { };
           type = lib.types.attrsOf (
             lib.types.submodule (
-              { name, ... }:
+              { name, config, ... }:
               {
                 options = {
 
@@ -27,9 +28,7 @@ in
                   subdomain = mkOpt lib.types.str name;
                   url = lib.mkOption {
                     type = lib.types.str;
-                    default = "${config.homelab.services.${name}.proxy.type}://${
-                      config.homelab.services.${name}.subdomain
-                    }.${config.homelab.domain}";
+                    default = "${config.proxy.type}://${config.subdomain}.${rootConfig.homelab.domain}";
                     readOnly = true;
                     description = "The full url [https://subdomain.domain.tld]";
                   };
@@ -62,7 +61,7 @@ in
                         displayName = mkOpt lib.types.str (capitalize name);
                         icon = mkOpt lib.types.str "sh:${name}";
                         category = mkOpt lib.types.str "General";
-                        url = mkOpt lib.types.str config.homelab.services.${name}.url; # Optional override if not using the subdomain
+                        url = mkOpt lib.types.str config.url; # Optional override if not using the subdomain
                         statusCodes = mkOpt (lib.types.listOf (lib.types.ints.between 100 511)) [ ];
                       };
                     };
@@ -78,6 +77,7 @@ in
   };
 
   config = {
+    # to error early in the eval of the config when there are conflicting ports
     assertions =
       let
         enabledServices = lib.filterAttrs (_: v: v.enable && v.port != 0) config.homelab.services;
