@@ -15,7 +15,7 @@ let
 in
 {
   systemd.services.glance = {
-    serviceConfig.EnvironmentFile = config.sops.secrets.NETBIRD_API_KEY.path;
+    serviceConfig.EnvironmentFile = lib.mkForce config.sops.secrets.NETBIRD_API_KEY.path;
   };
   services.glance = {
     enable = cfg.enable;
