@@ -1,7 +1,4 @@
 { ... }:
-let
-  NETBIRD_API_KEY = "";
-in
 {
   type = "custom-api";
   title = "Netbird";
@@ -9,8 +6,7 @@ in
   url = "https://api.netbird.io/api/peers";
   headers = {
     Accept = "application/json";
-    Authorization = "Token ${NETBIRD_API_KEY}";
-    # Authorization = "Token $NETBIRD_API_KEY";
+    Authorization = "Token \${NETBIRD_API_KEY}";
   };
   cache = "5m";
   template = ''

@@ -14,6 +14,9 @@ let
   # page-test = import ./pages/test.nix;
 in
 {
+  systemd.services.glance = {
+    serviceConfig.EnvironmentFile = config.sops.secrets.NETBIRD_API_KEY.path;
+  };
   services.glance = {
     enable = cfg.enable;
     openFirewall = false;
