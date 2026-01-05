@@ -1,3 +1,0 @@
-{
-  nixosConfigPath = "/home/max/nix";
-}

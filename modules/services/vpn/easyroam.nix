@@ -1,7 +1,4 @@
-{ ... }:
-let
-  vars = import ../../vars.nix;
-in
+{ flakeRoot, ... }:
 {
   # NOTE:
   # https://github.com/einetuer/nix-easyroam#usage
@@ -12,6 +9,6 @@ in
   services.easyroam = {
     enable = true;
     networkmanager.enable = true;
-    pkcsFile = vars.nixosConfigPath + "/modules/services/vpn/yoga.p12";
+    pkcsFile = "${flakeRoot}/modules/services/vpn/yoga.p12";
   };
 }
