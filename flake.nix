@@ -81,7 +81,6 @@
           };
           modules = [
             inputs.nixos-cli.nixosModules.nixos-cli
-            inputs.sops-nix.nixosModules.sops
             inputs.disko.nixosModules.disko
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
@@ -115,7 +114,6 @@
           };
           modules = [
             # { _module.args = { inherit pkgs; }; }
-            inputs.sops-nix.nixosModules.sops
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
