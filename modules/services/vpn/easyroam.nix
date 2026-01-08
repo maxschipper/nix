@@ -5,6 +5,7 @@
   # , openssl pkcs12 -in Downloads/yoga.p12 -passin pass: -nokeys | , openssl x509 -noout -subject | sed -e 's/.*=//' -e
   #  's/\s*//' | wl-copy
   # identity in nmtui
+  imports = [ inputs.nix-easyroam.nixosModules.nix-easyroam ];
 
   services.easyroam = {
     enable = true;

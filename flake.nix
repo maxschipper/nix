@@ -88,7 +88,6 @@
             inputs.disko.nixosModules.disko
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
-            inputs.nix-easyroam.nixosModules.nix-easyroam
 
             # inputs.niri-flake.nixosModules.niri
             # {
