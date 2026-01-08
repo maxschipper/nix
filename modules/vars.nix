@@ -1,3 +1,3 @@
 {
-  nixRepoRoot = "/home/max/nix";
+  flakeRepoRoot = "/home/max/nix";
 }

@@ -1,6 +1,6 @@
 { flakeStoreRoot, ... }:
 let
-  vars = import flakeStoreRoot + modules/vars.nix;
+  vars = import "${flakeStoreRoot}/modules/vars.nix";
 in
 {
   programs.nh = {
