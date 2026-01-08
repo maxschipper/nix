@@ -4,5 +4,6 @@
     nixd
     nil
     nixfmt
+    nixfmt-tree
   ];
 }
