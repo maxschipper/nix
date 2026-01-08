@@ -1,17 +1,17 @@
 {
   config,
-  flakeRoot,
+  flakeStoreRoot,
   inputs,
   ...
 }:
-let
-  vars = import ../../vars.nix;
-in
+# let
+#   vars = import flakeStoreRoot + modules/vars.nix;
+# in
 {
   imports = [ inputs.nix-easyroam.nixosModules.nix-easyroam ];
 
   sops.secrets."easyroam-cert.p12" = {
-    sopsFile = "${vars.nhFlake}/secrets/easyroam-yoga.p12.enc";
+    sopsFile = "${flakeStoreRoot}/secrets/easyroam-yoga.p12.enc";
     format = "binary";
     restartUnits = [ "easyroam-install.service" ];
   };

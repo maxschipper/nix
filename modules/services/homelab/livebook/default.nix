@@ -1,11 +1,11 @@
+{ flakeStoreRoot, ... }:
 let
-  domain = "nuc.lab";
-  vars = import ../../../vars.nix;
+  vars = import flakeStoreRoot + modules/vars.nix;
 in
 {
   services.livebook = {
     enableUserService = true;
-    environmentFile = vars.nixosConfigPath + "/modules/services/homelab/livebook/livebook.env";
+    environmentFile = vars.flakeRepoRoot + /modules/services/homelab/livebook/livebook.env;
     environment = {
       LIVEBOOK_PORT = 3002;
       # LIVEBOOK_IP = "0.0.0.0";

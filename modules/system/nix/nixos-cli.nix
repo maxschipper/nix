@@ -1,17 +1,18 @@
 {
   config,
+  flakeStoreRoot,
   lib,
   pkgs,
   ...
 }:
 let
-  vars = import ../../vars.nix;
+  vars = import flakeStoreRoot + modules/vars.nix;
 in
 {
   services.nixos-cli = {
     enable = true;
     config = {
-      config_location = vars.nixosConfigPath;
+      config_location = vars.flakeRepoRoot;
       # root_command = "doas";
       use_nvd = true;
       apply.use_nom = true;

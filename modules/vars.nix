@@ -1,3 +1,3 @@
 {
-  nixosConfigPath = "/home/max/nix";
+  nixRepoRoot = "/home/max/nix";
 }
