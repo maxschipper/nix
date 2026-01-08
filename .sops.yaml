@@ -12,6 +12,11 @@ creation_rules:
           - *max
           - *yoga
           - *nuc
+  - path_regex: secrets/.+\.p12(\.enc)?$
+    key_groups:
+      - age:
+          - *max
+          - *yoga
 stores:
   json:
     indent: 2
