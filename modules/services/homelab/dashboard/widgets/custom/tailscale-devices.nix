@@ -1,6 +1,6 @@
 { ... }:
 let
-  TAILSCALE_API_KEY = "***REMOVED***";
+  TAILSCALE_API_KEY = "tskey-api-xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 in
 {
   type = "custom-api";
