@@ -4,11 +4,14 @@
   inputs,
   ...
 }:
+let
+  vars = import ../../vars.nix;
+in
 {
   imports = [ inputs.nix-easyroam.nixosModules.nix-easyroam ];
 
   sops.secrets."easyroam-cert.p12" = {
-    sopsFile = "${flakeRoot}/secrets/easyroam-yoga.p12.enc";
+    sopsFile = "${vars.nhFlake}/secrets/easyroam-yoga.p12.enc";
     format = "binary";
     restartUnits = [ "easyroam-install.service" ];
   };

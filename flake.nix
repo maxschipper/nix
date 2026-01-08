@@ -52,7 +52,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       ...
     }@inputs:
@@ -64,10 +63,7 @@
       nixosConfigurations = {
         yoga = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            inherit inputs;
-            flakeRoot = self;
-          };
+          specialArgs = { inherit inputs; };
           pkgs = import nixpkgs {
             inherit system;
             config = {
@@ -103,10 +99,7 @@
         # ----------------------------------------------------------
         nuc = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = {
-            inherit inputs;
-            flakeRoot = self;
-          };
+          specialArgs = { inherit inputs; };
           pkgs = import nixpkgs {
             inherit system;
             config = {

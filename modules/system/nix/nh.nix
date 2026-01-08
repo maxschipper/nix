@@ -1,8 +1,10 @@
-{ flakeRoot, ... }:
+let
+  vars = import ../../vars.nix;
+in
 {
   programs.nh = {
     enable = true;
-    flake = toString flakeRoot;
+    flake = vars.nixosConfigPath;
     clean = {
       enable = false;
       dates = "weekly";

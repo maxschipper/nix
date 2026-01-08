@@ -1,6 +1,5 @@
 {
   config,
-  flakeRoot,
   lib,
   pkgs,
   ...
@@ -15,15 +14,11 @@ let
   # page-test = import ./pages/test.nix;
 in
 {
-  sops.secrets.NETBIRD_API_KEY = {
-    sopsFile = "${flakeRoot}/secrets/glance.env";
-    format = "dotenv";
-    reloadUnits = [ "glance.service" ];
+  systemd.services.glance = {
+    serviceConfig.EnvironmentFile = lib.mkForce config.sops.secrets.NETBIRD_API_KEY.path;
   };
-
   services.glance = {
     enable = cfg.enable;
-    environmentFile = config.sops.secrets.NETBIRD_API_KEY.path;
     openFirewall = false;
     settings = {
       server = {
