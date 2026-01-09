@@ -8,7 +8,7 @@ in
     settings = {
       Port = cfg.port;
       Address = cfg.ip;
-      MusicFolder = "/home/max/Music";
+      MusicFolder = "/var/lib/music";
       DataFolder = "/var/lib/navidrome";
       CacheFolder = "/var/cache/navidrome";
     };
