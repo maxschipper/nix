@@ -95,6 +95,11 @@
         dash.enable = false;
       };
 
+      lidarr = {
+        enable = true;
+        port = 8686;
+      };
+
     };
   };
 }

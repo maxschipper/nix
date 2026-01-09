@@ -15,6 +15,7 @@
     ../../modules/services/homelab/immich
     ../../modules/services/homelab/home-assistant
     ../../modules/services/homelab/music/navidrome.nix
+    ../../modules/services/homelab/music/lidarr.nix
 
     ../../modules/services/homelab/webdav
 
