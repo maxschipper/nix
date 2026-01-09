@@ -6,9 +6,6 @@ in
 {
   config = lib.mkIf cfg.enable {
 
-    services.caddy.virtualHosts.${cfg.url}.extraConfig =
-      "reverse_proxy ${cfg.ip}:${toString cfg.port} ";
-
     networking = {
       enableIPv6 = enableMatter;
       firewall = {
