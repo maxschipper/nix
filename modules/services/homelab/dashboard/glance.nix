@@ -1,5 +1,6 @@
 {
   config,
+  flakeStoreRoot,
   lib,
   pkgs,
   ...
@@ -9,14 +10,20 @@ let
 
   call = import-path: import import-path { inherit config lib pkgs; };
 
-  # page-all = import ./pages/all.nix;
   page-home = call ./pages/home-page.nix;
+  # page-all = import ./pages/all.nix;
   # page-test = import ./pages/test.nix;
 in
 {
+  sops.secrets.NETBIRD_API_KEY = {
+    sopsFile = flakeStoreRoot + /secrets/glance.env;
+    format = "dotenv";
+    reloadUnits = [ "glance.service" ];
+  };
   systemd.services.glance = {
     serviceConfig.EnvironmentFile = lib.mkForce config.sops.secrets.NETBIRD_API_KEY.path;
   };
+
   services.glance = {
     enable = cfg.enable;
     openFirewall = false;
