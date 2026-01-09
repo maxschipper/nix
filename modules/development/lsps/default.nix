@@ -1,18 +1,20 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # TOML
-    pkgs.taplo
-    # pkgs.tombi
+    taplo
+    # tombi
 
     # JSON / HTML / CSS / ESLINT
-    pkgs.vscode-langservers-extracted
+    vscode-langservers-extracted
+
+    yaml-language-server
 
     # HELIX Snippets
-    # pkgs.simple-completion-language-server
+    # simple-completion-language-server
 
     # FISH
-    pkgs.fish-lsp
+    fish-lsp
 
     # pkgs.typescript-language-server
   ];
