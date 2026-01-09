@@ -16,7 +16,7 @@ in
 
           deemix = {
             image = "ghcr.io/bambanah/deemix:latest";
-            ports = [ "${cfg.ip}:${cfg.port}:6595" ];
+            ports = [ "${cfg.ip}:${toString cfg.port}:6595" ];
             volumes = [
               "/var/lib/deemix:/config"
               "/var/lib/music:/downloads"
