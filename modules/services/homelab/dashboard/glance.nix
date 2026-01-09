@@ -20,13 +20,11 @@ in
     format = "dotenv";
     reloadUnits = [ "glance.service" ];
   };
-  systemd.services.glance = {
-    serviceConfig.EnvironmentFile = lib.mkForce config.sops.secrets.NETBIRD_API_KEY.path;
-  };
 
   services.glance = {
     enable = cfg.enable;
     openFirewall = false;
+    environmentFile = config.sops.secrets.NETBIRD_API_KEY.path;
     settings = {
       server = {
         host = cfg.ip;
