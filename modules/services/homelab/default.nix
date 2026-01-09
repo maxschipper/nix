@@ -100,6 +100,11 @@
         port = 8686;
       };
 
+      deemix = {
+        enable = true;
+        port = 6595;
+      };
+
     };
   };
 }
