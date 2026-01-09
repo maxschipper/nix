@@ -20,6 +20,8 @@
     enable = true;
     networkmanager.enable = true;
     pkcsFile = config.sops.secrets."easyroam-cert.p12".path;
+    owner = "wpa_supplicant";
+    group = "networkmanager";
   };
 
   # NOTE:
