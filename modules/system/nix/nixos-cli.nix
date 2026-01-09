@@ -6,7 +6,7 @@
   ...
 }:
 let
-  vars = import "${flakeStoreRoot}/modules/vars.nix";
+  vars = import (flakeStoreRoot + /modules/vars.nix);
 in
 {
   services.nixos-cli = {
