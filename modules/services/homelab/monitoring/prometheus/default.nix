@@ -3,6 +3,7 @@ let
   cfg = config.homelab.services.prometheus;
   cfgNode = config.homelab.services.node-exporter;
   cfgSmart = config.homelab.services.smart-exporter;
+  cfgNavidrome = config.homelab.services.navidrome;
 in
 {
   services.prometheus = {
@@ -20,6 +21,10 @@ in
       {
         job_name = "smart";
         static_configs = [ { targets = [ "${cfgSmart.ip}:${toString cfgSmart.port}" ]; } ];
+      }
+      {
+        job_name = "navidrome";
+        static_configs = [ { targets = [ "${cfgNavidrome.ip}:${toString cfgNavidrome.port}" ]; } ];
       }
     ];
 

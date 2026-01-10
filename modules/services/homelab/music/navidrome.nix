@@ -11,6 +11,7 @@ in
       MusicFolder = "/var/lib/music";
       DataFolder = "/var/lib/navidrome";
       CacheFolder = "/var/cache/navidrome";
+      Prometheus.Enabled = true;
       Scanner.WatcherWait = "30s";
     };
   };
