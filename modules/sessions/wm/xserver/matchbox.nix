@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # matchbox
+    matchbox
     unclutter-xfixes
     xdotool
     kitty
