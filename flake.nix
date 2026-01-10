@@ -58,7 +58,6 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations = {
@@ -74,13 +73,11 @@
               allowUnfree = false;
               allowUnfreePredicate =
                 pkg:
-                builtins.elem (pkgs.lib.getName pkg) [
+                builtins.elem (inputs.nixpkgs.lib.getName pkg) [
                   "hplip"
                   "lmstudio"
                 ];
-              permittedInsecurePackages = [
-                # "libsoup-2.74.3"
-              ];
+              permittedInsecurePackages = [ ];
             };
           };
           modules = [
@@ -111,20 +108,43 @@
             inherit system;
             config = {
               allowUnfree = false;
-              allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [ ];
-              permittedInsecurePackages = [
-                # "libsoup-2.74.3"
-              ];
+              allowUnfreePredicate = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [ ];
+              permittedInsecurePackages = [ ];
 
             };
           };
           modules = [
-            # { _module.args = { inherit pkgs; }; }
             inputs.nixos-cli.nixosModules.nixos-cli
             inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
             inputs.nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
             ./hosts/nuc
+          ];
+        };
+        imac = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
+            flakeStoreRoot = self;
+          };
+          pkgs = import nixpkgs {
+            inherit system;
+            config = {
+              allowUnfree = false;
+              allowUnfreePredicate = pkg: builtins.elem (inputs.nipxkgs.lib.getName pkg) [
+                  "broadcom-sta"
+                 ];
+              permittedInsecurePackages = [
+                "broadcom-sta-6.30.223.271-57-6.12.47"
+                 ];
+            };
+          };
+          modules = [
+            inputs.nixos-cli.nixosModules.nixos-cli
+            # inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
+            inputs.nix-index-database.nixosModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
+            ./hosts/imac
           ];
         };
         # ----------------------------------------------------------
@@ -149,7 +169,7 @@
             config = {
               allowUnfreePredicate =
                 pkg:
-                builtins.elem (pkgs.lib.getName pkg) [
+                builtins.elem (inputs.nixpkgs.lib.getName pkg) [
                   "broadcom-sta"
                 ];
               permittedInsecurePackages = [
