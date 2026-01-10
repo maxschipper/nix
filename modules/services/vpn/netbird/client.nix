@@ -1,6 +1,4 @@
 {
-  services.netbird = {
-    enable = true;
-    useRoutingFeatures = "client";
-  };
+  imports = [ ./. ];
+  services.netbird.useRoutingFeatures = "client";
 }
