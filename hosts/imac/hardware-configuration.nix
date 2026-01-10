@@ -11,7 +11,6 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./nixos-hardware-imac14_2.nix
   ];
 
   boot.initrd.availableKernelModules = [

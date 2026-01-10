@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    # nixpkgs-stable.url = "nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-cli = {
       url = "github:nix-community/nixos-cli";
@@ -25,183 +24,73 @@
       url = "github:einetuer/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # niri-flake = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # caelestia-cli = {
-    #   url = "github:caelestia-dots/cli";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.caelestia-shell.follows = "caelestia-shell";
-    # };
-    # caelestia-shell = {
-    #   url = "github:caelestia-dots/shell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.caelestia-cli.follows = "caelestia-cli";
-    #   # inputs.quickshell.follows = "quickshell";
-    # };
-    # ignis = {
-    #   url = "github:ignis-sh/ignis";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # mango = {
-    #   url = "github:DreamMaoMao/mango";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs =
+    { self, nixpkgs, ... }@inputs:
     {
-      self,
-      nixpkgs,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        yoga =
-          let
-            system = "x86_64-linux";
-          in
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            specialArgs = {
-              inherit inputs;
-              flakeStoreRoot = self;
+      nixosConfigurations =
+        let
+          args = { inherit inputs flakeRepoRoot flakeStoreRoot; };
+          flakeStoreRoot = self;
+          flakeRepoRoot = "/home/max/nix";
+
+          allowUnfree = allowedUnfreePkgs: {
+            nixpkgs.config = {
+              allowUnfree = false;
+              allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) allowedUnfreePkgs;
             };
-            pkgs = import nixpkgs {
-              inherit system;
-              config = {
-                allowUnfree = false;
-                allowUnfreePredicate =
-                  pkg:
-                  builtins.elem (inputs.nixpkgs.lib.getName pkg) [
-                    "hplip"
-                    "lmstudio"
-                  ];
-                permittedInsecurePackages = [ ];
-              };
-            };
+          };
+          allowInsecure = allowedInsecurePkgs: {
+            nixpkgs.config.permittedInsecurePackages = allowedInsecurePkgs;
+          };
+        in
+        {
+          # ----------------------------------------------------------
+          yoga = nixpkgs.lib.nixosSystem {
+            specialArgs = args;
             modules = [
-              inputs.nixos-cli.nixosModules.nixos-cli
-              inputs.disko.nixosModules.disko
-              inputs.nix-index-database.nixosModules.nix-index
-              { programs.nix-index-database.comma.enable = true; }
-
-              # inputs.niri-flake.nixosModules.niri
-              # {
-              #   pkgs.overlays = [ inputs.niri-flake.overlays.niri ];
-              #   programs.niri.package = pkgs.niri-unstable;
-              # }
-
-              # inputs.mango.nixosModules.mango
-              # { programs.mango.enable = true; }
+              (allowUnfree [
+                "hplip"
+                "lmstudio"
+              ])
+              (allowInsecure [ ])
               ./hosts/yoga
             ];
           };
-        # ----------------------------------------------------------
-        nuc =
-          let
-            system = "x86_64-linux";
-          in
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            specialArgs = {
-              inherit inputs;
-              flakeStoreRoot = self;
-            };
-            pkgs = import nixpkgs {
-              inherit system;
-              config = {
-                allowUnfree = false;
-                allowUnfreePredicate = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [ ];
-                permittedInsecurePackages = [ ];
-
-              };
-            };
+          # ----------------------------------------------------------
+          nuc = nixpkgs.lib.nixosSystem {
+            specialArgs = args;
             modules = [
-              inputs.nixos-cli.nixosModules.nixos-cli
+              (allowUnfree [ ])
+              (allowInsecure [ ])
               inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
-              inputs.nix-index-database.nixosModules.nix-index
-              { programs.nix-index-database.comma.enable = true; }
               ./hosts/nuc
             ];
           };
-        # ----------------------------------------------------------
-        imac =
-          let
-            system = "x86_64-linux";
-          in
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            specialArgs = {
-              inherit inputs;
-              flakeStoreRoot = self;
-            };
-            pkgs = import nixpkgs {
-              inherit system;
-              config = {
-                allowUnfree = false;
-                allowUnfreePredicate =
-                  pkg:
-                  builtins.elem (inputs.nixpkgs.lib.getName pkg) [
-                    "broadcom-sta"
-                  ];
-                permittedInsecurePackages = [
-                  "broadcom-sta-6.30.223.271-57-6.12.47"
-                  "broadcom-sta-6.30.223.271-59-6.12.64"
-                ];
-              };
-            };
+          # ----------------------------------------------------------
+          imac = nixpkgs.lib.nixosSystem {
+            specialArgs = args;
             modules = [
-              inputs.nixos-cli.nixosModules.nixos-cli
-              # inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
-              inputs.nix-index-database.nixosModules.nix-index
-              { programs.nix-index-database.comma.enable = true; }
+              (allowUnfree [ ])
+              (allowInsecure [ ])
+              inputs.nixos-hardware.nixosModules.apple-imac-14-2
               ./hosts/imac
             ];
           };
-        # ----------------------------------------------------------
-        pc =
-          let
-            system = "x86_64-linux";
-          in
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            pkgs = import nixpkgs {
-              inherit system;
-            };
+          # ----------------------------------------------------------
+          pc = nixpkgs.lib.nixosSystem {
+            specialArgs = args;
             modules = [
+              (allowUnfree [ ])
+              (allowInsecure [ ])
               ./hosts/pc
               ./modules/packages
               ./modules/packages/gui
               ./modules/tailscale.nix
             ];
           };
-        # ----------------------------------------------------------
-        # imac dev machine
-        devnix =
-          let
-            system = "x86_64-linux";
-          in
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            pkgs = import nixpkgs {
-              inherit system;
-              config = {
-                allowUnfreePredicate =
-                  pkg:
-                  builtins.elem (inputs.nixpkgs.lib.getName pkg) [
-                    "broadcom-sta"
-                  ];
-                permittedInsecurePackages = [
-                  "broadcom-sta-6.30.223.271-57-6.12.47"
-                ];
-              };
-            };
-            modules = [
-              ./hosts/imacs/devnix
-            ];
-          };
-      };
+          # ----------------------------------------------------------
+        };
     };
 }

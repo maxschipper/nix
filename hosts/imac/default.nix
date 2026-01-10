@@ -25,6 +25,7 @@
     ../../modules/system/networking/resolved.nix
     ../../modules/system/networking/bluetooth.nix
     ../../modules/system/nix
+    ../../modules/system/nix/comma.nix
     ../../modules/system/nix/nh.nix
     ../../modules/system/nix/nixos-cli.nix
     ../../modules/system/nix/nix-lsps.nix

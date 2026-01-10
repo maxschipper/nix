@@ -1,11 +1,8 @@
-{ flakeStoreRoot, ... }:
-let
-  vars = import (flakeStoreRoot + /modules/vars.nix);
-in
+{ flakeRepoRoot, ... }:
 {
   services.livebook = {
     enableUserService = true;
-    environmentFile = vars.flakeRepoRoot + /modules/services/homelab/livebook/livebook.env;
+    environmentFile = flakeRepoRoot + /modules/services/homelab/livebook/livebook.env;
     environment = {
       LIVEBOOK_PORT = 3002;
       # LIVEBOOK_IP = "0.0.0.0";

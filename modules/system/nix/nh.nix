@@ -1,11 +1,8 @@
-{ flakeStoreRoot, ... }:
-let
-  vars = import (flakeStoreRoot + /modules/vars.nix);
-in
+{ flakeRepoRoot, ... }:
 {
   programs.nh = {
     enable = true;
-    flake = vars.flakeRepoRoot;
+    flake = flakeRepoRoot;
     clean = {
       enable = false;
       dates = "weekly";

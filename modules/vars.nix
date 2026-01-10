@@ -1,3 +1,0 @@
-{
-  flakeRepoRoot = "/home/max/nix";
-}
