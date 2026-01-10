@@ -4,12 +4,10 @@ keys:
   # host ssh keys
   - &yoga age12hhwf7vqzc4ct5u0zxpnf0jrgdazhpwzpkq405f5hcjdk8gle4jqj7czvx
   - &nuc age1tzxvzx8kqvpaklsvulyr7phjqqtevjhxtyvz93qz67upnuam9qjs3dmrej
-
 creation_rules:
   # - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
   - path_regex: secrets/.+$
-    # key_groups:
-  - age:
+    age:
       - *max
       - *yoga
       - *nuc
