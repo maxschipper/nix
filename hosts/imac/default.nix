@@ -2,6 +2,11 @@
   networking.hostName = "imac";
   imports = [
 
+    ../../modules/services/vpn/netbird/server.nix
+
+    ../../modules/services/vpn/tailscale
+    ../../modules/services/vpn/tailscale/exit-node-server.nix
+
     ./configuration.nix
     ./hardware-configuration.nix
 
@@ -40,11 +45,6 @@
 
     # modules/SERVICES
     ##################
-    # ../../modules/services/vpn/netbird/server.nix
-
-    # ../../modules/services/vpn/tailscale
-    # ../../modules/services/vpn/tailscale/subnet-router.nix
-    # ../../modules/services/vpn/tailscale/exit-node-server.nix # conflicts with netbird/server.nix
     ../../modules/services/remap/keyd.nix
     ../../modules/services/ssh/openssh.nix
     # ../../modules/services/streaming/sunshine.nix

@@ -199,7 +199,7 @@
               };
             };
             modules = [
-              ./hosts/imac/devnix
+              ./hosts/imacs/devnix
             ];
           };
       };
