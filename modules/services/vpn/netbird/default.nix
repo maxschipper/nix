@@ -1,9 +1,4 @@
-{
-  config,
-  flakeStoreRoot,
-  lib,
-  ...
-}:
+{ config, flakeStoreRoot, ... }:
 let
   cfgClient = config.services.netbird.clients.default;
 in
@@ -15,7 +10,6 @@ in
   };
 
   services.netbird = {
-    # useRoutingFeatures = "client"; # will be set in different client.nix / server.nix files
 
     clients.default = {
       port = 51820;
@@ -24,10 +18,6 @@ in
       interface = "nb";
       hardened = false;
       logLevel = "warning";
-      # dns-resolver = {
-      #   address = null;
-      #   port = 53;
-      # };
 
       config = {
         DisableSSHConfig = true;
@@ -40,9 +30,4 @@ in
       };
     };
   };
-
-  users.users.max.extraGroups = lib.mkIf cfgClient.hardened [ cfgClient.user.group ];
-  # systemd.services.${cfgClient.service.name}.serviceConfig.AmbientCapabilities = [
-  #   "CAP_NET_BIND_SERVICE"
-  # ];
 }
