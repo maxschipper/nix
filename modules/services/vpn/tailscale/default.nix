@@ -10,7 +10,7 @@
     enable = true;
     openFirewall = true;
     disableUpstreamLogging = true;
-    authKeyFile = config.sops.secrets."tailscale-auth-key".path;
+    # authKeyFile = config.sops.secrets."tailscale-auth-key".path;
     # authKeyParameters.ephemeral = false;
   };
 }

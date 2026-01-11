@@ -1,13 +1,13 @@
-{ config, flakeStoreRoot, ... }:
-let
-  cfgClient = config.services.netbird.clients.default;
-in
+# { config, flakeStoreRoot, ... }:
+# let
+#   cfgClient = config.services.netbird.clients.default;
+# in
 {
-  sops.secrets."netbird-setup-key" = {
-    sopsFile = flakeStoreRoot + /secrets/netbird-setup-key;
-    format = "binary";
-    restartUnits = [ "${cfgClient.service.name}.service" ];
-  };
+  # sops.secrets."netbird-setup-key" = {
+  #   sopsFile = flakeStoreRoot + /secrets/netbird-setup-key;
+  #   format = "binary";
+  #   restartUnits = [ "${cfgClient.service.name}.service" ];
+  # };
 
   services.netbird = {
 
@@ -23,11 +23,11 @@ in
         DisableSSHConfig = true;
       };
 
-      login = {
-        enable = true;
-        setupKeyFile = config.sops.secrets."netbird-setup-key".path;
-        systemdDependencies = [ "sops-install-secrets.service" ];
-      };
+      # login = {
+      #   enable = true;
+      #   setupKeyFile = config.sops.secrets."netbird-setup-key".path;
+      #   systemdDependencies = [ "sops-install-secrets.service" ];
+      # };
     };
   };
 }
