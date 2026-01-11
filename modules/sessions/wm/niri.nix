@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ./.common-wayland.nix
@@ -8,17 +8,40 @@
 
   services.iio-niri.enable = false; # sometimes flips output upside down after resume from hibernation
 
+  services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
   services.udisks2.enable = true;
   services.gvfs.enable = true;
 
-  # Required for screen sharing
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    description = "gnome-polkit-agent";
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gnome
       pkgs.xdg-desktop-portal-gtk
     ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.Settings" = [ "gnome" ];
+      };
+      niri = {
+        default = lib.mkForce [ "gtk" ];
+        # default = lib.mkForce [ "gnome" "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "niri" ];
+      };
+    };
   };
 
   programs.gamemode.enable = true;
@@ -34,10 +57,10 @@
 
     pkgs.blueman
 
-    pkgs.papirus-icon-theme
+    # pkgs.papirus-icon-theme
 
+    pkgs.polkit_gnome
     pkgs.xwayland-satellite
-    pkgs.gnome-keyring
     pkgs.nautilus
     pkgs.fuzzel
     pkgs.bemoji
