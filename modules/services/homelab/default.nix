@@ -103,6 +103,7 @@
       deemix = {
         enable = true;
         port = 6595;
+        dash.icon = "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/deemix.webp";
       };
 
     };
