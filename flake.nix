@@ -79,7 +79,10 @@
           imac = nixpkgs.lib.nixosSystem {
             specialArgs = args;
             modules = [
-              (allowUnfree [ ])
+              (allowUnfree [
+                "nvidia-x11"
+                "nvidia-settings"
+              ])
               (allowInsecure [ ])
               inputs.nixos-hardware.nixosModules.apple-imac-14-2
               ./hosts/imac
