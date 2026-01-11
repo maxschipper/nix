@@ -1,4 +1,10 @@
+{ lib, ... }:
 {
+  boot.kernel.sysctl = {
+    "net.ipv4.conf.all.forwarding" = lib.mkForce true;
+    "net.ipv6.conf.all.forwarding" = lib.mkForce true;
+  };
+
   networking.nameservers = [
     "9.9.9.9"
     "149.112.112.112"
