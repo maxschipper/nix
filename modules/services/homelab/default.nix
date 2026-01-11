@@ -96,7 +96,7 @@
       };
 
       lidarr = {
-        enable = true;
+        enable = false;
         port = 8686;
       };
 
