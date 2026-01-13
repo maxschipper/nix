@@ -84,7 +84,7 @@
     ../../modules/programs/gui/passwordmanager/ente-auth.nix
     ../../modules/programs/gui/virtualization/virt-manager.nix
     # ../../modules/programs/gui/virtualization/waydroid.nix
-    ../../modules/programs/gui/office/libreoffice.nix
+    # ../../modules/programs/gui/office/libreoffice.nix
     ../../modules/programs/gui/fonts
     ../../modules/programs/gui/fonts/iosevka.nix
     ../../modules/programs/gui/fonts/ibm-plex-mono.nix
