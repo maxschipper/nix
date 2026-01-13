@@ -67,7 +67,7 @@
     ../../modules/programs/cli/shell/fish.nix
     ../../modules/programs/cli/shell/starship.nix
     ../../modules/programs/cli/llm/lmstudio
-    ../../modules/programs/cli/llm/opencode
+    # ../../modules/programs/cli/llm/opencode
     ../../modules/programs/laptop
     # ../../modules/programs/flatpak
 
