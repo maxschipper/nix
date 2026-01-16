@@ -9,9 +9,11 @@
     keyboards.default = {
       ids = [
         "*"
+        # "0001:0001:09b4e68d" # yoga internal keyboard
+        # "17ef:619e:a7a9c955" # lenovo wireless keyboard
         "-045e:0b22:a9ce7264" # id of xbox controller found with keyd monitor
         "-04F3:327E" # yoga touchpad emits numlock and kpminus events; NOT WORKING??
-        # "0001:0001:09b4e68d" # yoga internal keyboard
+        "-18d1:9450:809e75e5" # chromecast remote
       ];
       settings = {
         main = {
@@ -34,6 +36,10 @@
         };
       };
     };
+    # keyboards.chromecast-remote = {
+    #   ids = [ "18d1:9450" ];
+    #   settings = { };
+    # };
   };
 
   users.groups.keyd.members = [ "max" ];

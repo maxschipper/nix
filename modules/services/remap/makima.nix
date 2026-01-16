@@ -1,3 +1,4 @@
+# NOTE: for makima to start keyd needs to be stopped, but can be started again after
 { pkgs, ... }:
 let
   tomlFormat = pkgs.formats.toml { };
