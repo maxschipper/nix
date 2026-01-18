@@ -1,4 +1,5 @@
 {
+  networking.hostName = "yoga";
   imports = [
     ./configuration.nix
     ./disko.nix
@@ -96,18 +97,18 @@
     # ../../modules/programs/gui/desktop-shell/quickshell.nix
     # ../../modules/programs/gui/desktop-shell/ignis.nix
 
-    # modules/DEVELOPMENT
+    # development/langs
     #####################
-    ../../modules/development/lsps
-    ../../modules/development/typst.nix
-    ../../modules/development/python/python3.nix
-    ../../modules/development/python/uv.nix
-    ../../modules/development/python/lsp.nix
+    ../../modules/development/langs/default-lsps.nix
+    ../../modules/development/langs/typst
+    ../../modules/development/langs/fish
+    ../../modules/development/langs/python
 
-    # devtools
+    # development/tools
     #####################
     ../../modules/development/tools/jj.nix
     ../../modules/development/tools/direnv.nix
+    ../../modules/development/tools/jq.nix
 
     # games
     #####################
@@ -115,5 +116,4 @@
 
     ../../modules/services/homelab/caddy/tls-cert/trust.nix
   ];
-  networking.hostName = "yoga";
 }
