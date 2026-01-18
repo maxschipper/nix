@@ -103,6 +103,7 @@
     ../../modules/development/langs/typst
     ../../modules/development/langs/fish
     ../../modules/development/langs/python
+    ../../modules/development/langs/typescript/bun.nix
 
     # development/tools
     #####################
