@@ -99,6 +99,7 @@
 
     # development/langs
     #####################
+    ../../modules/development/port5432.nix
     ../../modules/development/langs/default-lsps.nix
     ../../modules/development/langs/typst
     ../../modules/development/langs/fish
