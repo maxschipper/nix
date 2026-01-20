@@ -34,6 +34,7 @@
     ../../modules/system/power
     ../../modules/system/tty/tty.nix
     ../../modules/system/xdg/baseDirSpec
+    ../../modules/system/xdg/defaultApps.nix
 
     # modules/SESSIONS
     ##################
