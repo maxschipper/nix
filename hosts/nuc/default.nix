@@ -65,7 +65,7 @@
     # ../../modules/system/security/tpm.nix
     ../../modules/system/security/sops-nix.nix
     # ../../modules/system/power
-    ../../modules/system/env-vars/xdg.nix
+    ../../modules/system/xdg/baseDirSpec
 
     # modules/SESSIONS
     ##################

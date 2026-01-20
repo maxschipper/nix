@@ -1,15 +1,5 @@
 {
   environment.sessionVariables = {
-    XDG_CACHE_HOME = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_STATE_HOME = "$HOME/.local/state";
-
-    # XDG_DATA_DIRS = "/usr/local/share/:/usr/share/";
-    # XDG_CONFIG_DIRS = "/etc/xdg";
-  };
-
-  environment.sessionVariables = {
     HISTFILE = "$XDG_STATE_HOME/bash/history";
     XCOMPOSECACHE = "$XDG_CACHE_HOME/X11/xcompose";
     RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
@@ -23,5 +13,4 @@
     NPM_CONFIG_TMP = "$XDG_RUNTIME_DIR/npm";
     DOTNET_CLI_HOME = "$XDG_DATA_HOME/dotnet";
   };
-
 }
