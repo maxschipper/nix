@@ -1,6 +1,6 @@
 {
   xdg.mime.defaultApplications = {
-    "image/*" = "imv";
-    "video/*" = "mpv";
+    "image/*" = "imv.desktop";
+    "video/*" = "mpv.desktop";
   };
 }
