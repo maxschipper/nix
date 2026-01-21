@@ -13,6 +13,6 @@
     pkgs.ffmpeg-full
     # pkgs.btrfs-assistant
     # pkgs.handbrake
-    pkgs.vscodium-fhs
+    # pkgs.vscodium-fhs
   ];
 }
