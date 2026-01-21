@@ -12,8 +12,4 @@
     pkgs.mpv
     pkgs.imv
   ];
-  programs.nautilus-open-any-terminal = {
-    enable = true;
-    terminal = "foot-client";
-  };
 }
