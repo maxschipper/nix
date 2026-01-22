@@ -34,6 +34,7 @@
     keyboards.yoga-keyboard = {
       ids = [ "0001:0001:09b4e68d" ];
       settings.main = {
+        capslock = "overload(shift, esc)";
         # TODO: create alias for copilot key?
         # "leftshift+leftmeta+f23" = "rightcontrol"; # bind copilot key to right control
         "leftshift+leftmeta+f23" = "rightmeta"; # bind copilot key to right meta
