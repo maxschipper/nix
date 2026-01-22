@@ -64,14 +64,17 @@
 
     # modules/PROGRAMS
     ##################
+    ../../modules/programs/laptop
+    # ../../modules/programs/flatpak
+
     ../../modules/programs/cli
     ../../modules/programs/cli/others/gemini.nix
     ../../modules/programs/cli/shell/fish.nix
     ../../modules/programs/cli/shell/starship.nix
     ../../modules/programs/cli/llm/lmstudio
     # ../../modules/programs/cli/llm/opencode
-    ../../modules/programs/laptop
-    # ../../modules/programs/flatpak
+
+    ../../modules/programs/cli/scripts/battery-conservation.nix
 
     ../../modules/programs/gui/others
     ../../modules/programs/gui/others/activitywatch.nix
