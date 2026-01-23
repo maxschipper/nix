@@ -5,13 +5,14 @@
     ./niri-xdg-portals.nix
 
     ./niri-systemd-services/foot-server.nix
-    ./niri-systemd-services/udiskie.nix
     ./niri-systemd-services/polkit-gnome.nix
     ./niri-systemd-services/sunsetr.nix
     ./niri-systemd-services/swayidle.nix
     ./niri-systemd-services/swaync.nix
     ./niri-systemd-services/swayosd.nix
     ./niri-systemd-services/swww.nix
+    ./niri-systemd-services/udiskie.nix
+    ./niri-systemd-services/vicinae.nix
     ./niri-systemd-services/waybar.nix
   ];
 
@@ -43,10 +44,10 @@
 
     hyprpicker
     better-control
+    libqalculate
 
     # papirus-icon-theme
     # walker
-    # libqalculate
     # zenity # gui for scripts, used by waybar-hotspot
   ];
 }

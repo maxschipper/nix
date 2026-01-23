@@ -6,5 +6,6 @@
     XDG_SESSION_TYPE = "wayland";
     QT_QPA_PLATFORM = "wayland";
     NO_AT_BRIDGE = "1"; # disables gtk accessibility features
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 }
