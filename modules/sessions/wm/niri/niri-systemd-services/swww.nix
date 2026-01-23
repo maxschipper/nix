@@ -11,6 +11,7 @@
 
     serviceConfig = {
       ExecStart = "${pkgs.swww}/bin/swww-daemon";
+      ExecStartPost = "${pkgs.swww}/bin/swww restore"; # daemon fails to load cache
       Restart = "on-failure";
     };
   };
