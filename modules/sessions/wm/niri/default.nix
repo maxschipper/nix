@@ -5,6 +5,7 @@
     ./niri-xdg-portals.nix
 
     ./niri-systemd-services/foot-server.nix
+    ./niri-systemd-services/udiskie.nix
     ./niri-systemd-services/polkit-gnome.nix
     ./niri-systemd-services/sunsetr.nix
     ./niri-systemd-services/swayidle.nix
