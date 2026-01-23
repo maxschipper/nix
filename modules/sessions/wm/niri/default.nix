@@ -1,84 +1,50 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ../.common-wayland.nix
+    ./niri-xdg-portals.nix
+
+    ./niri-systemd-services/foot-server.nix
+    ./niri-systemd-services/polkit-gnome.nix
+    ./niri-systemd-services/sunsetr.nix
+    ./niri-systemd-services/swaync.nix
+    ./niri-systemd-services/swayosd.nix
+    ./niri-systemd-services/swww.nix
+    ./niri-systemd-services/waybar.nix
   ];
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    useNautilus = true;
+  };
 
-  services.iio-niri.enable = false; # sometimes flips output upside down after resume from hibernation
-
-  services.gnome.gnome-keyring.enable = true;
   security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
   services.gvfs.enable = true;
-
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    description = "gnome-polkit-agent";
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config = {
-      common = {
-        default = [ "gtk" ];
-        "org.freedesktop.impl.portal.Settings" = [ "gnome" ];
-      };
-      niri = {
-        default = lib.mkForce [ "gtk" ];
-        # default = lib.mkForce [ "gnome" "gtk" ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "niri" ];
-      };
-    };
-  };
-
+  services.iio-niri.enable = false; # sometimes flips output upside down after resume from hibernation
   programs.gamemode.enable = true;
 
-  environment.systemPackages = [
-    pkgs.capitaine-cursors
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+    wl-clipboard
+    libnotify
 
-    pkgs.wl-clipboard
-    pkgs.libnotify
-    pkgs.udiskie # for automounting usbs
-    pkgs.nwg-displays
-    pkgs.nwg-look
+    capitaine-cursors
+    nautilus
+    fuzzel
+    bemoji
 
-    pkgs.blueman
+    nwg-displays
+    nwg-look
+    blueman
 
-    # pkgs.papirus-icon-theme
+    hyprpicker
+    better-control
 
-    pkgs.polkit_gnome
-    pkgs.xwayland-satellite
-    pkgs.nautilus
-    pkgs.fuzzel
-    pkgs.bemoji
-    pkgs.swww
-    pkgs.libqalculate
-
-    pkgs.walker
-    pkgs.waybar
-    pkgs.swaynotificationcenter
-    pkgs.hypridle
-    pkgs.hyprlock
-    pkgs.hyprpicker
-    pkgs.swayosd
-    pkgs.sunsetr
-    pkgs.better-control
-
-    pkgs.nirius
-    pkgs.zenity # gui for scripts, used by waybar-hotspot
-
+    # papirus-icon-theme
+    # walker
+    # libqalculate
+    # zenity # gui for scripts, used by waybar-hotspot
   ];
 }
