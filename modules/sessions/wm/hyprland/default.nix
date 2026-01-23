@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./.common-wayland.nix
+    ../.common-wayland.nix
   ];
 
   programs.hyprland.enable = true;

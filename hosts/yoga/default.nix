@@ -40,8 +40,8 @@
     ##################
     ../../modules/sessions/dm/ly.nix
     # ../../modules/sessions/dm/greetd/tuigreet.nix
-    # ../../modules/sessions/wm/hyprland.nix
-    ../../modules/sessions/wm/niri.nix
+    # ../../modules/sessions/wm/hyprland
+    ../../modules/sessions/wm/niri
 
     # modules/SERVICES
     ##################

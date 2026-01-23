@@ -4,6 +4,5 @@
     matchbox
     unclutter-xfixes
     xdotool
-    kitty
   ];
 }
