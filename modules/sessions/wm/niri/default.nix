@@ -7,6 +7,7 @@
     ./niri-systemd-services/foot-server.nix
     ./niri-systemd-services/polkit-gnome.nix
     ./niri-systemd-services/sunsetr.nix
+    ./niri-systemd-services/swayidle.nix
     ./niri-systemd-services/swaync.nix
     ./niri-systemd-services/swayosd.nix
     ./niri-systemd-services/swww.nix
