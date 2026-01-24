@@ -32,7 +32,7 @@
     # ../../modules/system/nix/nix-ld.nix
     ../../modules/system/audio
     ../../modules/system/localization
-    ../../modules/system/users/max.nix
+    ../../modules/system/users/max
     ../../modules/system/security/sops-nix.nix
     # ../../modules/system/power
     ../../modules/system/env-vars/xdg.nix

@@ -6,7 +6,7 @@
     ../../modules/system/initrd/systemd.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/localization
-    ../../modules/system/users/max.nix
+    ../../modules/system/users/max
     ../../modules/programs/cli/core
     ../../modules/programs/cli/nh
     ../../modules/programs/cli/shell/fish.nix
