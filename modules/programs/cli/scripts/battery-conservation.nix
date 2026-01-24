@@ -1,9 +1,11 @@
 { pkgs, ... }:
+let
+  conservationModePath = "/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode";
+in
 {
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "battery-toggle" ''
-      # BAT_PATH=$(find /sys/bus/platform/drivers/ideapad_acpi -name "conservation_mode" | head -n 1) # doesnt work??
-      MODE_PATH="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+      MODE_PATH="${conservationModePath}"
 
       if [ -z "$MODE_PATH" ]; then
         echo "Error: Lenovo conservation mode not found."
@@ -44,7 +46,19 @@
     after = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash -c 'echo 1 > $(find /sys/bus/platform/drivers/ideapad_acpi -name conservation_mode | head -n 1)'";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo 1 > ${conservationModePath}'";
     };
   };
+
+  # security.sudo.extraRules = [
+  #   {
+  #     users = [ "max" ];
+  #     commands = [
+  #       {
+  #         command = "/run/current-system/sw/bin/tee /sys/bus/platform/drivers/ideapad_acpi/*/conservation_mode";
+  #         options = [ "NOPASSWD" ];
+  #       }
+  #     ];
+  #   }
+  # ];
 }
