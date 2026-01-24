@@ -45,21 +45,22 @@
 
     # modules/SERVICES
     ##################
-    ../../modules/services/vpn/netbird/client.nix
 
+    ../../modules/services/printing
+    ../../modules/services/remap/keyd.nix
+    ../../modules/services/remap/makima.nix
+    ../../modules/services/ssh/keyAuth.nix
+    ../../modules/services/ssh/openssh.nix
+    ../../modules/services/streaming/airplay.nix
+    ../../modules/services/streaming/sunshine.nix
+    ../../modules/services/virt/distrobox.nix
+    ../../modules/services/virt/podman.nix
+    ../../modules/services/vpn/easyroam.nix
+    # ../../modules/services/vpn/eduvpn.nix
+    ../../modules/services/vpn/netbird/client.nix
     # ../../modules/services/vpn/tailscale
     # ../../modules/services/vpn/tailscale/exit-node-client.nix
     # ../../modules/services/vpn/tailscale/taildrive.nix
-    # ../../modules/services/vpn/eduvpn.nix
-    ../../modules/services/vpn/easyroam.nix
-    ../../modules/services/remap/keyd.nix
-    ../../modules/services/remap/makima.nix
-    ../../modules/services/printing
-    #  ../../modules/services/ssh/openssh.nix
-    ../../modules/services/streaming/airplay.nix
-    ../../modules/services/streaming/sunshine.nix
-    ../../modules/services/virt/podman.nix
-    ../../modules/services/virt/distrobox.nix
     ../../modules/system/sensors/iio.nix
 
     # modules/PROGRAMS
