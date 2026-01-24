@@ -37,4 +37,14 @@
       fi
     '')
   ];
+
+  systemd.services.battery-conservation = {
+    description = "Enable Lenovo battery conservation mode on startup";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo 1 > $(find /sys/bus/platform/drivers/ideapad_acpi -name conservation_mode | head -n 1)'";
+    };
+  };
 }
