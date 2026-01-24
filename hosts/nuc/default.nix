@@ -82,7 +82,7 @@
 
     # modules/DEVELOPMENT
     #####################
-    ../../modules/development/lsps
+    # ../../modules/development/langs/default-lsps.nix
     # ../../modules/development/typst.nix
 
     # devtools
