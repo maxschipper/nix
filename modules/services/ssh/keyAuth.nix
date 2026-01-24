@@ -1,3 +1,4 @@
+{ flakeStoreRoot, ... }:
 {
   services.openssh = {
     settings = {
@@ -13,5 +14,16 @@
     extraConfig = ''
       AddKeysToAgent yes
     '';
+    knownHosts = {
+      nuc = {
+        extraHostNames = [
+          "nuc.lab"
+          "git.nuc.lab"
+          "100.0.64.230"
+          "10.0.0.2"
+        ];
+        publicKeyFile = flakeStoreRoot + /hosts/nuc/ssh-nuc-host-key.pub;
+      };
+    };
   };
 }
