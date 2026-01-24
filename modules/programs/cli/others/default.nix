@@ -1,17 +1,19 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [
-    pkgs.jujutsu
-    pkgs.stow
-    pkgs.fastfetch
-    pkgs.just
-    pkgs.ncdu
+  environment.systemPackages = with pkgs; [
+    jujutsu
+    stow
+    fastfetch
+    just
+    ncdu
 
-    pkgs.fontpreview
-    pkgs.jq
-    pkgs.ffmpeg-headless
+    fontpreview
+    jq
+    ffmpeg-headless
 
-    pkgs.icloudpd
+    icloudpd
+
+    bitwarden-cli
   ];
 
   programs.television = {
