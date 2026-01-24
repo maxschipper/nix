@@ -3,6 +3,7 @@
   imports = [
     ../.common-wayland.nix
     ./niri-xdg-portals.nix
+    ./theme.nix
 
     ./niri-systemd-services/foot-server.nix
     ./niri-systemd-services/polkit-gnome.nix
