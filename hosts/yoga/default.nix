@@ -84,6 +84,7 @@
     ../../modules/programs/gui/terminal/foot.nix
     ../../modules/programs/gui/browser/chromium.nix
     ../../modules/programs/gui/browser/firefox.nix
+    ../../modules/programs/gui/browser/qute.nix
     ../../modules/programs/gui/editor/zed.nix
     ../../modules/programs/gui/mail/thunderbird.nix
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
