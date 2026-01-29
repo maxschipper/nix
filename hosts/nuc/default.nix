@@ -42,6 +42,7 @@
 
     # modules/SERVICES
     ##################
+    ../../modules/services/monitoring/glances
     # ../../modules/services/printing
     ../../modules/services/remap/keyd.nix
     ../../modules/services/remap/makima.nix

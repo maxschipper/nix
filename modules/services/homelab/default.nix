@@ -106,6 +106,11 @@
         dash.icon = "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/deemix.webp";
       };
 
+      glances = {
+        enable = true;
+        port = 61208; # hardcoded in the service
+      };
+
     };
   };
 }
