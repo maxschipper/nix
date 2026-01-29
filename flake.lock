@@ -120,11 +120,11 @@
         "optnix": "optnix"
       },
       "locked": {
-        "lastModified": 1769541609,
-        "narHash": "sha256-A6O0ed5mQebnQT6bX4wX7iCxwF08gvsHekpjE3zQwSg=",
+        "lastModified": 1769661385,
+        "narHash": "sha256-/plSW7bFp9hz0/k3KUXPk2mIy2KG+UFxJCifcmpj7BE=",
         "owner": "nix-community",
         "repo": "nixos-cli",
-        "rev": "b3beec6be405cb54dbf0a5cfa82d7edbfcd5305b",
+        "rev": "320458fb3ddbd160566f6d9cca97b48645786d79",
         "type": "github"
       },
       "original": {
