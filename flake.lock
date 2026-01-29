@@ -77,11 +77,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769449074,
-        "narHash": "sha256-VnwWFaXpTwsimCDgAbfEq8nfAaYb+iMdTRV4PQ0mdl8=",
+        "lastModified": 1769687838,
+        "narHash": "sha256-BVb8+MPFi6/ITlhdVcX6PGsdtYnUolyzPVcyAVTCpIs=",
         "owner": "einetuer",
         "repo": "nix-easyroam",
-        "rev": "5fe13d7466cee9356ec211700fa5f6326c472968",
+        "rev": "c5745795950187f79437fd8fafbb66dcd479a89a",
         "type": "github"
       },
       "original": {
