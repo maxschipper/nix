@@ -10,15 +10,15 @@
   sops.secrets."easyroam-cert.p12" = {
     sopsFile = flakeStoreRoot + /secrets/easyroam-yoga.p12.enc;
     format = "binary";
-    restartUnits = [ "easyroam-install.service" ];
+    # restartUnits = [ "easyroam-install.service" ];
+    restartUnits = [ "easyroam-network-manager-setup.service" ];
   };
 
   services.easyroam = {
     enable = true;
     networkmanager.enable = true;
+    # owner = "wpa_supplicant";
     pkcsFile = config.sops.secrets."easyroam-cert.p12".path;
-    owner = "wpa_supplicant";
-    group = "networkmanager";
   };
 
   # NOTE:
