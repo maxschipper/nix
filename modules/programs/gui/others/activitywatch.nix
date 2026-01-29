@@ -2,8 +2,8 @@
 {
   environment.systemPackages = with pkgs; [
     activitywatch
-    aw-watcher-window-wayland
     awatcher
+    # aw-watcher-window-wayland
   ];
 
   systemd.user.services.activity-watch = {
@@ -20,14 +20,14 @@
   };
 
   systemd.user.services.awatcher = {
-    description = "acitivitywatch aw-server service from nix config";
+    description = "acitivitywatch watcher(awatcher) service from nix config";
 
     partOf = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
     wantedBy = [ "graphical-session.target" ];
 
     serviceConfig = {
-      ExecStart = "${pkgs.awatcher}/bin/awatcher";
+      ExecStart = "${pkgs.awatcher}/bin/awatcher -vv";
       Restart = "on-failure";
     };
   };
