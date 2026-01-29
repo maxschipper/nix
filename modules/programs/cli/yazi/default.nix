@@ -11,6 +11,7 @@
   # plugin deps
   environment.systemPackages = with pkgs; [
     yazi
+    file
     mediainfo
     glow
     hexyl
