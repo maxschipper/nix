@@ -25,5 +25,7 @@ in
     ];
     virtualHosts.${gitServerURL}.serverAliases = [ "https://git.${domain}" ];
     virtualHosts."https://fritz.${domain}".extraConfig = "reverse_proxy 10.0.0.1";
+
+    virtualHosts."https://dev.${domain}".extraConfig = "reverse_proxy 100.64.0.161:8080";
   };
 }
