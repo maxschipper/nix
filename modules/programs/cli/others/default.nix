@@ -14,6 +14,8 @@
     icloudpd
 
     bitwarden-cli
+
+    wifitui
   ];
 
   programs.television = {
