@@ -10,7 +10,7 @@
     ./niri-systemd-services/sunsetr.nix
     ./niri-systemd-services/swayidle.nix
     ./niri-systemd-services/swaync.nix
-    ./niri-systemd-services/swayosd.nix
+    # ./niri-systemd-services/swayosd.nix
     ./niri-systemd-services/swww.nix
     ./niri-systemd-services/udiskie.nix
     ./niri-systemd-services/vicinae.nix
