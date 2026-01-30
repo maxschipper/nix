@@ -8,6 +8,7 @@
     nautilus
     gnome-disk-utility
     # gnome-font-viewer
+    # gimp
     cheese
     # snapshot
     zathura
@@ -15,6 +16,6 @@
     mpv
     imv
     xournalpp
-    # gimp
+    feishin
   ];
 }
