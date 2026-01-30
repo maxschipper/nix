@@ -1,13 +1,20 @@
 { pkgs, ... }:
 {
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.noto-fonts
-    pkgs.inter
+  fonts = {
+    fontconfig.enable = false;
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      geist-font
+      noto-fonts
+      inter
 
-    # pkgs.jetbrains-mono
-    # pkgs.material-design-icons
-    # pkgs.material-icons
-    # pkgs.material-symbols
-  ];
+      ibm-plex
+      # public-sans
+
+      # pkgs.jetbrains-mono
+      # pkgs.material-design-icons
+      # pkgs.material-icons
+      # pkgs.material-symbols
+    ];
+  };
 }
