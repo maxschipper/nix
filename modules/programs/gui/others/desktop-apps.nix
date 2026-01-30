@@ -1,15 +1,20 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [
-    pkgs.kdePackages.dolphin
-    pkgs.nautilus
-    pkgs.gnome-disk-utility
-    pkgs.gnome-font-viewer
-    pkgs.cheese
-    pkgs.snapshot
-    pkgs.zathura
-    pkgs.dragon-drop
-    pkgs.mpv
-    pkgs.imv
+  programs.localsend.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    nmgui
+    # kdePackages.dolphin
+    nautilus
+    gnome-disk-utility
+    # gnome-font-viewer
+    cheese
+    # snapshot
+    zathura
+    dragon-drop
+    mpv
+    imv
+    xournalpp
+    # gimp
   ];
 }

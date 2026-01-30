@@ -93,6 +93,7 @@
     # ../../modules/programs/gui/office/libreoffice.nix
     ../../modules/programs/gui/others
     ../../modules/programs/gui/others/activitywatch.nix
+    ../../modules/programs/gui/others/desktop-apps.nix
     # ../../modules/programs/gui/others/livebook.nix
     ../../modules/programs/gui/others/moonlight.nix
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
