@@ -15,7 +15,6 @@
   };
   environment.systemPackages = [
     pkgs.alsa-utils
-    pkgs.pavucontrol
     pkgs.pulseaudio
     pkgs.pulsemixer
     pkgs.wiremix

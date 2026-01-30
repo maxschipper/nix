@@ -77,28 +77,29 @@
 
     ../../modules/programs/cli/scripts/battery-conservation.nix
 
-    ../../modules/programs/gui/others
-    ../../modules/programs/gui/others/activitywatch.nix
-    ../../modules/programs/gui/others/moonlight.nix
-    # ../../modules/programs/gui/others/livebook.nix
-    ../../modules/programs/gui/terminal/foot.nix
+    ../../modules/programs/gui/3d/freecad.nix
+    ../../modules/programs/gui/3d/openscad.nix
+    ../../modules/programs/gui/3d/orcaslicer.nix
+    ../../modules/programs/gui/audio
     ../../modules/programs/gui/browser/chromium.nix
     ../../modules/programs/gui/browser/firefox.nix
     ../../modules/programs/gui/browser/qute.nix
+    ../../modules/programs/gui/cursors
     ../../modules/programs/gui/editor/zed.nix
+    ../../modules/programs/gui/fonts
+    ../../modules/programs/gui/fonts/ibm-plex-mono.nix
+    ../../modules/programs/gui/fonts/iosevka.nix
     ../../modules/programs/gui/mail/thunderbird.nix
+    # ../../modules/programs/gui/office/libreoffice.nix
+    ../../modules/programs/gui/others
+    ../../modules/programs/gui/others/activitywatch.nix
+    # ../../modules/programs/gui/others/livebook.nix
+    ../../modules/programs/gui/others/moonlight.nix
     ../../modules/programs/gui/passwordmanager/bitwarden.nix
     ../../modules/programs/gui/passwordmanager/ente-auth.nix
+    ../../modules/programs/gui/terminal/foot.nix
     ../../modules/programs/gui/virtualization/virt-manager.nix
     # ../../modules/programs/gui/virtualization/waydroid.nix
-    # ../../modules/programs/gui/office/libreoffice.nix
-    ../../modules/programs/gui/fonts
-    ../../modules/programs/gui/fonts/iosevka.nix
-    ../../modules/programs/gui/fonts/ibm-plex-mono.nix
-    ../../modules/programs/gui/cursors
-    ../../modules/programs/gui/3d/orcaslicer.nix
-    ../../modules/programs/gui/3d/freecad.nix
-    ../../modules/programs/gui/3d/openscad.nix
 
     # ../../modules/programs/gui/desktop-shell/quickshell.nix
     # ../../modules/programs/gui/desktop-shell/ignis.nix
