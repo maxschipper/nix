@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   fonts = {
-    fontconfig.enable = false;
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       geist-font
