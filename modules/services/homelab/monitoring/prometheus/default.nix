@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   cfg = config.homelab.services.prometheus;
   cfgNode = config.homelab.services.node-exporter;
@@ -13,20 +13,18 @@ in
     stateDir = "prometheus2"; # will be under /var/lib/
     rules = [ ];
     globalConfig.scrape_interval = "15s";
-    scrapeConfigs = [
-      {
+    scrapeConfigs =
+      lib.optional cfgNode.enable {
         job_name = "node";
         static_configs = [ { targets = [ "${cfgNode.ip}:${toString cfgNode.port}" ]; } ];
       }
-      {
+      ++ lib.optional cfgSmart.enable {
         job_name = "smart";
         static_configs = [ { targets = [ "${cfgSmart.ip}:${toString cfgSmart.port}" ]; } ];
       }
-      {
+      ++ lib.optional cfgNavidrome.enable {
         job_name = "navidrome";
         static_configs = [ { targets = [ "${cfgNavidrome.ip}:${toString cfgNavidrome.port}" ]; } ];
-      }
-    ];
-
+      };
   };
 }
