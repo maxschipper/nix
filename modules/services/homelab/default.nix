@@ -90,7 +90,7 @@
       };
 
       smart-exporter = {
-        enable = true;
+        enable = false;
         port = 9633;
         dash.enable = false;
       };
