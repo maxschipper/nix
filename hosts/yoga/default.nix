@@ -46,6 +46,7 @@
     # modules/SERVICES
     ##################
 
+    ../../modules/services/homelab/monitoring/prometheus/exporters/nodeLaptop.nix
     ../../modules/services/printing
     ../../modules/services/remap/keyd.nix
     ../../modules/services/remap/makima.nix
