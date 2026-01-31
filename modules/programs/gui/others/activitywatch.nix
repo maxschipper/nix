@@ -28,7 +28,9 @@
 
     serviceConfig = {
       ExecStart = "${pkgs.awatcher}/bin/awatcher -vv";
-      Restart = "on-failure";
+      # Restart = "on-failure";
+      Restart = "always"; # exits with success when wayland isnt found yet
+      RestartSec = "5";
     };
   };
 }

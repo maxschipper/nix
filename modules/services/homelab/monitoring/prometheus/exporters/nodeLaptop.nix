@@ -8,6 +8,7 @@ let
 in
 {
 
+  # not needed?
   # networking.firewall.interfaces."{cfg.interface}".allowedTCPPorts = [ cfg.port ];
 
   services.prometheus.exporters.node = {
