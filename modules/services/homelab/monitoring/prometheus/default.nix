@@ -19,14 +19,20 @@ in
     rules = [ ];
     globalConfig.scrape_interval = "15s";
     scrapeConfigs =
-      lib.optional cfgNode.enable {
+      lib.optional (cfgNode.enable || cfgNodeLaptop.enable) {
         job_name = "node";
-        static_configs = [ { targets = [ "${cfgNode.ip}:${toString cfgNode.port}" ]; } ];
+        static_configs =
+          (lib.optional cfgNode.enable {
+            targets = [ "${cfgNode.ip}:${toString cfgNode.port}" ];
+          })
+          ++ (lib.optional cfgNodeLaptop.enable {
+            targets = [ "${cfgNodeLaptop.ip}:${toString cfgNodeLaptop.port}" ];
+          });
       }
-      ++ lib.optional cfgNodeLaptop.enable {
-        job_name = "nodeLaptop";
-        static_configs = [ { targets = [ "${cfgNodeLaptop.ip}:${toString cfgNodeLaptop.port}" ]; } ];
-      }
+      # ++ lib.optional cfgNodeLaptop.enable {
+      #   job_name = "nodeLaptop";
+      #   static_configs = [ { targets = [ "${cfgNodeLaptop.ip}:${toString cfgNodeLaptop.port}" ]; } ];
+      # }
       ++ lib.optional cfgSmart.enable {
         job_name = "smart";
         static_configs = [ { targets = [ "${cfgSmart.ip}:${toString cfgSmart.port}" ]; } ];
