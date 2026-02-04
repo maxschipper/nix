@@ -15,7 +15,10 @@
       config_location = flakeRepoRoot;
       # root_command = "doas";
       use_nvd = true;
-      apply.use_nom = true;
+      apply = {
+        use_nom = true;
+        reexec_as_root = true;
+      };
       confirmation.empty = "default-yes";
       aliases = {
         test = [
