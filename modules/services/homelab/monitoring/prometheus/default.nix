@@ -13,6 +13,7 @@ let
     enable = true;
     port = 2019;
   };
+  cfgAdguard = config.homelab.services.adguard-exporter;
 in
 {
   services.prometheus = {
@@ -48,6 +49,10 @@ in
       ++ lib.optional cfgCaddy.enable {
         job_name = "caddy";
         static_configs = [ { targets = [ "localhost:${toString cfgCaddy.port}" ]; } ];
+      }
+      ++ lib.optional cfgAdguard.enable {
+        job_name = "adguard";
+        static_configs = [ { targets = [ "localhost:${toString cfgAdguard.port}" ]; } ];
       };
   };
 }
