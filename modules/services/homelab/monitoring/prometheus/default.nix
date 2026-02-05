@@ -9,6 +9,10 @@ let
     ip = "100.64.0.161";
     port = 9100;
   };
+  cfgCaddy = {
+    enable = true;
+    port = 2019;
+  };
 in
 {
   services.prometheus = {
@@ -40,6 +44,10 @@ in
       ++ lib.optional cfgNavidrome.enable {
         job_name = "navidrome";
         static_configs = [ { targets = [ "${cfgNavidrome.ip}:${toString cfgNavidrome.port}" ]; } ];
+      }
+      ++ lib.optional cfgCaddy.enable {
+        job_name = "caddy";
+        static_configs = [ { targets = [ "localhost:${toString cfgCaddy.port}" ]; } ];
       };
   };
 }

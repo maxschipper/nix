@@ -18,6 +18,9 @@ in
       # the root.crt is at /var/lib/caddy/.local/share/caddy/pki/authorities/local/root.crt
       local_certs
       grace_period 5s
+      metrics {
+        per_host
+      }
     '';
     virtualHosts.${homePageURL}.serverAliases = [
       domain
