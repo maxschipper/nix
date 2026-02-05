@@ -87,12 +87,14 @@
         enable = true;
         port = 9100;
         dash.enable = false;
+        proxy.enable = false;
       };
 
       smart-exporter = {
         enable = false;
         port = 9633;
         dash.enable = false;
+        proxy.enable = false;
       };
 
       lidarr = {
