@@ -97,6 +97,13 @@
         proxy.enable = false;
       };
 
+      adguard-exporter = {
+        enable = true;
+        port = 9618;
+        dash.enable = false;
+        proxy.enable = false;
+      };
+
       lidarr = {
         enable = false;
         port = 8686;

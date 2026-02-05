@@ -23,6 +23,7 @@
     ../../modules/services/homelab/monitoring/prometheus
     ../../modules/services/homelab/monitoring/prometheus/exporters/node.nix
     ../../modules/services/homelab/monitoring/prometheus/exporters/smart.nix
+    ../../modules/services/homelab/monitoring/prometheus/exporters/adguard
 
     ../../modules/programs/gui/browser/chromium.nix
     # ../../modules/sessions/wm/cage/youtube.nix
