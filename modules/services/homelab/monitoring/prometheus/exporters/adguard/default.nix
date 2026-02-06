@@ -24,53 +24,55 @@ let
   };
 in
 {
-  systemd.services.adguard-exporter = lib.mkIf (cfg.enable && cfgAdguard.enable) {
-    description = "AdGuard Home Prometheus Exporter";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
+  config = lib.mkIf (cfg.enable && cfgAdguard.enable) {
+    systemd.services.adguard-exporter = {
+      description = "AdGuard Home Prometheus Exporter";
+      after = [ "network.target" ];
+      wantedBy = [ "multi-user.target" ];
 
-    serviceConfig = {
-      ExecStart = "${adguard-exporter}/bin/adguard-exporter";
-      Restart = "always";
+      serviceConfig = {
+        ExecStart = "${adguard-exporter}/bin/adguard-exporter";
+        Restart = "always";
 
-      Environment = [
-        "ADGUARD_SERVERS=${cfgAdguard.url}"
-        "ADGUARD_USERNAMES=not_needed"
-        "ADGUARD_PASSWORDS=not_needed"
-        # "INTERVAL=30s"
-        # "DEBUG="
-        "BIND_ADDR=${cfg.ip}:${toString cfg.port}"
-      ];
+        Environment = [
+          "ADGUARD_SERVERS=${cfgAdguard.url}"
+          "ADGUARD_USERNAMES=not_needed"
+          "ADGUARD_PASSWORDS=not_needed"
+          # "INTERVAL=30s"
+          # "DEBUG="
+          "BIND_ADDR=${cfg.ip}:${toString cfg.port}"
+        ];
 
-      DynamicUser = true;
-      User = "adguard-exporter";
-      Group = "adguard-exporter";
+        DynamicUser = true;
+        User = "adguard-exporter";
+        Group = "adguard-exporter";
 
-      ProtectSystem = "full";
-      DeviceAllow = "";
+        ProtectSystem = "full";
+        DeviceAllow = "";
 
-      ProtectHome = true; # /home, /root, /run/user are inaccessible
-      PrivateTmp = true;
-      PrivateDevices = true; # No access to hardware devices (/dev)
-      ProtectKernelTunables = true;
-      ProtectKernelModules = true;
-      ProtectControlGroups = true;
-      RestrictSUIDSGID = true;
+        ProtectHome = true; # /home, /root, /run/user are inaccessible
+        PrivateTmp = true;
+        PrivateDevices = true; # No access to hardware devices (/dev)
+        ProtectKernelTunables = true;
+        ProtectKernelModules = true;
+        ProtectControlGroups = true;
+        RestrictSUIDSGID = true;
 
-      RestrictAddressFamilies = [
-        "AF_INET"
-        # "AF_INET6"
-      ];
+        RestrictAddressFamilies = [
+          "AF_INET"
+          # "AF_INET6"
+        ];
 
-      CapabilityBoundingSet = ""; # Drop ALL capabilities (root powers)
-      NoNewPrivileges = true; # Prevent elevating privileges later
+        CapabilityBoundingSet = ""; # Drop ALL capabilities (root powers)
+        NoNewPrivileges = true; # Prevent elevating privileges later
 
-      SystemCallFilter = [ "@system-service" ];
-      SystemCallErrorNumber = "EPERM";
+        SystemCallFilter = [ "@system-service" ];
+        SystemCallErrorNumber = "EPERM";
 
-      LockPersonality = true; # Prevent kernel architecture emulation
-      MemoryDenyWriteExecute = true; # Prevent creating executable memory (anti-exploit)
-      RemoveIPC = true; # Clean up IPC objects on stop
+        LockPersonality = true; # Prevent kernel architecture emulation
+        MemoryDenyWriteExecute = true; # Prevent creating executable memory (anti-exploit)
+        RemoveIPC = true; # Clean up IPC objects on stop
+      };
     };
   };
 }

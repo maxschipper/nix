@@ -1,3 +1,4 @@
+{ lib, ... }:
 let
   cfg = {
     enable = true;
@@ -8,20 +9,23 @@ let
   };
 in
 {
+  config = lib.mkIf cfg.enable {
 
-  # not needed?
-  # networking.firewall.interfaces."{cfg.interface}".allowedTCPPorts = [ cfg.port ];
+    # not needed?
+    # networking.firewall.interfaces."{cfg.interface}".allowedTCPPorts = [ cfg.port ];
 
-  services.prometheus.exporters.node = {
-    enable = cfg.enable;
-    port = cfg.port;
-    listenAddress = cfg.ip;
-    enabledCollectors = [ "systemd" ];
+    services.prometheus.exporters.node = {
+      enable = cfg.enable;
+      port = cfg.port;
+      listenAddress = cfg.ip;
+      enabledCollectors = [ "systemd" ];
+    };
+
+    # or just bind to 0.0.0.0 ?
+    # systemd.services."prometheus-node-exporter".serviceConfig = {
+    #   RestartSec = "5m";
+    #   StartLimitIntervalSec = 0;
+    # };
+
   };
-
-  # or just bind to 0.0.0.0 ?
-  # systemd.services."prometheus-node-exporter".serviceConfig = {
-  #   RestartSec = "5m";
-  #   StartLimitIntervalSec = 0;
-  # };
 }
