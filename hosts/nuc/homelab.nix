@@ -22,6 +22,13 @@
 
     services = {
 
+      caddy = {
+        enable = true;
+        port = 443; # just for conflict checks
+        dash.enable = false;
+        proxy.enable = false;
+      };
+
       glance = {
         enable = true;
         port = 5678;

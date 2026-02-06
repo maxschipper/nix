@@ -1,8 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.homelab;
+  cfg = config.homelab.services.caddy;
+  myServices = config.homelab.services;
 
-  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.proxy.enable) cfg.services;
+  enabledServices = lib.filterAttrs (name: svc: svc.enable && svc.proxy.enable) myServices;
 
   autoHosts = lib.mapAttrs' (name: svc: {
     name = svc.url;
@@ -12,5 +13,7 @@ let
   }) enabledServices;
 in
 {
-  services.caddy.virtualHosts = autoHosts;
+  config = lib.mkIf cfg.enable {
+    services.caddy.virtualHosts = autoHosts;
+  };
 }
