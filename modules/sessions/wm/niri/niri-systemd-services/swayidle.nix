@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     swayidle
-    swaylock
+    hyprlock
   ];
 
   systemd.user.services.swayidle = {
