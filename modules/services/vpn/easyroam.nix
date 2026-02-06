@@ -17,6 +17,7 @@
   services.easyroam = {
     enable = true;
     networkmanager.enable = true;
+    wpa-supplicant.enable = true;
     # owner = "wpa_supplicant";
     pkcsFile = config.sops.secrets."easyroam-cert.p12".path;
   };
