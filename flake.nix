@@ -90,18 +90,6 @@
             ];
           };
           # ----------------------------------------------------------
-          pc = nixpkgs.lib.nixosSystem {
-            specialArgs = args;
-            modules = [
-              (allowUnfree [ ])
-              (allowInsecure [ ])
-              ./hosts/pc
-              ./modules/packages
-              ./modules/packages/gui
-              ./modules/tailscale.nix
-            ];
-          };
-          # ----------------------------------------------------------
         };
     };
 }
