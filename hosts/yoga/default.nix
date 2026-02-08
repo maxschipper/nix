@@ -113,7 +113,6 @@
 
     # development/langs
     #####################
-    (flakeStoreRoot + /modules/development/port5432.nix)
     (flakeStoreRoot + /nixos/development/langs/default-lsps.nix)
     (flakeStoreRoot + /nixos/development/langs/typst)
     (flakeStoreRoot + /nixos/development/langs/fish)

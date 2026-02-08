@@ -1,5 +1,6 @@
 {
   environment.localBinInPath = true;
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 
   services.fstrim.enable = true;
   services.fwupd.enable = true;
