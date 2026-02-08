@@ -6,6 +6,10 @@
     ./disko.nix
     ./hardware-configuration.nix
 
+    # SCRIPTS
+    #########
+    (flakeStoreRoot + /scripts/nb-status.nix)
+
     # modules/SYSTEM
     ################
     (flakeStoreRoot + /modules/system/kernel/latest.nix)
