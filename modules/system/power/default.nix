@@ -1,25 +1,38 @@
 {
   powerManagement.enable = true;
+
   services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
+  services.upower = {
+    enable = true;
+    criticalPowerAction = "Hibernate";
+  };
 
-  services.upower.criticalPowerAction = "Hibernate";
-
-  # systemd.sleep.extraConfig = "HibernateDelaySec=1h";
   systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=yes
-    AllowHybridSleep=yes
-    AllowSuspendThenHibernate=no
+    HibernateDelaySec=3h
+    HibernateOnACPower=no
   '';
+  services.logind.settings.Login = {
+    # Can be one of "ignore", "poweroff", "reboot", "halt", "kexec", "suspend", "hibernate", "hybrid-sleep", "suspend-then-hibernate", "sleep", "lock", "factory-reset", and "secure-attention-key".
+    HandlePowerKey = "ignore";
+    HandlePowerKeyLongPress = "poweroff";
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
 
-  # services.logind.settings.Login.HandleLidSwitch = "hibernate";
-  services.logind.settings.Login.HandleLidSwitch = "lock";
-  services.logind.settings.Login.HandleLidSwitchExternalPower = "lock";
-  services.logind.settings.Login.HandlePowerKey = "ignore";
-  services.acpid.enable = true;
+    # HandleRebootKey=
+    # HandleRebootKeyLongPress=
+    # HandleSuspendKey=
+    # HandleSuspendKeyLongPress=
+    # HandleHibernateKey=
+    # HandleHibernateKeyLongPress=
+    # HandleSecureAttentionKey=
+
+    # LidSwitchIgnoreInhibited="yes";
+    # PowerKeyIgnoreInhibited="no";
+  };
 
   # this normal powerEventCommands triggers twice per press, use handler with "button/power PBTN" event instead
+  # services.acpid.enable = true;
   # services.acpid.powerEventCommands = ''
   #   echo "$(date): Power button pressed" >> /var/log/powerbutton.log
   # '';

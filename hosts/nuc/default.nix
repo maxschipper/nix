@@ -30,7 +30,7 @@
     # ../../modules/system/security/nitrokey.nix
     # ../../modules/system/security/tpm.nix
     ../../modules/system/security/sops-nix.nix
-    # ../../modules/system/power
+    # ../../modules/system/power # (laptop specific)
     ../../modules/system/xdg/baseDirSpec
 
     # modules/SESSIONS
