@@ -1,7 +1,5 @@
 {
   imports = [
-    # (flakeStoreRoot + /modules/services/homelab/caddy/tls-cert/trust.nix)
-
     ./options.nix
 
     ./dashboard/glance

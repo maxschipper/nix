@@ -1,73 +1,74 @@
+{ flakeStoreRoot, ... }:
 {
   networking.hostName = "imac";
   imports = [
 
-    ../../modules/services/vpn/netbird/server.nix
+    (flakeStoreRoot + /nixos/services/vpn/netbird/server.nix)
 
-    ../../modules/services/vpn/tailscale
-    ../../modules/services/vpn/tailscale/exit-node-server.nix
+    (flakeStoreRoot + /nixos/services/vpn/tailscale)
+    (flakeStoreRoot + /nixos/services/vpn/tailscale/exit-node-server.nix)
 
     ./configuration.nix
     ./hardware-configuration.nix
 
-    # modules/SYSTEM
+    # nixos/SYSTEM
     ################
-    # ../../modules/system/kernel/latest.nix
-    # ../../modules/system/kernel/zen.nix
+    # (flakeStoreRoot + /nixos/system/kernel/latest.nix)
+    # (flakeStoreRoot + /nixos/system/kernel/zen.nix)
 
-    # ../../modules/system/kernel/params/nuc.nix
-    ../../modules/system/tty/tty.nix
+    # (flakeStoreRoot + /nixos/system/kernel/params/nuc.nix)
+    (flakeStoreRoot + /nixos/system/tty/tty.nix)
 
-    ../../modules/system/bootloader/systemd.nix
-    ../../modules/system/initrd/systemd.nix
+    (flakeStoreRoot + /nixos/system/bootloader/systemd.nix)
+    (flakeStoreRoot + /nixos/system/initrd/systemd.nix)
 
-    ../../modules/system/networking/networkmanager.nix
-    ../../modules/system/networking/resolved.nix
-    ../../modules/system/networking/bluetooth.nix
-    ../../modules/system/nix
-    ../../modules/system/nix/comma.nix
-    ../../modules/system/nix/nh.nix
-    ../../modules/system/nix/nixos-cli.nix
-    ../../modules/system/nix/nix-lsps.nix
-    # ../../modules/system/nix/nix-ld.nix
-    ../../modules/system/audio
-    ../../modules/system/localization
-    ../../modules/system/users/max
-    ../../modules/system/security/sops-nix.nix
-    # ../../modules/system/power
-    ../../modules/system/env-vars/xdg.nix
+    (flakeStoreRoot + /nixos/system/networking/networkmanager.nix)
+    (flakeStoreRoot + /nixos/system/networking/resolved.nix)
+    (flakeStoreRoot + /nixos/system/networking/bluetooth.nix)
+    (flakeStoreRoot + /nixos/system/nix)
+    (flakeStoreRoot + /nixos/system/nix/comma.nix)
+    (flakeStoreRoot + /nixos/system/nix/nh.nix)
+    (flakeStoreRoot + /nixos/system/nix/nixos-cli.nix)
+    (flakeStoreRoot + /nixos/system/nix/nix-lsps.nix)
+    # (flakeStoreRoot + /nixos/system/nix/nix-ld.nix)
+    (flakeStoreRoot + /nixos/system/audio)
+    (flakeStoreRoot + /nixos/system/localization)
+    (flakeStoreRoot + /nixos/system/users/max)
+    (flakeStoreRoot + /nixos/system/security/sops-nix.nix)
+    # (flakeStoreRoot + /nixos/system/power)
+    (flakeStoreRoot + /nixos/system/env-vars/xdg.nix)
 
-    # modules/SESSIONS
+    # nixos/SESSIONS
     ##################
-    # ../../modules/sessions/dm/ly.nix
-    # ../../modules/sessions/dm/greetd/tuigreet.nix
-    # ../../modules/sessions/wm/hyprland.nix
-    # ../../modules/sessions/wm/niri.nix
+    # (flakeStoreRoot + /nixos/sessions/dm/ly.nix)
+    # (flakeStoreRoot + /nixos/sessions/dm/greetd/tuigreet.nix)
+    # (flakeStoreRoot + /nixos/sessions/wm/hyprland.nix)
+    # (flakeStoreRoot + /nixos/sessions/wm/niri.nix)
 
-    # modules/SERVICES
+    # nixos/SERVICES
     ##################
-    ../../modules/services/remap/keyd.nix
-    ../../modules/services/ssh/openssh.nix
-    # ../../modules/services/streaming/sunshine.nix
+    (flakeStoreRoot + /nixos/services/remap/keyd.nix)
+    (flakeStoreRoot + /nixos/services/ssh/openssh.nix)
+    # (flakeStoreRoot + /nixos/services/streaming/sunshine.nix)
 
-    # modules/PROGRAMS
+    # nixos/PROGRAMS
     ##################
-    ../../modules/programs/cli
-    ../../modules/programs/cli/shell/fish.nix
-    ../../modules/programs/cli/shell/starship.nix
+    (flakeStoreRoot + /nixos/programs/cli)
+    (flakeStoreRoot + /nixos/programs/cli/shell/fish.nix)
+    (flakeStoreRoot + /nixos/programs/cli/shell/starship.nix)
 
-    # modules/DEVELOPMENT
+    # nixos/DEVELOPMENT
     #####################
-    # ../../modules/development/lsps
-    # ../../modules/development/typst.nix
+    # (flakeStoreRoot + /nixos/development/lsps)
+    # (flakeStoreRoot + /nixos/development/typst.nix)
 
     # devtools
     #####################
-    # ../../modules/development/tools/jj.nix
-    # ../../modules/development/tools/direnv.nix
+    # (flakeStoreRoot + /nixos/development/tools/jj.nix)
+    # (flakeStoreRoot + /nixos/development/tools/direnv.nix)
 
     # games
     #####################
-    # ../../modules/programs/gui/games/minecraft.nix
+    # (flakeStoreRoot + /nixos/programs/gui/games/minecraft.nix)
   ];
 }

@@ -44,7 +44,8 @@
             timeout ${toString time.dim} '${bin.bash} -c "${bin.brightnessctl} -s && ${bin.brightnessctl} set 1"' resume '${bin.brightnessctl} -r' \
             timeout ${toString (time.notifyLock.abs)} '${bin.notify} -e -t ${toString time.notifyLock.rel}000 "Locking screen in ${toString time.notifyLock.rel} seconds!"' resume '${bin.swaync} --hide-latest' \
             timeout ${toString time.lock} '${bin.loginctl} lock-session' \
-            timeout ${toString time.monitorOff} '${bin.niri} msg action power-off-monitors' resume '${bin.niri} msg action power-on-monitors' \
+            timeout ${toString time.monitorOff} '${bin.niri} msg action power-off-monitors' \
+              resume '${bin.niri} msg action power-on-monitors' \
             before-sleep '${bin.loginctl} lock-session' \
             lock '${bin.pidof} ${bin.hyprlock} || ${bin.hyprlock} &'
         '';

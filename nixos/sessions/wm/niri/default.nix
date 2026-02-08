@@ -19,7 +19,7 @@
 
   programs.niri = {
     enable = true;
-    useNautilus = true;
+    useNautilus = false;
   };
 
   security.polkit.enable = true;
@@ -35,7 +35,16 @@
     libnotify
 
     capitaine-cursors
-    nautilus
+
+    # nautilus
+
+    nemo
+    # nemo-fileroller
+    # file-roller
+    # nemo-preview
+
+    # thunar
+
     fuzzel
     bemoji
 

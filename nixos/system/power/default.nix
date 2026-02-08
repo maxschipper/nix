@@ -16,7 +16,8 @@
     HandlePowerKey = "ignore";
     HandlePowerKeyLongPress = "poweroff";
     HandleLidSwitch = "suspend-then-hibernate";
-    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchExternalPower = "suspend";
+    # HandleLidSwitchExternalPower = "lock";
     HandleLidSwitchDocked = "ignore";
 
     # HandleRebootKey=

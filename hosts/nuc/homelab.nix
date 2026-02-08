@@ -1,15 +1,15 @@
 { flakeStoreRoot, ... }:
 {
   imports = [
-    (flakeStoreRoot + /modules/services/homelab)
+    (flakeStoreRoot + /nixos/services/homelab)
 
-    (flakeStoreRoot + /modules/services/homelab/caddy/tls-cert/trust.nix)
+    (flakeStoreRoot + /nixos/services/homelab/caddy/tls-cert/trust.nix)
 
-    # (flakeStoreRoot + /modules/sessions/wm/cage/youtube.nix)
-    (flakeStoreRoot + /modules/programs/gui/browser/chromium.nix)
-    (flakeStoreRoot + /modules/sessions/wm/xserver)
-    (flakeStoreRoot + /modules/sessions/wm/xserver/matchbox.nix)
-    (flakeStoreRoot + /modules/sessions/wm/xserver/xob.nix)
+    # (flakeStoreRoot + /nixos/sessions/wm/cage/youtube.nix)
+    (flakeStoreRoot + /nixos/programs/gui/browser/chromium.nix)
+    (flakeStoreRoot + /nixos/sessions/wm/xserver)
+    (flakeStoreRoot + /nixos/sessions/wm/xserver/matchbox.nix)
+    (flakeStoreRoot + /nixos/sessions/wm/xserver/xob.nix)
   ];
 
   homelab = {
