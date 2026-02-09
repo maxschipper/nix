@@ -34,6 +34,7 @@
     (flakeStoreRoot + /nixos/system/audio)
     (flakeStoreRoot + /nixos/system/localization)
     (flakeStoreRoot + /nixos/system/users/max)
+    (flakeStoreRoot + /nixos/system/home-manager.nix)
     (flakeStoreRoot + /nixos/system/security/sops-nix.nix)
     # (flakeStoreRoot + /nixos/system/security/nitrokey.nix)
     (flakeStoreRoot + /nixos/system/security/tpm.nix)
