@@ -16,9 +16,10 @@
     (flakeStoreRoot + /nixos/system/initrd/systemd.nix)
     # (flakeStoreRoot + /nixos/system/initrd/luks-fido2.nix)
 
+    (flakeStoreRoot + /nixos/system/networking/bluetooth.nix)
     (flakeStoreRoot + /nixos/system/networking/networkmanager.nix)
     (flakeStoreRoot + /nixos/system/networking/resolved.nix)
-    (flakeStoreRoot + /nixos/system/networking/bluetooth.nix)
+    (flakeStoreRoot + /nixos/system/networking/tools.nix)
     (flakeStoreRoot + /nixos/system/nix)
     (flakeStoreRoot + /nixos/system/nix/comma.nix)
     (flakeStoreRoot + /nixos/system/nix/nh.nix)
