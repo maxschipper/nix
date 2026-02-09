@@ -6,6 +6,7 @@
     ./theme.nix
 
     ../components/swayidle.nix
+    ../components/hyprlock.nix
 
     ./niri-systemd-services/foot-server.nix
     ./niri-systemd-services/polkit-gnome.nix
