@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-result=$(echo -e "Lock\nShutdown\nReboot\nSuspend\nHibernate\nLog out" | fuzzel --dmenu --placeholder="POWER MENU" --hide-prompt -l 6)
+# result=$(echo -e "Lock\nShutdown\nReboot\nSuspend\nHibernate\nLog out" | fuzzel --dmenu --placeholder="POWER MENU" --hide-prompt -l 6)
+result=$(echo -e "Lock\nShutdown\nReboot\nSuspend\nHibernate\nLog out" | vicinae dmenu -n "Power Menu" -H 400)
 
 if [[ "${result}" = "Lock" ]]; then
   niri msg action power-off-monitors && loginctl lock-session
