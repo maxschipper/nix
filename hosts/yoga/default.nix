@@ -48,7 +48,7 @@
     (flakeStoreRoot + /nixos/sessions/dm/ly.nix)
     # (flakeStoreRoot + /nixos/sessions/dm/greetd/tuigreet.nix)
     # (flakeStoreRoot + /nixos/sessions/wm/hyprland)
-    (flakeStoreRoot + /nixos/sessions/wm/niri)
+    (flakeStoreRoot + /nixos/sessions/wm/wayland/niri)
 
     # nixos/SERVICES
     ##################
