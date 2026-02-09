@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    drill
+    ldns
     mtr
     nmap
     doggo
