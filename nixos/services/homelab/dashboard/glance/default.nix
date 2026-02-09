@@ -20,7 +20,7 @@ in
     sops.secrets.NETBIRD_API_KEY = {
       sopsFile = flakeStoreRoot + /secrets/glance.env;
       format = "dotenv";
-      reloadUnits = [ "glance.service" ];
+      restartUnits = [ "glance.service" ];
     };
 
     services.glance = {
