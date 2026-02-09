@@ -1,5 +1,15 @@
 { pkgs, ... }:
 {
+  # move cache linking to postConfigure (#488420)[https://github.com/NixOS/nixpkgs/pull/488420]
+  nixpkgs.overlays = [
+    (final: prev: {
+      ly = prev.ly.overrideAttrs (oldAttrs: {
+        postPatch = "";
+        postConfigure = oldAttrs.postPatch;
+      });
+    })
+  ];
+
   services.displayManager.ly = {
     enable = true;
     settings = {
