@@ -3,7 +3,7 @@ let
   cfg = config.homelab.services.prometheus;
 in
 {
-  imports = lib.optional cfg.enable ./scrapeConfigs.nix;
+  imports = [ ./scrapeConfigs.nix ];
 
   config = lib.mkIf cfg.enable {
     services.prometheus = {

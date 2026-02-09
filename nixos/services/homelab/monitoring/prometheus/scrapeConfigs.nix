@@ -1,5 +1,6 @@
 { config, lib, ... }:
 let
+  cfgPrometheus = config.homelab.services.prometheus;
   cfgNode = config.homelab.services.node-exporter;
   cfgSmart = config.homelab.services.smart-exporter;
   cfgNavidrome = config.homelab.services.navidrome;
@@ -15,7 +16,7 @@ let
   cfgAdguard = config.homelab.services.adguard-exporter;
 in
 {
-  services.prometheus = {
+  services.prometheus = lib.mkIf cfgPrometheus.enable {
     scrapeConfigs =
       lib.optional (cfgNode.enable || cfgNodeLaptop.enable) {
         job_name = "node";
