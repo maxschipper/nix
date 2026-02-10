@@ -6,7 +6,7 @@
 
     events = {
       before-sleep = "${pkgs.systemd}/bin/loginctl lock-session";
-      lock = "${pkgs.procps}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock --grace 5";
+      lock = "${pkgs.procps}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
     };
 
     timeouts = [
