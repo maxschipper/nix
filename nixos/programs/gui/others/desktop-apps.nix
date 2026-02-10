@@ -14,6 +14,7 @@
     dragon-drop
     mpv
     imv
+    satty
     xournalpp
     feishin
   ];
