@@ -6,8 +6,13 @@
     (flakeStoreRoot + /nixos/services/homelab/caddy/tls-cert/trust.nix)
 
     # (flakeStoreRoot + /nixos/sessions/wm/cage/youtube.nix)
-    (flakeStoreRoot + /nixos/programs/gui/browser/chromium.nix)
+
+    # (flakeStoreRoot + /nixos/programs/gui/browser/chromium.nix)
+
     # (flakeStoreRoot + /nixos/sessions/wm/xserver/matchbox.nix)
+
+    (flakeStoreRoot + /nixos/sessions/wm/wayland/cage/youtube.nix)
+
   ];
 
   homelab = {
