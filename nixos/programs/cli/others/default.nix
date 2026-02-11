@@ -2,18 +2,18 @@
 {
   environment.systemPackages = with pkgs; [
     jujutsu
-    stow
+    # stow
     fastfetch
     just
-    ncdu
+    # ncdu
 
     fontpreview
     jq
-    ffmpeg-headless
+    # ffmpeg-headless
 
-    icloudpd
+    # icloudpd
 
-    bitwarden-cli
+    # bitwarden-cli
 
     wifitui
   ];
