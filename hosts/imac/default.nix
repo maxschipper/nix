@@ -37,7 +37,7 @@
     (flakeStoreRoot + /nixos/system/users/max)
     (flakeStoreRoot + /nixos/system/security/sops-nix.nix)
     # (flakeStoreRoot + /nixos/system/power)
-    (flakeStoreRoot + /nixos/system/env-vars/xdg.nix)
+    (flakeStoreRoot + /nixos/system/xdg/baseDirSpec)
 
     # nixos/SESSIONS
     ##################
