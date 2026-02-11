@@ -12,6 +12,7 @@
     "2620:fe::f9"
   ];
 
+  environment.enableAllTerminfo = true;
   environment.localBinInPath = true;
 
   services.fstrim.enable = true;
