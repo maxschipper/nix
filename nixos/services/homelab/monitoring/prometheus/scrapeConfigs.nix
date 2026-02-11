@@ -28,12 +28,21 @@ in
         static_configs =
           (lib.optional cfgNode.enable {
             targets = [ "${cfgNode.ip}:${toString cfgNode.port}" ];
+            labels = {
+              "device" = "nuc";
+            };
           })
           ++ (lib.optional cfgNodeLaptop.enable {
             targets = [ "${cfgNodeLaptop.ip}:${toString cfgNodeLaptop.port}" ];
+            labels = {
+              "device" = "yoga";
+            };
           })
           ++ (lib.optional cfgNodeimac.enable {
             targets = [ "${cfgNodeimac.ip}:${toString cfgNodeimac.port}" ];
+            labels = {
+              "device" = "imac";
+            };
           });
       }
       # ++ lib.optional cfgNodeLaptop.enable {
