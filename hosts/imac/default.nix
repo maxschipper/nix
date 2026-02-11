@@ -4,9 +4,10 @@
   imports = [
 
     (flakeStoreRoot + /nixos/services/vpn/netbird/server.nix)
+    (flakeStoreRoot + /nixos/services/homelab/monitoring/prometheus/exporters/node/external.nix)
 
-    (flakeStoreRoot + /nixos/services/vpn/tailscale)
-    (flakeStoreRoot + /nixos/services/vpn/tailscale/exit-node-server.nix)
+    # (flakeStoreRoot + /nixos/services/vpn/tailscale)
+    # (flakeStoreRoot + /nixos/services/vpn/tailscale/exit-node-server.nix)
 
     ./configuration.nix
     ./hardware-configuration.nix
@@ -47,8 +48,8 @@
 
     # nixos/SERVICES
     ##################
-    (flakeStoreRoot + /nixos/services/remap/keyd.nix)
     (flakeStoreRoot + /nixos/services/ssh/openssh.nix)
+    # (flakeStoreRoot + /nixos/services/remap/keyd.nix)
     # (flakeStoreRoot + /nixos/services/streaming/sunshine.nix)
 
     # nixos/PROGRAMS

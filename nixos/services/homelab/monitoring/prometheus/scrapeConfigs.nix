@@ -2,13 +2,18 @@
 let
   cfgPrometheus = config.homelab.services.prometheus;
   cfgNode = config.homelab.services.node-exporter;
-  cfgSmart = config.homelab.services.smart-exporter;
-  cfgNavidrome = config.homelab.services.navidrome;
   cfgNodeLaptop = {
     enable = true;
     ip = "100.64.0.161";
     port = 9100;
   };
+  cfgNodeimac = {
+    enable = true;
+    ip = "100.64.0.141";
+    port = 9100;
+  };
+  cfgSmart = config.homelab.services.smart-exporter;
+  cfgNavidrome = config.homelab.services.navidrome;
   cfgCaddy = {
     enable = true;
     port = 2019;
@@ -26,6 +31,9 @@ in
           })
           ++ (lib.optional cfgNodeLaptop.enable {
             targets = [ "${cfgNodeLaptop.ip}:${toString cfgNodeLaptop.port}" ];
+          })
+          ++ (lib.optional cfgNodeimac.enable {
+            targets = [ "${cfgNodeimac.ip}:${toString cfgNodeimac.port}" ];
           });
       }
       # ++ lib.optional cfgNodeLaptop.enable {

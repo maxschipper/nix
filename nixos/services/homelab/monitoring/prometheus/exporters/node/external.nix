@@ -3,7 +3,6 @@ let
   cfg = {
     enable = true;
     port = 9100;
-    # ip = "100.64.0.161";
     ip = "0.0.0.0";
     interface = "nb";
   };
@@ -11,8 +10,7 @@ in
 {
   config = lib.mkIf cfg.enable {
 
-    # not needed?
-    # networking.firewall.interfaces."{cfg.interface}".allowedTCPPorts = [ cfg.port ];
+    # networking.firewall.interfaces."{cfg.interface}".allowedTCPPorts = [ cfg.port ]; # not needed?
 
     services.prometheus.exporters.node = {
       enable = cfg.enable;
@@ -20,12 +18,5 @@ in
       listenAddress = cfg.ip;
       enabledCollectors = [ "systemd" ];
     };
-
-    # or just bind to 0.0.0.0 ?
-    # systemd.services."prometheus-node-exporter".serviceConfig = {
-    #   RestartSec = "5m";
-    #   StartLimitIntervalSec = 0;
-    # };
-
   };
 }
