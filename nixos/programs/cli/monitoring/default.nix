@@ -1,11 +1,12 @@
 {
-  pkgs,
-  lib,
   config,
+  lib,
+  pkgs,
   ...
 }:
 {
   environment.systemPackages = [
+    pkgs.btop
     # pkgs.glances
     # pkgs.s0ix-selftest-tool
     # pkgs.linuxKernel.packages.linux_6_18.cpupower

@@ -31,7 +31,6 @@
     pkgs.ripgrep
     pkgs.ripgrep-all
     pkgs.fd
-    pkgs.btop
     pkgs.fzf
     pkgs.lm_sensors
   ];
