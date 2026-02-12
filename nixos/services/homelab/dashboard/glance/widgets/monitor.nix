@@ -5,9 +5,8 @@ let
 
   monitorContent = lib.mapAttrsToList (name: svc: {
     title = svc.dash.displayName;
-    url = svc.dash.url;
-    icon = svc.dash.icon;
     alt-status-codes = svc.dash.statusCodes;
+    inherit (svc.dash) url icon;
     same-tab = false;
     timeout = "1s";
   }) enabledServices;

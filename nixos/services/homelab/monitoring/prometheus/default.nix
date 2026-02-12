@@ -7,9 +7,9 @@ in
 
   config = lib.mkIf cfg.enable {
     services.prometheus = {
-      enable = cfg.enable;
-      port = cfg.port;
+      inherit (cfg) enable port;
       listenAddress = cfg.ip;
+
       stateDir = "prometheus2"; # will be under /var/lib/
       rules = [ ];
       globalConfig.scrape_interval = "15s";

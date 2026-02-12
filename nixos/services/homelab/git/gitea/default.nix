@@ -35,7 +35,8 @@ in
     };
 
     services.gitea = {
-      enable = cfg.enable;
+      inherit (cfg) enable;
+
       appName = "🍵 gitea";
       settings = {
         server = {

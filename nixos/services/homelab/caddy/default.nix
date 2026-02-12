@@ -1,7 +1,8 @@
 { config, lib, ... }:
 let
+  inherit (config.homelab) domain;
+
   cfg = config.homelab.services.caddy;
-  domain = config.homelab.domain;
   homePageURL = config.homelab.services.glance.url;
   gitServerURL = config.homelab.services.gitea.url;
 in

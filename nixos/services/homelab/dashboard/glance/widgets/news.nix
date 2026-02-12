@@ -1,4 +1,4 @@
-{ ... }:
+_:
 {
   type = "group";
   # type = "split-column";

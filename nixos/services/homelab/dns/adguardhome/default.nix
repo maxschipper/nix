@@ -16,9 +16,9 @@ in
     };
 
     services.adguardhome = {
-      enable = cfg.enable;
+      inherit (cfg) enable port;
+
       host = "0.0.0.0";
-      port = cfg.port; # web ui
       mutableSettings = true; # changes made in the web ui persist between restarts
       extraArgs = [ ]; # extra cli args
       settings = {

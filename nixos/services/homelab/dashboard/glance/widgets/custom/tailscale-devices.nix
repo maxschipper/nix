@@ -1,4 +1,4 @@
-{ ... }:
+_:
 let
   TAILSCALE_API_KEY = "tskey-api-xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 in

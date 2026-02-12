@@ -6,10 +6,10 @@ in
   config = lib.mkIf cfg.enable {
 
     services.webdav = {
-      enable = cfg.enable;
+      inherit (cfg) enable;
       settings = {
+        inherit (cfg) port;
         address = cfg.ip;
-        port = cfg.port;
         prefix = "/";
         permissions = "CRUD";
         directory = "/var/lib/webdav/default";

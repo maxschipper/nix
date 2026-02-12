@@ -1,4 +1,4 @@
-{ ... }:
+_:
 {
   type = "releases";
   # hide-header = true;

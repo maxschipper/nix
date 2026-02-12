@@ -24,13 +24,13 @@ in
     };
 
     services.glance = {
-      enable = cfg.enable;
+      inherit (cfg) enable;
       openFirewall = false;
       environmentFile = config.sops.secrets.NETBIRD_API_KEY.path;
       settings = {
         server = {
+          inherit (cfg) port;
           host = cfg.ip;
-          port = cfg.port;
           proxied = true;
         };
         branding.hide-footer = true;

@@ -1,16 +1,12 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
   cfg = config.homelab.services.node-exporter;
 in
 {
-  config = lib.mkIf cfg.enable {
+  services.prometheus.exporters.node = {
+    inherit (cfg) enable port;
+    listenAddress = cfg.ip;
 
-    services.prometheus.exporters.node = {
-      enable = cfg.enable;
-      port = cfg.port;
-      listenAddress = cfg.ip;
-      enabledCollectors = [ "systemd" ];
-    };
-
+    enabledCollectors = [ "systemd" ];
   };
 }

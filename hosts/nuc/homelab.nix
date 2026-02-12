@@ -48,7 +48,7 @@
 
       adguard = {
         enable = true;
-        port = 3001;
+        port = 3001; # for web ui
         dash = {
           displayName = "AdGuard Home";
           icon = "sh:adguard-home";

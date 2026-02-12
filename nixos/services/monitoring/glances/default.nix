@@ -4,7 +4,7 @@ let
 in
 {
   services.glances = {
-    enable = cfg.enable;
+    inherit (cfg) enable;
     # extraArgs = [
     #   "--webserver"
     # ];

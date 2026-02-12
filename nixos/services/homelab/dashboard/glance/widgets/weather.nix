@@ -1,4 +1,4 @@
-{ ... }:
+_:
 {
   type = "weather";
   hide-header = true;

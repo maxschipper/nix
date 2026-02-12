@@ -1,4 +1,4 @@
-{ ... }:
+_:
 {
   type = "markets";
   hide-header = true;

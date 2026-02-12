@@ -6,9 +6,9 @@ in
   config = lib.mkIf cfg.enable {
 
     services.immich = {
-      enable = cfg.enable;
-      port = cfg.port;
+      inherit (cfg) enable port;
       host = cfg.ip;
+
       mediaLocation = "/var/lib/immich";
       # accelerationDevices = [ "/dev/dri/renderD128" ];
       accelerationDevices = null;

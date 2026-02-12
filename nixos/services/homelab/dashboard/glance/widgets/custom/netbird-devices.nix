@@ -1,4 +1,4 @@
-{ ... }:
+_:
 {
   type = "custom-api";
   title = "Netbird";

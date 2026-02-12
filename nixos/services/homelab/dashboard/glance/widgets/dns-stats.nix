@@ -6,7 +6,7 @@ in
   type = "dns-stats";
   cache = "30s";
   service = "adguard";
-  url = cfg.url;
+  inherit (cfg) url;
   username = "max";
   password = "";
   hour-format = "24h";

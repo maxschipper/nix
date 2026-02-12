@@ -13,9 +13,9 @@ in
     # networking.firewall.interfaces."{cfg.interface}".allowedTCPPorts = [ cfg.port ]; # not needed?
 
     services.prometheus.exporters.node = {
-      enable = cfg.enable;
-      port = cfg.port;
+      inherit (cfg) enable port;
       listenAddress = cfg.ip;
+
       enabledCollectors = [ "systemd" ];
     };
   };
