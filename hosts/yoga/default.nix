@@ -34,6 +34,7 @@
     (flakeStoreRoot + /nixos/system/nix/nix-ld.nix)
     (flakeStoreRoot + /nixos/system/nix/nix-lsps.nix)
     (flakeStoreRoot + /nixos/system/nix/nixos-cli.nix)
+    (flakeStoreRoot + /nixos/system/nix/nixpkgs-track.nix)
     (flakeStoreRoot + /nixos/system/nix/rippkgs.nix)
     (flakeStoreRoot + /nixos/system/power)
     # (flakeStoreRoot + /nixos/system/security/nitrokey.nix)
