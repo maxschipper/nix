@@ -1,5 +1,6 @@
 { inputs, lib, ... }:
 {
+  imports = [ ./caches.nix ];
   nix = {
     settings.experimental-features = [
       "nix-command"
