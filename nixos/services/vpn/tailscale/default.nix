@@ -1,4 +1,4 @@
-{ config, flakeStoreRoot, ... }:
+{ flakeStoreRoot, ... }:
 {
   sops.secrets."tailscale-auth-key" = {
     sopsFile = flakeStoreRoot + /secrets/tailscale-auth-key;
