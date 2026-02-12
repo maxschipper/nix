@@ -27,6 +27,7 @@
     (flakeStoreRoot + /nixos/system/networking/resolved.nix)
     (flakeStoreRoot + /nixos/system/networking/bluetooth.nix)
     (flakeStoreRoot + /nixos/system/nix)
+    (flakeStoreRoot + /nixos/system/nix/caches.nix)
     (flakeStoreRoot + /nixos/system/nix/comma.nix)
     (flakeStoreRoot + /nixos/system/nix/nh.nix)
     (flakeStoreRoot + /nixos/system/nix/nixos-cli.nix)

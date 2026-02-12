@@ -24,6 +24,7 @@
     (flakeStoreRoot + /nixos/system/networking/resolved.nix)
     (flakeStoreRoot + /nixos/system/networking/tools.nix)
     (flakeStoreRoot + /nixos/system/nix)
+    (flakeStoreRoot + /nixos/system/nix/caches.nix)
     (flakeStoreRoot + /nixos/system/nix/comma.nix)
     (flakeStoreRoot + /nixos/system/nix/nh.nix)
     # (flakeStoreRoot + /nixos/system/nix/nix-ld.nix)
