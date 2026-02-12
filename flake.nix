@@ -71,13 +71,6 @@
               (allowInsecure [ ])
               inputs.nixos-hardware.nixosModules.gmktec-nucbox-g3-plus
               ./hosts/nuc
-              {
-                nixpkgs.overlays = [
-                  (final: prev: {
-                    libmatchbox = final.callPackage ./pkgs/libmatchbox/package.nix { };
-                  })
-                ];
-              }
             ];
           };
           # ----------------------------------------------------------
