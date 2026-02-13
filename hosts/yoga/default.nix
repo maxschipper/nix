@@ -58,8 +58,9 @@
 
     (flakeStoreRoot + /nixos/services/homelab/monitoring/prometheus/exporters/node/external.nix)
     (flakeStoreRoot + /nixos/services/printing)
-    (flakeStoreRoot + /nixos/services/remap/keyd.nix)
-    (flakeStoreRoot + /nixos/services/remap/makima.nix)
+    # (flakeStoreRoot + /nixos/services/remap/keyd.nix)
+    (flakeStoreRoot + /nixos/services/remap/kanata)
+    # (flakeStoreRoot + /nixos/services/remap/makima.nix)
     (flakeStoreRoot + /nixos/services/ssh/keyAuth.nix)
     (flakeStoreRoot + /nixos/services/ssh/openssh.nix)
     (flakeStoreRoot + /nixos/services/streaming/airplay.nix)
