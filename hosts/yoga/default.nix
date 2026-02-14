@@ -108,6 +108,7 @@
     (flakeStoreRoot + /nixos/programs/gui/others/desktop-apps.nix)
     # (flakeStoreRoot + /nixos/programs/gui/others/livebook.nix)
     (flakeStoreRoot + /nixos/programs/gui/others/moonlight.nix)
+    (flakeStoreRoot + /nixos/programs/gui/others/rapidRAW.nix)
     (flakeStoreRoot + /nixos/programs/gui/passwordmanager/bitwarden.nix)
     (flakeStoreRoot + /nixos/programs/gui/passwordmanager/ente-auth.nix)
     (flakeStoreRoot + /nixos/programs/gui/terminal/foot.nix)
