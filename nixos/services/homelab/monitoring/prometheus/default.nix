@@ -1,19 +1,16 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
   cfg = config.homelab.services.prometheus;
 in
 {
   imports = [ ./scrapeConfigs.nix ];
 
-  config = lib.mkIf cfg.enable {
-    services.prometheus = {
-      inherit (cfg) enable port;
-      listenAddress = cfg.ip;
+  services.prometheus = {
+    inherit (cfg) enable port;
+    listenAddress = cfg.ip;
+    stateDir = "prometheus2"; # will be under /var/lib/
 
-      stateDir = "prometheus2"; # will be under /var/lib/
-      rules = [ ];
-      globalConfig.scrape_interval = "15s";
-      scrapeConfigs = [ ]; # defined in ./scrapeConfigs.nix
-    };
+    globalConfig.scrape_interval = "15s";
+    retentionTime = "90d";
   };
 }
