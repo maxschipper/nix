@@ -29,6 +29,10 @@
       url = "github:einetuer/nix-easyroam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    go-check-flake = {
+      url = "github:maxschipper/go-check-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -61,6 +65,7 @@
               ])
               (allowInsecure [ ])
               ./hosts/yoga
+              { environment.systemPackages = [ inputs.go-check-flake.packages.x86_64-linux.default ]; }
             ];
           };
           # ----------------------------------------------------------
