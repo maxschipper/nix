@@ -70,6 +70,26 @@
         "type": "github"
       }
     },
+    "go-check-flake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771253359,
+        "narHash": "sha256-sQ9Wy/vJdea/ScyUdSWqMeStOQYpXlpvfFhwHMYwOWg=",
+        "owner": "maxschipper",
+        "repo": "go-check-flake",
+        "rev": "8cedeb868357ae4c704c45c98e43cfe110a47e22",
+        "type": "github"
+      },
+      "original": {
+        "owner": "maxschipper",
+        "repo": "go-check-flake",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -77,11 +97,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770654520,
-        "narHash": "sha256-mg5WZMIPGsFu9MxSrUcuJUPMbfMsF77el5yb/7rc10k=",
+        "lastModified": 1771188132,
+        "narHash": "sha256-qLXxN/tPrZtnekaLBQuVtxQfvqqs5cT5WbyH4zZaTGI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "6c4fdbe1ad198fac36c320fd45c5957324a80b8e",
+        "rev": "ae8003d8b61d0d373e7ca3da1a48f9c870d15df9",
         "type": "github"
       },
       "original": {
@@ -222,6 +242,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "go-check-flake": "go-check-flake",
         "home-manager": "home-manager",
         "nix-easyroam": "nix-easyroam",
         "nix-index-database": "nix-index-database",
