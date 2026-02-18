@@ -4,9 +4,15 @@
     enable = true;
     systemdTarget = "graphical-session.target";
 
+    extraArgs = [
+      "-w"
+      "idlehint"
+      "300"
+    ];
+
     events = {
       before-sleep = "${pkgs.systemd}/bin/loginctl lock-session";
-      lock = "${pkgs.procps}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock &";
+      lock = "${pkgs.procps}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock --immediate-render";
     };
 
     timeouts = [
@@ -25,7 +31,7 @@
       # 3m 20s: Lock session
       {
         timeout = 200;
-        command = "${pkgs.systemd}/bin/loginctl lock-session";
+        command = "${pkgs.hyprlock}/bin/hyprlock --grace 10 &";
       }
       # 3m 30s: Turn off monitors
       {
