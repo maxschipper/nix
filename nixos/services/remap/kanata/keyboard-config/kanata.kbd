@@ -1,33 +1,33 @@
 (defsrc
-  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
-  tab   q     w     e     r     t     y     u     i     o     p     [     ]
-  caps  a     s     d     f     g     h     j     k     l     ;     '     \     ret
-  lsft  z     x     c     v     b     n     m     ,     .     /             rsft
-  lctl  lmet  lalt           spc            ralt f23 left down up   right
+  grv    1      2      3      4      5      6      7      8      9      0      -     =     bspc 
+  tab    q      w      e      r      t      y      u      i      o      p      [     ]
+  caps   a      s      d      f      g      h      j      k      l      ;     '     \     ret 
+  lsft   z      x      c      v      b      n      m      ,      .      /             rsft 
+  lctl   lmet   lalt            spc             ralt  f23  left  down  up    right 
 )
 
 ;; (lrld-num 3)
 (deflayer Qwerty
-  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
-  tab   q     w     e     r     t     y     u     i     o     p     [     ]
-  @escS @a    s     d     f     g     h     @j    @k    @l    @;    @'    \     ret
-  lsft  z     x     c     v     b     n     m     ,     .     /             rsft
-  lctl  lalt  lmet           @spcLay        ralt @cp left down up   right
+  grv    1      2      3      4      5      6      7      8      9      0      -     =     bspc
+  tab    q      w      e      r      t      y      u      i      o      p      [     ]
+  @escS  @a     s      d      f      g      h      @j     @k     @l     @;    @'    \     ret
+  lsft   z      x      c      v      b      n      m      ,      .      /             rsft
+  lctl   lalt   @escM           @spcLay         @bspA @cp  left  down  up    right
 )
-(deflayer Lay
-  lrnx  _     _     _     _     _     _     _     _     _     _     _     _     _
-  _     _     _     _     _     _     _     _     _     _     _     _     _
-  _     _     _     _     _     _     left  down  up    right _     _     _     _
-  _     _     _     _     _     _     _     _     _     _     _             _
-  _     _     _              _              _    _   _    _    _    _
+(deflayer LaySpc
+  lrnx   _      _      _      _      _      _      _      _      _      _      _     _     _
+  _      _      _      _      _      _      _      _      _      _      _      _     _
+  _      _      _      _      _      _      left   down   up     right  _     _     _     _
+  _      _      _      _      _      _      PageDown PageUp _      _      _             _
+  _      _      _               _               _     _    _     _     _     _
 )
 
 (deflayer Qwerty-up
-  tab   q     w     e     r     t     y     u     i     o     p     _     _     bspc
-  @escS a     s     d     f     g     h     j     k     l     ;     [     ]
-  @escS z     x     c     v     b     n     m     ,     .     @;    @'    \     ret
-  lsft  z     x     ret   lmet  b     spc   m     ,     .     /             rsft
-  lctl  lalt  lmet           spc            ralt @cp left down up   right
+  tab    q      w      e      r      t      y      u      i      o      p      _     _     bspc
+  @escS  a      s      d      f      g      h      j      k      l      ;      [     ]
+  @escS  z      x      c      v      b      n      m      ,      .      @;    @'    \     ret
+  lsft   z      x      ret    lmet   b      spc    m      ,      .      /             rsft
+  lctl   lalt   lmet            spc             ralt  @cp  left  down  up    right
 )
 
 ;; (deflayer Colemak-dh
@@ -70,14 +70,22 @@
 ;; 
 
 (defalias
+  ;; copilot key
+  cp (multi (release-key lsft) (release-key lalt) rmeta)
+
+  ;; chord alias
   j (chord esc-chord j)
   k (chord esc-chord k)
   l (chord esc-chord l)
  
-  spcLay (tap-hold 200 200 spc (layer-toggle Lay))
-  ;; copilot key
-  cp (multi (release-key lsft) (release-key lalt) rmeta)
+  ;; layers
+  spcLay (tap-hold 200 200 spc (layer-toggle LaySpc))
+
+
+  bspA (tap-hold-release 0 180 bspc ralt)
+
   escS (tap-hold-release 0 180 esc lsft)
+  escM (tap-hold-release 0 180 esc lmet)
 
   ;; a (tap-hold 200 200 a lsft)
   a (tap-hold-release-keys 200 800 a lsft (q w e r t a s d f g z x c v b))
