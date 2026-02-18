@@ -1,0 +1,95 @@
+(defsrc
+  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab   q     w     e     r     t     y     u     i     o     p     [     ]
+  caps  a     s     d     f     g     h     j     k     l     ;     '     \     ret
+  lsft  z     x     c     v     b     n     m     ,     .     /             rsft
+  lctl  lmet  lalt           spc            ralt f23 left down up   right
+)
+
+;; (lrld-num 3)
+(deflayer Qwerty
+  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab   q     w     e     r     t     y     u     i     o     p     [     ]
+  @escS @a    s     d     f     g     h     @j    @k    @l    @;    @'    \     ret
+  lsft  z     x     c     v     b     n     m     ,     .     /             rsft
+  lctl  lalt  lmet           @spcLay        ralt @cp left down up   right
+)
+(deflayer Lay
+  lrnx  _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _     _     _
+  _     _     _     _     _     _     left  down  up    right _     _     _     _
+  _     _     _     _     _     _     _     _     _     _     _             _
+  _     _     _              _              _    _   _    _    _    _
+)
+
+(deflayer Qwerty-up
+  tab   q     w     e     r     t     y     u     i     o     p     _     _     bspc
+  @escS a     s     d     f     g     h     j     k     l     ;     [     ]
+  @escS z     x     c     v     b     n     m     ,     .     @;    @'    \     ret
+  lsft  z     x     ret   lmet  b     spc   m     ,     .     /             rsft
+  lctl  lalt  lmet           spc            ralt @cp left down up   right
+)
+
+;; (deflayer Colemak-dh
+;; grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+;; tab  q    w    f    p    b    j    l    u    y    ;    -    ]
+;; caps a    r    s    t    g    m    n    e    i    o    '    ret
+;; lsft z    x    c    d    v    k    h    ,    .    /    rsft
+;; lctl lmet lalt           spc            ralt       left down up right
+;; )
+
+;; (deflayer Colemak-dh     
+;;   _     q     w     f     p     b     _     _     j     l     u     y     _     '
+;;   esc   @aS   @rM   @sA   @tC   g     _     _     m     @nC   @eA   @iM   @oS
+;;   _     z     x     c     d     v     _     _     k     h     S-/   /     \
+;;   _     _     ,     @sNav tab   _     _     del   @bNum .     _     _
+;;   _     _     _              ret            _     _     _
+;; )
+
+;; (deflayer Num  
+;;   _     S-1   S-2   S-3   S-4   S-5   _     _     S-6   S-7   S-8   S-9   S-0   S-`    
+;;   =     1     2     3     4     5     _     _     6     7     8     9     0     S-`
+;;   _     S--   -     +     [     ]     _     _     S-[   S-]   ;     S-;   S-\
+;;   _     _     _     _     _     _     _     _     _     _     _     _
+;;   _     _     _              _              _     _     _
+;; )
+
+;; (defalias
+;;   bNum (tap-hold 200 200 bspc (layer-toggle Num))
+;;   sNav (tap-hold 200 200 spc (layer-toggle Nav))
+;; )
+
+(defchords esc-chord 30
+  (j k) esc
+  (k l) ret
+  (j) j
+  (k) k
+  (l) l
+)
+
+;; 
+
+(defalias
+  j (chord esc-chord j)
+  k (chord esc-chord k)
+  l (chord esc-chord l)
+ 
+  spcLay (tap-hold 200 200 spc (layer-toggle Lay))
+  ;; copilot key
+  cp (multi (release-key lsft) (release-key lalt) rmeta)
+  escS (tap-hold-release 0 180 esc lsft)
+
+  ;; a (tap-hold 200 200 a lsft)
+  a (tap-hold-release-keys 200 800 a lsft (q w e r t a s d f g z x c v b))
+  ; (tap-hold 200 200 ; lsft)
+  ' (tap-hold 200 200 ; lsft)
+
+  s (tap-hold 200 200 s lalt)
+  ;; l (tap-hold 200 200 l ralt)
+
+  d (tap-hold 200 200 d lctl)
+  ;; k (tap-hold 200 200 k lctl)
+
+  f (tap-hold 200 200 f lmet)
+  ;; j (tap-hold 200 200 j lmet)
+)
