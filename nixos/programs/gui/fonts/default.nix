@@ -8,6 +8,8 @@
       inter
 
       ibm-plex
+      maple-mono.Normal-OTF
+      # maple-mono.Normal-NF-unhinted
       # public-sans
 
       # pkgs.jetbrains-mono
