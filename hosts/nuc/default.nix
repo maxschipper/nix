@@ -39,6 +39,8 @@
     # (flakeStoreRoot + /nixos/system/security/nitrokey.nix)
     (flakeStoreRoot + /nixos/system/security/sops-nix.nix)
     # (flakeStoreRoot + /nixos/system/security/tpm.nix)
+    # (flakeStoreRoot + /nixos/system/tty/tty.nix)
+    (flakeStoreRoot + /nixos/system/tty/getty.nix)
     (flakeStoreRoot + /nixos/system/users/max)
     (flakeStoreRoot + /nixos/system/xdg/baseDirSpec)
 
