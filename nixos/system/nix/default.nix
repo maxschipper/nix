@@ -4,7 +4,7 @@
   nix = {
     settings = {
       use-xdg-base-directories = true;
-      # warn-dirty = false;
+      warn-dirty = false;
       experimental-features = [
         "nix-command"
         "flakes"
