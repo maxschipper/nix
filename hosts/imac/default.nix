@@ -28,17 +28,17 @@
     (flakeStoreRoot + /nixos/system/networking/bluetooth.nix)
 
     (flakeStoreRoot + /nixos/system/nix)
-    (flakeStoreRoot + /nixos/system/nix/nix-lsps.nix)
+    # (flakeStoreRoot + /nixos/system/nix/nix-lsps.nix)
     # (flakeStoreRoot + /nixos/system/nix/nix-ld.nix)
-    (flakeStoreRoot + /nixos/system/nix/tools/comma.nix)
+    # (flakeStoreRoot + /nixos/system/nix/tools/comma.nix)
     (flakeStoreRoot + /nixos/system/nix/tools/nh.nix)
-    (flakeStoreRoot + /nixos/system/nix/tools/nixf.nix)
-    (flakeStoreRoot + /nixos/system/nix/tools/nixos-cli.nix)
-    (flakeStoreRoot + /nixos/system/nix/tools/nixpkgs-track.nix)
-    (flakeStoreRoot + /nixos/system/nix/tools/rippkgs.nix)
-    (flakeStoreRoot + /nixos/system/nix/tools/statix.nix)
+    # (flakeStoreRoot + /nixos/system/nix/tools/nixf.nix)
+    # (flakeStoreRoot + /nixos/system/nix/tools/nixos-cli.nix)
+    # (flakeStoreRoot + /nixos/system/nix/tools/nixpkgs-track.nix)
+    # (flakeStoreRoot + /nixos/system/nix/tools/rippkgs.nix)
+    # (flakeStoreRoot + /nixos/system/nix/tools/statix.nix)
 
-    (flakeStoreRoot + /nixos/system/audio)
+    # (flakeStoreRoot + /nixos/system/audio)
     (flakeStoreRoot + /nixos/system/localization)
     (flakeStoreRoot + /nixos/system/users/max)
     (flakeStoreRoot + /nixos/system/security/sops-nix.nix)
@@ -62,7 +62,7 @@
     ##################
     (flakeStoreRoot + /nixos/programs/cli)
     (flakeStoreRoot + /nixos/programs/cli/shell/fish.nix)
-    (flakeStoreRoot + /nixos/programs/cli/shell/starship.nix)
+    # (flakeStoreRoot + /nixos/programs/cli/shell/starship.nix)
 
     # nixos/DEVELOPMENT
     #####################
