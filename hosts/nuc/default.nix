@@ -17,7 +17,7 @@
     # (flakeStoreRoot + /nixos/system/initrd/luks-fido2.nix)
 
     (flakeStoreRoot + /nixos/system/audio)
-    (flakeStoreRoot + /nixos/system/home-manager.nix)
+    # (flakeStoreRoot + /nixos/system/home-manager.nix)
     (flakeStoreRoot + /nixos/system/localization)
     (flakeStoreRoot + /nixos/system/networking/bluetooth.nix)
     (flakeStoreRoot + /nixos/system/networking/networkmanager.nix)
