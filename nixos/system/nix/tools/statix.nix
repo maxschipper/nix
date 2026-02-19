@@ -1,4 +1,18 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [ statix ];
+  # there was no release since 2023
+  environment.systemPackages = [
+    (pkgs.statix.overrideAttrs (_: rec {
+      src = pkgs.fetchFromGitHub {
+        owner = "oppiliappan";
+        repo = "statix";
+        rev = "e9df54ce918457f151d2e71993edeca1a7af0132";
+        hash = "sha256-duH6Il124g+CdYX+HCqOGnpJxyxOCgWYcrcK0CBnA2M=";
+      };
+      cargoDeps = pkgs.rustPlatform.importCargoLock {
+        lockFile = src + "/Cargo.lock";
+        allowBuiltinFetchGit = true;
+      };
+    }))
+  ];
 }
