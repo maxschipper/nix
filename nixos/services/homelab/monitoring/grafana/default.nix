@@ -4,7 +4,7 @@ let
   cfgPrometheus = config.homelab.services.prometheus;
 in
 {
-  config = lib.mkIf {
+  config = lib.mkIf cfg.enable {
 
     sops.secrets."grafana_secret_key" = {
       owner = "grafana";
