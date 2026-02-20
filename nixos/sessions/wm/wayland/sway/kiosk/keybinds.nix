@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  yt-cmd = import ./yt-cmd.nix;
+in
 {
   environment.systemPackages = with pkgs; [
     wtype
@@ -23,9 +26,9 @@
           };
         };
       key = {
+        code.power = "160";
         yt = "XF86CameraAccessDisable";
         netflix = "XF86CameraAccessToggle";
-        power = "error, bind keycode 160 instead of this sym"; # the sym is not working but the keycode is
         source = "XF86MediaSelectTV";
         select = "XF86Select";
         back = "XF86Back";
@@ -49,7 +52,9 @@
         ${key.home} = "exec wtype -k Escape";
         ${key.yt} = "exec wtype -P Return -s 1000 -p Return";
 
+        # ${key.netflix} = "exec chromium";
         ${key.source} = "mode extra_controls";
+        # ${key.source} = "exec notify-send 'Mode: Extra Controls' -t 1500; mode extra_controls";
 
         "Mod4+t" = "exec foot";
         "Mod4+Shift+q" = "exec swaymsg exit";
@@ -58,19 +63,19 @@
       modes."extra_controls" = {
         ${key.audio.raise} = "exec ${cmd.bright.up}";
         ${key.audio.lower} = "exec ${cmd.bright.down}";
+
+        ${key.home} = "exec swaymsg exit";
         ${key.audio.mute} = "exec systemctl --user restart wob.service";
+
+        # ${key.yt} = "kill";
+        ${key.netflix} = "kill";
 
         ${key.source} = "mode default";
         ${key.back} = "mode default";
-        ${key.home} = "mode default";
         "Escape" = "mode default";
       };
-      keycodebindings =
-        let
-          keyCode.power = "160";
-        in
-        {
-          ${keyCode.power} = "exec swaymsg exit";
-        };
+      keycodebindings = {
+        ${key.code.power} = "exec pkill -x chromium || ${yt-cmd}";
+      };
     };
 }
