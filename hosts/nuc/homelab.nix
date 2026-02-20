@@ -9,6 +9,8 @@
     # (flakeStoreRoot + /nixos/sessions/wm/xserver/matchbox.nix)
 
     # (flakeStoreRoot + /nixos/sessions/wm/wayland/cage/youtube.nix)
+
+    (flakeStoreRoot + /nixos/sessions/wm/wayland/sway/kiosk)
   ];
 
   homelab = {
