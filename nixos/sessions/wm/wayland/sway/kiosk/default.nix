@@ -5,7 +5,6 @@
     ./config.nix
     ./keybinds.nix
     ./wob.nix
-    ./yt.nix
   ];
 
   security.polkit.enable = true;
