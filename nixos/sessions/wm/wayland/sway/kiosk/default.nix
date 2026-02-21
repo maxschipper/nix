@@ -2,6 +2,7 @@
 {
   imports = [
     ./autoStartSway.nix
+    ./chromium.nix
     ./config.nix
     ./keybinds.nix
     ./wob.nix
