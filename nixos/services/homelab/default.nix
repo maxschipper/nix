@@ -5,6 +5,7 @@
     ./dashboard/glance
     ./paperless
     ./git/gitea
+    ./git/runners/forgejo-runner.nix
     #./ttyd/btop
     ./caddy
     #./dns/core-dns

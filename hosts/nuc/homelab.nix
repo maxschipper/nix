@@ -3,8 +3,6 @@
   imports = [
     (flakeStoreRoot + /nixos/services/homelab)
 
-    (flakeStoreRoot + /nixos/services/homelab/git/runners/forgejo-runner.nix)
-
     (flakeStoreRoot + /nixos/services/homelab/caddy/tls-cert/trust.nix)
 
     # (flakeStoreRoot + /nixos/programs/gui/browser/chromium.nix)
@@ -138,6 +136,11 @@
         port = 61208; # hardcoded in the service
       };
 
+      forgejoRunner = {
+        enable = true;
+        dash.enable = false;
+        proxy.enable = false;
+      };
     };
   };
 }
